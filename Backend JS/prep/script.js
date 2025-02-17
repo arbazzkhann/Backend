@@ -10,8 +10,12 @@ app.get('/', function(request, response) {
     response.send("Hello world from get.");
 });
 
-app.get('/contact', function(request, response) {
-    response.send("Hello i am contact route.");
+app.get('/user', function(request, response) {
+    response.send(`User route`);
+});
+
+app.get('/user/:username', function(request, response) {
+    response.send(`Hello i am ${request.params.username}`);
 });
 
 app.listen(3000);
