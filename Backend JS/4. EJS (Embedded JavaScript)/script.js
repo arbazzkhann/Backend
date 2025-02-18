@@ -31,13 +31,13 @@ app.set("view engine", "ejs");
 
 //rendering main/home route
 app.get('/', function(request, response) {
-    let age = 12;
-    response.render("index", {age});
+    response.render("index", {age: 12});
 });
 
 //rendering about route
 app.get('/about', function(request, response) {
-    response.render("about");
+    let name = "Arbaz"
+    response.render("about", {name, university: "IIT Delhi"});
 });
 
 app.listen(3000);
