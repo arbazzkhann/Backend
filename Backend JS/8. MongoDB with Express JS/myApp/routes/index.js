@@ -10,14 +10,20 @@ router.get('/', function(req, res, next) {
 });
 
 //creating user with express
-router.get('/create', async function(req, res, next) {
-  const createdUser = await userModel.create({
-    username: "xr_arbaz",
-    name: "Arbaz Khan",
-    age: 25
-  });
-  res.send(createdUser);
-});
+// router.get('/create', async function(req, res, next) {
+//   const createdUser = await userModel.create({
+//     username: "xr_arbaz",
+//     name: "Arbaz Khan",
+//     age: 25
+//   });
+//   res.send(createdUser);
+// });
+
+//printing all userData with (.find)
+router.get('/allusers', async function(req, res, next) {
+  const allUsers = await userModel.find();
+  res.send(allUsers);
+})
 
 
 module.exports = router;
