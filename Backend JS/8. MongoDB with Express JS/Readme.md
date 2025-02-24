@@ -36,7 +36,7 @@ const userSchema = mongoose.Schema({
 Use the schema to create a model (collection) and export it:
 
 ```js
-module.exports = mongoose.model(collectionName, schema);
+module.exports = mongoose.model("collectionName", schema);
 ```
 
 ---
