@@ -41,7 +41,11 @@ module.exports = mongoose.model("collectionName", schema);
 
 ---
 
-## 📝 Object Creation (Adding Data)
+📌 **Note:** `userModel` is an asynchronous function, so we use `async/await` to handle it properly.
+
+---
+
+## 📝 Ducument Creation ( .create() )
 Create a new user document and save it in the database:
 
 ```js
@@ -51,8 +55,41 @@ router.get('/create', async function(req, res, next) {
         name: "name_in_string",
         age: age_in_numbers
     });
-    res.send(createdUser);
 });
 ```
 
-📌 **Note:** `userModel.create()` is an asynchronous function, so we use `async/await` to handle it properly.
+## 📝 Document Find ( .find() )
+Displays all documents in collection:
+
+```js
+router.get('/allusers', async function(req, res, next) {
+    const allUsers = await userModel.find();
+});
+```
+
+## 📝 Document Find One ( .findOne() )
+Displays Only one document in collection:
+
+```js
+router.get('/allusers', async function(req, res, next) {
+    const allUsers = await userModel.findOne({name: "Arbaz"});
+});
+```
+
+## 📝 Document Delete ( .deleteOne() )
+It will delelte one document in collection:
+
+```js
+router.get('/deleteOne', async function(req, res, next) {
+    const removeUser = await userModel.deleteOne();
+});
+```
+
+## 📝 Find One and Delete document ( .findOneAndDelete() )
+It will delelte one document in collection:
+
+```js
+router.get('/findOneAndDelete', async function(req, res, next) {
+    const findOneAndDelete = await userModel.findOneAndDelete({age: 22});
+});
+```
