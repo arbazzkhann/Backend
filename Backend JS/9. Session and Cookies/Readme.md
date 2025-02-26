@@ -39,3 +39,10 @@ req.session.ban = true;
 ```
 
 ✅ Your Express app now supports session management!
+
+
+## Destroy session
+
+```js
+req.session.destroy(call_Back_Function);
+```
