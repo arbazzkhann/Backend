@@ -29,6 +29,14 @@ router.get('/checkban', function(req, res, next) {
   else if(req.session.ban == false){
     res.send("You are Unbanned")
   }
+});
+
+//destroy session
+router.get('/sessiondestroy', function(req, res) {
+  req.session.destroy(function(err) {
+    if(err) throw err;
+    res.send("Ban removed");
+  })
 })
 
 module.exports = router;
