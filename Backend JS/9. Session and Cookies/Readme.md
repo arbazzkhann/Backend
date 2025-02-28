@@ -46,3 +46,28 @@ req.session.ban = true;
 ```js
 req.session.destroy(call_Back_Function);
 ```
+
+
+# 📌 Cookies
+
+## 🚀 Step 1: Require cookie-parser
+require the `cookie-parser` in app.js (it already installed and required after `express-generator` installation)
+
+## 🚀 Step 2: Creating cookie
+Do all cookie function in `router.get`
+
+```js
+res.cookie(cookie_name, value);
+```
+
+## 🚀 Step 3: Using cookie
+
+```js
+req.cookies;
+```
+
+## 🚀 Step 4: Deleting cookie
+
+```js
+res.clearCookie(cookie_Name)
+```
