@@ -3,6 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  res.cookie("age", 25); //cookie
   res.render('index', { title: 'Express' });
 });
 
@@ -37,6 +38,19 @@ router.get('/sessiondestroy', function(req, res) {
     if(err) throw err;
     res.send("Ban removed");
   })
+});
+
+
+//reading cookie
+router.get('/readcookie', function(req, res, next) {
+  console.log(req.cookies);
+  res.send('see console');
+});
+
+//deleting cookie
+router.get('/deletecookie', function(req, res, next) {
+  res.clearCookie("age");
+  res.send("cookie removed");
 })
 
 module.exports = router;
