@@ -1,12 +1,9 @@
-const mongoose = require("mongoose");
+var express = require('express');
+var router = express.Router();
 
-mongoose.connect("mongodb://127.0.0.1:27017/students");
-
-const studentsSchema = mongoose.Schema({
-  name: String,
-  age: Number,
-  rollNO: Number,
-  medium: String
+/* GET users listing. */
+router.get('/', function(req, res, next) {
+  res.send('respond with a resource');
 });
 
-module.exports = mongoose.model("class10", studentsSchema);
+module.exports = router;

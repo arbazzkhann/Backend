@@ -1,21 +1,36 @@
 var express = require('express');
 var router = express.Router();
 
-let dbClass10 = require("./users")
-
-/* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.send("Home page");
 });
 
-router.get("/createclass10", async function(req, res, next) {
-  const student = await dbClass10.create({
-    name: "Madhav",
-    age: 17,
-    rollNo: 23,
-    medium: "English"
-  });
-  res.send(student);
+router.get('/ban', function(req, res, next) {
+  req.session.ban = true;
+  res.send("You are banned now");
 });
+
+
+router.get('/isban', function(req, res, next) {
+  if(req.session.ban == true) {
+    res.send("you are banned");
+  }
+  else {
+    res.send("Not banned");
+  }
+
+});
+
+router.get('/removeban', function(req, res, next) {
+  if(req.session.ban == true) {
+    req.session.ban == false;
+    res.send("You are unbanned");
+  }
+  else {
+    res.send("Not ban");
+  }
+});
+
+
 
 module.exports = router;
