@@ -33,4 +33,17 @@ router.get('/removeban', function(req, res, next) {
 
 
 
+//cookies
+router.get("/createCookie", function(req, res, next) {
+  res.cookie("arbazAge", 22);
+  res.send(req.cookies);
+});
+
+router.get("/showCookies", function(req, res, next) {
+  console.log(req.cookies)
+  res.send("See console.");
+});
+
+
+
 module.exports = router;
