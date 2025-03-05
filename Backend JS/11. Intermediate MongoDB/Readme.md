@@ -23,7 +23,7 @@ new RegExp("Arbaz", "i"); // 'i' for case-insensitive search
 
 ```js
 router.get('/find', async function(req, res) {
-  const regexnew = RegExp("^Arbaz$", "i"); // Case-insensitive match for exact word
+  const regexnew = RegExp("^aRbAz$", "i"); // Case-insensitive match for exact word
   const userData = await userModel.find({ nickname: regexnew });
   res.send(userData);
 });
