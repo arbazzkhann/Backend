@@ -1,9 +1,19 @@
-var express = require('express');
-var router = express.Router();
+let mongoose = require("mongoose");
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+mongoose.connect("mongodb://127.0.0.1:27017/testDB");
+
+let mongooseSchema = mongoose.Schema({
+  name: String,
+  username: String,
+  description: String,
+  categories: {
+    type: Array,
+    default: []
+  },
+  dateCreated: {
+    type: Date,
+    default: Date.now()
+  }
 });
 
-module.exports = router;
+module.exports = mongoose.model("testingCollection", mongooseSchema)
