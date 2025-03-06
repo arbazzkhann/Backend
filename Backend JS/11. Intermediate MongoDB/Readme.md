@@ -15,6 +15,7 @@ new RegExp("Arbaz", "i"); // 'i' for case-insensitive search
 ---
 
 ## 🚀 Start and End Matching
+RegExp (Regular Expression)
 
 - `^` → Matches the **start** of a string
 - `$` → Matches the **end** of a string
