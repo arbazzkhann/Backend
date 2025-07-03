@@ -30,3 +30,12 @@
 
 5. **Modules**: Organize code into reusable modules using **require()**.
 
+
+# JavaScript on Client-side:
+1. **Displays Web Page**: Turns HTML code into what you see on screen.
+
+2. **User Clicks**: Helps you interect with the web pages.
+
+3. **Updates Content**: Allows changes to the page using JavaScript.
+
+4. **Loads Files**: Gets HTML, images, etc. form the server.
