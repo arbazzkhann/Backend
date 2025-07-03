@@ -9,7 +9,7 @@
 
 5. **V8 engine** + **Backend Features** = **Node.js**
 
-# Node.js Pros:
+## Node.js Pros:
 1. **Design**: Features an event-driven, non-blocking I/O model for efficiency.
 
 2. **Full-stack**: Allows using JavaScript on both **Server** and **Client** sides.
@@ -17,3 +17,16 @@
 3. **Scalability**: **Ideal for scalable network applications** due to **its architecture**.
 
 4.  **Versatility**: Suitable for **web**, **real-time chat** and **REST API Servers**.
+
+
+## Node.js Features:
+1. **Non-blocking I/O**: Designed to **perform non-blocking operations by default**, making it suitable for I/O-heavy operations.
+
+2. **Network Support**: **Supports TCP/UDP sockets**, which are crucial for building lower-level network applications that browsers can't handle.
+
+3. **File System Access**: **Provides APIs** to **read** and **write** **files directly**, which is not possible in browser environments for security reasons.
+
+4. **Server-side capabilities**: Node.js **enables JavaScript to run on the server**, **handling HTTP requests**, **file operations**, and **other server-side functionalities**.
+
+5. **Modules**: Organize code into reusable modules using **require()**.
+
