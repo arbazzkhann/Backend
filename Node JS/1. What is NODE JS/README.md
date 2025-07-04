@@ -71,3 +71,12 @@
 2. **Internet of Thing (IoT)**: Develops server-side applications for IoT devices, managing communications and data processing.
 
 3. **Scripting for Automation**: **Automates repetitive tasks** in software development processes, such as **testing** and **deployment**.
+
+
+## Server architecture with Node.js:
+Node.js server will:
+1. **Create server** and **listen to incoming requests**.
+
+2. **Business logic**: Validation, connect to db, actual processing of data.
+
+3. **Return response** HTML, JSON, CSS, JS, etc.
