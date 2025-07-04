@@ -31,7 +31,7 @@
 5. **Modules**: Organize code into reusable modules using **require()**.
 
 
-# JavaScript on Client-side:
+## JavaScript on Client-side:
 1. **Displays Web Page**: Turns HTML code into what you see on screen.
 
 2. **User Clicks**: Helps you interect with the web pages.
@@ -39,3 +39,27 @@
 3. **Updates Content**: Allows changes to the page using JavaScript.
 
 4. **Loads Files**: Gets HTML, images, etc. form the server.
+
+
+## JavaScript on Server:
+1. **Database Managemen**t: Stores, retrives, and manages data efficiently through operations like CRUD (Create, Read, Update, Delete).
+
+2. **Authentication**: Varifies user identities to control access to the system, ensuring that users are who they claim to be.
+
+3. **Authorization**: Determines what authenticated users are allowed to do by managing permissions and access controls.
+
+4. **Input Validations**: Checks incoming data for correctness, completeness, and security to prevent malicious data entry and errors.
+
+5. **Session Management**: Tracks users activity across various requests to maintain state and manage user-specific settings.
+
+
+## Client VS Server code:
+1. **User/Client can't access server code directly**.
+
+2. **Client must raise requests** for particular APIs to access certain features or data.
+
+3. **Environment Access**: Server-side JavaScript **accesses server features** like file systems and databases.
+
+4. **Security**: Server-side code can **handle sensitive operations securely**, while **client-side code is exposed** and must manage security risks.
+
+5. **Performance**: Heavy computations are **better performed on the server** to **avoid slowing down the client system/performance**.
