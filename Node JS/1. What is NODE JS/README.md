@@ -63,3 +63,11 @@
 4. **Security**: Server-side code can **handle sensitive operations securely**, while **client-side code is exposed** and must manage security risks.
 
 5. **Performance**: Heavy computations are **better performed on the server** to **avoid slowing down the client system/performance**.
+
+
+## Other usage of Node.js:
+1. **Local Utility Scripts**: Automates takes and process files locally, like using shell scripts but with javascript.
+
+2. **Internet of Thing (IoT)**: Develops server-side applications for IoT devices, managing communications and data processing.
+
+3. **Scripting for Automation**: **Automates repetitive tasks** in software development processes, such as **testing** and **deployment**.
