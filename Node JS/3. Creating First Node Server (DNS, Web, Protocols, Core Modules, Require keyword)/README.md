@@ -16,3 +16,51 @@
 ![alt text](image-1.png)
 
 
+## How web works?
+1. **Client Request Initiation**: The client (browser) initiates a network call by entering a URL.
+2. **DNS Resolution**: The browser contacts a DNS server to get the IP address of the domain.
+3. **TCP Connection**: The browser **establishes a TCP connection** with the server's IP address.
+4. **HTTP Request**: The browser sends an HTTP request to the server.
+5. **Server Processing**: The server processes the request and prepares a response.
+6. **HTTP Response**: The **server sends** an **HTTP response back to the client**.
+7. **Network Transmission**: The **response travels back to the client** over the network.
+8. **Client Receives Response**: The browser receives and interprets the response.
+9. **Rendering**: The browser renders the content of the response and displays it to the user.
+
+![alt text](image-2.png)
+
+
+## What are Protocols?
+HTTP (Hyper Text Transfer Protocol):
+* **Facilitates communication between a web browser** and **server** to **transfer web pages**.
+* Sends data in **plain text** (**no encryption**).
+* Used for basic website **browsing without security**.
+
+HTTPS (Hyper Text Transfer Protocol Secure):
+* **Secure version of HTTP**, **encrypts data** for secure communication.
+* Uses **SSL/TLS** to encrypt data.
+* Used in **online banking e-commerce**.
+
+TCP (Transmission Control Protocol):
+* **Ensures reliable**, **ordered**, and **error-checked** **data delivery over the internet**.
+* Establishes a **connection before data is transfer**.
+
+![alt text](image-3.png)
+
+
+## Node Core Modules:
+* **Built-in**: Core modules are included with Node.js installation.
+* **No Installation Needed**: Directly available for use without npm installation.
+* **Performance**: Highly optimized for performace.
+
+![alt text](image-4.png)
+
+1. **fs** (File System): **Handles file operations** and makes HTTP requests.
+2. **http** (Hyper Text Transfer Protocol): Creates HTTP servers and makes HTTP requests.
+3. **https** (Hyper Text Transfer Protocol Secure): Launch a SSL server.
+4. **path**: Provides utilities for handling and transforming file.
+5. **path.os**: Provides operating system-related utility methods and properties.
+6. **events**: Handles events and event-driven programming.
+7. **crypto**: Provides cryptographic functionalities like hashing and encryption.
+8. **url**: Parses and formates UTL strings.
+
