@@ -64,3 +64,24 @@ TCP (Transmission Control Protocol):
 7. **crypto**: Provides cryptographic functionalities like hashing and encryption.
 8. **url**: Parses and formates UTL strings.
 
+
+## Required Keyword:
+1. **Purpose**: **Imports modules** in Node JS.
+2. **Caching**: Modules are **cached after the first required call**.
+3. **.js** is **added autumatically** and  **not needed** to add at the end of module name.
+    (e.g., require(**fs.js**) as require(**fs**)).
+4. **Path Resolution**: Node.js **searches for modules** in **core**, **node_modules**, and **file paths**.
+
+### Syntax:
+```js
+const moduleName = require('module');
+
+//Load the built-in http module
+const http = require('http');
+
+//Load the third party express module
+const express = require('express');
+
+//Load the custom module
+const myModule = require('./myModule');
+```
