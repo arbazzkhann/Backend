@@ -4,7 +4,8 @@
 
 ![alt text](image.png)
 
-[text](https://youtu.be/9HYAaXwS7I4?list=PL78RhpUUKSwfeSOOwfE9x6l5jTjn5LbY3&t=101)
+> 🔁 YouTube video for better understanding:
+[Watch Video](https://youtu.be/9HYAaXwS7I4?list=PL78RhpUUKSwfeSOOwfE9x6l5jTjn5LbY3&t=101)
 
 # Node.js Event Loop (Simplified)
 
