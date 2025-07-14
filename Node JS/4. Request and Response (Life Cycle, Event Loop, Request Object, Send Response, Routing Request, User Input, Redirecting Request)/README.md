@@ -37,3 +37,20 @@ This is how the Node.js Event Loop works based on the diagram:
    The Event Loop sends the final response to the client.
 
 > 🔁 This loop continues, allowing Node.js to handle multiple operations asynchronously and efficiently.
+
+
+## How to Exit "**Event Loop**":
+```js
+//Simple Node.js server
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+   console.log(req);
+   process.exit();  // stop event loop
+});
+
+const PORT = 3001;
+server.listen(PORT, () => {
+   console.log(`Server is running at http://localhost:${PORT}`);
+});
+```
