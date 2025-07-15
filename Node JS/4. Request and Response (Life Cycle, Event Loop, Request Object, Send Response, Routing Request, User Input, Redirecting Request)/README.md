@@ -41,6 +41,11 @@ This is how the Node.js Event Loop works based on the diagram:
 
 ## How to Exit "**Event Loop**":
 ```js
+process.exit();  // stop event loop
+```
+
+Example:
+```js
 //Simple Node.js server
 const http = require('http');
 
@@ -54,3 +59,9 @@ server.listen(PORT, () => {
    console.log(`Server is running at http://localhost:${PORT}`);
 });
 ```
+
+## What is HTTP header?
+* HTTP Headers are **key-value pairs** sent between the client and server.
+
+* They provide **metadata** about the request or response (e.g., content type, length, status, etc.).
+
