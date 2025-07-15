@@ -1,5 +1,5 @@
 ## Installation Node.JS in Windows:
-Download and Install latest version of Node.js ([text](https://nodejs.org/en/download))
+Download and Install latest version of Node.js ([Download](https://nodejs.org/en/download))
 
 ## Command for Node.js:
 * check version:
