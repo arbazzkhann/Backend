@@ -4,11 +4,28 @@ const server = http.createServer((req, res) => {
    console.log(req.headers);
 
    res.setHeader('Content-Type', 'text/html');
-   res.write('<html>');
-   res.write('<head><title>Node Response</title></head>');
-   res.write('<body><h1>I am from node.js response.</h1></body>');
-   res.write('</html>');
-   res.end();
+
+   if (req.url === '/') {
+      res.write('<html>');
+      res.write('<head><title>Home</title></head>');
+      res.write('<body><h1>Home page</h1></body>');
+      res.write('</html>');
+      res.end();
+   }
+   else if (req.url === '/about') {
+      res.write('<html>');
+      res.write('<head><title>About</title></head>');
+      res.write('<body><h1>About page</h1></body>');
+      res.write('</html>');
+      res.end();
+   }
+   else {
+      res.write('<html>');
+      res.write('<head><title>Error</title></head>'); // ✅ fixed here
+      res.write('<body><h1>404 page not found.</h1></body>');
+      res.write('</html>');
+      res.end();
+   }
 });
 
 const PORT = 3001;
