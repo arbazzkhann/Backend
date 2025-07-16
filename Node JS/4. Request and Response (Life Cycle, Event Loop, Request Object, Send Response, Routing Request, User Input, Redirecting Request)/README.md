@@ -106,3 +106,19 @@ res.write("<label for='female'>Female</label><br/><br/>");
 res.write("<button type='submit'>Submit</button>");
 res.write("</form>");
 ```
+
+## Redirecting from HTML FORM to Another page:
+```js
+//form action and POST method:
+res.write("<form action='/submit-details' method='POST'>");
+
+//rendering response:
+if(req.url.toLowerCase() === '/submit-details' && req.method == "POST") {
+        fs.writeFile('newText.txt', "File is created successfully", (err) => {
+            if(err) console.log("Error occur: ", err);
+            else console.log("DONE!");
+        });
+        res.statusCode = 302; //302 means - Location Moved Temporarily
+        res.setHeader('Location', '/'); //redirecting
+    }
+```
