@@ -53,5 +53,8 @@ When reading a 1GB file:
 
 Example (in simple words): 
 * When you stream a video, data comes in chunks. These chunks are kept in a Buffer until the app processes them.
+* **Stream** => A **box** to **temporarily hold those pieces** (in binary form).
 
 ![alt text](image-4.png)
+
+
