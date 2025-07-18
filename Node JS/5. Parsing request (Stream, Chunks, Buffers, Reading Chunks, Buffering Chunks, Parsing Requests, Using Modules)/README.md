@@ -58,9 +58,24 @@ Example (in simple words):
 ![alt text](image-4.png)
 
 
-## Reading Chunks:
+## Reading Chunk:
 ```js
 req.on('data', chunk => {
     console.log(chunk);
 })
+```
+
+## Reading and End Reading Chunk:
+```js
+let chunkArray = [];  //array for holding chunk
+//Reading chunk
+req.on('data', chunk => {
+    chunkArray.push(chunk);
+});
+
+//chunk buffering and converting into string
+req.on('end', () => {
+    const parsedBody = Buffer.concat(chunkArray).toString();
+    console.log(parsedBody);
+});
 ```

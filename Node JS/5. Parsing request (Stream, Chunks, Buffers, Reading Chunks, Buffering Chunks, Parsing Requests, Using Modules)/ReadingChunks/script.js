@@ -19,11 +19,11 @@ http.createServer((req, res) => {
                     <br/><br/>
 
                     <label for="gender">Gender:</label>
+                    <input type="radio" id='male' name="gender" value='male'>
                     <label for="male">Male</label>
-                    <input type="radio" name="gender" for="male" value='male'>
 
+                    <input type="radio" id='female' name="gender" value='female'>
                     <label for="female" >Female</label>
-                    <input type="radio" name="gender" for="female" value='female'>
                     <button>Submit</button>
                 </form>
             </body>
@@ -32,11 +32,18 @@ http.createServer((req, res) => {
         return res.end();
     }
     else if(req.url === '/submit-details' && req.method == 'POST') {
+        let chunkArray = [];
         //Reading chunks
         req.on('data', chunk => {
             console.log(chunk);
-        })
+            chunkArray.push(chunk);
+        });
 
+        //chunk buffering and converting into string
+        req.on('end', () => {
+            const parsedBody = Buffer.concat(chunkArray).toString();
+            console.log(parsedBody);
+        });
 
 
         fs.writeFile('createdByNode.txt', "Successfull created!", (err) => {
