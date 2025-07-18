@@ -43,8 +43,20 @@ http.createServer((req, res) => {
         req.on('end', () => {
             const parsedBody = Buffer.concat(chunkArray).toString();
             console.log(parsedBody);
-        });
 
+            //1st WAY:
+            /*parsedBody is like a URL then we passing into JS in-built function called "URLSearchParams" and applying for-of loop and storing values into emmptyObject called "bodyObject"*/
+            // const bodyObject = {};
+            const params = new URLSearchParams(parsedBody);
+            // for(const [key, value] of params.entries()) {
+            //     bodyObject[key] = value;
+            // }
+            // console.log(bodyObject);
+
+            //2nd WAY:
+            const bodyObject = Object.fromEntries(params);
+            console.log(bodyObject);
+        });
 
         fs.writeFile('createdByNode.txt', "Successfull created!", (err) => {
             if(err) console.log("Error occur: ", err);

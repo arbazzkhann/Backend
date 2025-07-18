@@ -65,6 +65,7 @@ req.on('data', chunk => {
 })
 ```
 
+
 ## Reading and End Reading Chunk:
 ```js
 let chunkArray = [];  //array for holding chunk
@@ -77,5 +78,49 @@ req.on('data', chunk => {
 req.on('end', () => {
     const parsedBody = Buffer.concat(chunkArray).toString();
     console.log(parsedBody);
+});
+```
+
+
+## Parsing Request:
+```js
+//1st WAY:
+const params = new URLSearchParams(parsedBody);
+for(const [key, value] of params.entries()) {
+    bodyObject[key] = value;
+}
+
+//2nd WAY:
+const params = new URLSearchParams(parsedBody);
+const bodyObject = Object.fromEntries(params);
+console.log(bodyObject);
+```
+
+example:
+```js
+let chunkArray = [];  //empty array
+//Reading chunks
+req.on('data', chunk => {
+    console.log(chunk);
+    chunkArray.push(chunk);
+});
+
+//chunk buffering and converting into string
+req.on('end', () => {
+    const parsedBody = Buffer.concat(chunkArray).toString();
+    console.log(parsedBody);
+
+    //1st WAY:
+    /*parsedBody is like a URL then we passing into JS in-built function called "URLSearchParams" and applying for-of loop and storing values into emmptyObject called "bodyObject"*/
+    // const bodyObject = {};
+    const params = new URLSearchParams(parsedBody);
+    // for(const [key, value] of params.entries()) {
+    //     bodyObject[key] = value;
+    // }
+    // console.log(bodyObject);
+
+    //2nd WAY:
+    const bodyObject = Object.fromEntries(params);
+    console.log(bodyObject);
 });
 ```
