@@ -56,12 +56,14 @@ http.createServer((req, res) => {
             //2nd WAY:
             const bodyObject = Object.fromEntries(params);
             console.log(bodyObject);
+
+            //writting into file
+            fs.writeFile('createdByNode.txt', JSON.stringify(bodyObject), (err) => {
+                if(err) console.log("Error occur: ", err);
+                else console.log("DONE!");
+            });
         });
 
-        fs.writeFile('createdByNode.txt', "Successfull created!", (err) => {
-            if(err) console.log("Error occur: ", err);
-            else console.log("DONE!");
-        });
         res.statusCode = 302;
         res.setHeader('Location', '/');
         res.end();

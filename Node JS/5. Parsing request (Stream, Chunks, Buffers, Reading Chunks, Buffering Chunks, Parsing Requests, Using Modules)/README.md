@@ -94,6 +94,12 @@ for(const [key, value] of params.entries()) {
 const params = new URLSearchParams(parsedBody);
 const bodyObject = Object.fromEntries(params);
 console.log(bodyObject);
+
+//writting into file:
+fs.writeFile('file_Name', JSON.stringify(bodyObject), (err) => {
+    if(err) console.log("Error occur: ", err);
+    else console.log("DONE!");
+});
 ```
 
 example:
@@ -122,5 +128,6 @@ req.on('end', () => {
     //2nd WAY:
     const bodyObject = Object.fromEntries(params);
     console.log(bodyObject);
+
 });
 ```
