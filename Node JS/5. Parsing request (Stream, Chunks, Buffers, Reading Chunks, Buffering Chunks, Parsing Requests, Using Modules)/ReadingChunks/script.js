@@ -32,6 +32,13 @@ http.createServer((req, res) => {
         return res.end();
     }
     else if(req.url === '/submit-details' && req.method == 'POST') {
+        //Reading chunks
+        req.on('data', chunk => {
+            console.log(chunk);
+        })
+
+
+
         fs.writeFile('createdByNode.txt', "Successfull created!", (err) => {
             if(err) console.log("Error occur: ", err);
             else console.log("DONE!");

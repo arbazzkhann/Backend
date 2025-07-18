@@ -58,3 +58,9 @@ Example (in simple words):
 ![alt text](image-4.png)
 
 
+## Reading Chunks:
+```js
+req.on('data', chunk => {
+    console.log(chunk);
+})
+```
