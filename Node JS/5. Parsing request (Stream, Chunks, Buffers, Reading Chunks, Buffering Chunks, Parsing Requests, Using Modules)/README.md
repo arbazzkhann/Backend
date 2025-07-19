@@ -131,3 +131,18 @@ req.on('end', () => {
 
 });
 ```
+
+
+## Using Modules:
+* JavaScript modules allow us to **split code into separate files** and **reuse it easily**.
+
+NOTE: Node.js does **support export default**, **but only in ES Module** (ESM) mode — **not in CommonJS**.
+
+Syntax:
+```js
+//exporting
+module.export = object_name;
+
+//importing
+const variable_name = require('object_relative_path');
+```
