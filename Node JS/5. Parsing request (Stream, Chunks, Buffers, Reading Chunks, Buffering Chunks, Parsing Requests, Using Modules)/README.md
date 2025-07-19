@@ -160,10 +160,5 @@ exports.property_or_method_name3 = property_or_method_name3;
 
 
 //importing (multiple properties/objects):
-const customModule = require('relative_path');
-
-//using module:
-customModule.property_or_method_name1;
-customModule.property_or_method_name2;
-customModule.property_or_method_name3;
+const { property_or_method_name1, property_or_method_name2, property_or_method_name3 } = require('relative_path');
 ```

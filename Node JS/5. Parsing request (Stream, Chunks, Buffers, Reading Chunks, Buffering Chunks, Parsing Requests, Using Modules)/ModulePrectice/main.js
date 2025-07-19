@@ -1,3 +1,5 @@
-const one = require('./1');
+const { sum, multiply, half } = require('./1');
 
-console.log(one.sum(4,5));
+console.log(sum(4,5));
+console.log(multiply(4,5));
+console.log(half(10));
