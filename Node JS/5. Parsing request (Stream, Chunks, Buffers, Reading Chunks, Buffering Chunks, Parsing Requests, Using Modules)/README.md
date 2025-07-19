@@ -140,9 +140,30 @@ NOTE: Node.js does **support export default**, **but only in ES Module** (ESM) m
 
 Syntax:
 ```js
-//exporting
-module.export = object_name;
+//exporting (single module):
+module.exports = object_name;
 
-//importing
+//importing (single module):
 const variable_name = require('object_relative_path');
+
+
+//exporting (multiple properties/objects):
+//1st WAY:
+module.exports.property_or_method_name1 = property_or_method_name1;
+module.exports.property_or_method_name2 = property_or_method_name2;
+module.exports.property_or_method_name3 = property_or_method_name3;
+
+//2nd WAY:
+exports.property_or_method_name1 = property_or_method_name1;
+exports.property_or_method_name2 = property_or_method_name2;
+exports.property_or_method_name3 = property_or_method_name3;
+
+
+//importing (multiple properties/objects):
+const customModule = require('relative_path');
+
+//using module:
+customModule.property_or_method_name1;
+customModule.property_or_method_name2;
+customModule.property_or_method_name3;
 ```
