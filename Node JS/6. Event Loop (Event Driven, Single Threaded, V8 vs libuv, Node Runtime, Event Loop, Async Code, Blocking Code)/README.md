@@ -62,3 +62,20 @@
 * Heavy tasks (I/O or DB queries) are sent to worker threads (via libuv), not executed directly in the main thread.
 * Callbacks are executed only when the main call stack is clear.
 * Node.js remains fast because it never waits for operations—it delegates and continues.
+
+
+## V8 vs libuv:
+
+V8 engine:
+1. **Open-Source**: JavaScript engine by Google.
+2. Used in **Chrome** and **Node.js**.
+3. **Compiles JavaScript** to **native machine code**.
+4. Ensures **high-performance** JavaScript execution.
+
+libuv:
+1. **Multi-platform support library** for Node.js.
+2. Handles **asynchronous I/O Operations**.
+3. **Handles event-driven architecture**.
+4. Manages **file system**, **networking**, and **timers non-blockingly** **across platforms**.
+
+![alt text](image-2.png)
