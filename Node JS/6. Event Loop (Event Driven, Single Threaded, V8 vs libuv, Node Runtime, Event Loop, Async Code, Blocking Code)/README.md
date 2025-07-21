@@ -29,3 +29,36 @@
     * For example, if a button was clicked, the function linked to that click event will now run.
 
 
+## Single Thread:
+
+![alt text](image-1.png)
+
+1. Requests Enter Node.js:
+    * Incoming requests or tasks (e.g., HTTP requests, timers, or I/O operations) are received by Node.js.
+    * Node.js is single-threaded, but it can handle multiple tasks using asynchronous operations.
+
+2. Event Loop Starts (Single Thread):
+    * The event loop constantly runs in a loop, checking for new tasks and callbacks that need to be executed.
+
+3. Register Callback:
+    * When an intensive operation (e.g., reading a file, accessing a database, or performing heavy computations) is requested:
+        * Node.js registers a callback function for this task.
+        * The heavy work is delegated to Node.js worker threads (through libuv).
+
+4. Intensive Operation (Async Tasks):
+    * These tasks are handled in the background (e.g., file system operations, network requests, or database queries).
+    * The main thread is not blocked during this time.
+
+5. Operation Complete:
+    * When the background task finishes, it signals the event loop that it’s done.
+
+6. Trigger Callback:
+    * The callback function (that was registered earlier) is placed in the event queue.
+    * The event loop picks it up when the call stack is empty and executes it.
+
+
+### Single Threaded (Key Points):
+* Event loop is the core mechanism that allows Node.js to perform non-blocking I/O.
+* Heavy tasks (I/O or DB queries) are sent to worker threads (via libuv), not executed directly in the main thread.
+* Callbacks are executed only when the main call stack is clear.
+* Node.js remains fast because it never waits for operations—it delegates and continues.
