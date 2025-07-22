@@ -79,3 +79,17 @@ libuv:
 4. Manages **file system**, **networking**, and **timers non-blockingly** **across platforms**.
 
 ![alt text](image-2.png)
+
+
+## Event Loop Priority:
+
+![alt text](image-3.png)
+
+* **Timers**: This phase executes callbacks scheduled by **setTimeout()** and **setInterval()**.
+* **Pending Callbacks**: Executes I/O callbacks deferred to the next loop iteration.
+* **Idle**, **Prepare**: Only used internally
+* **Poll**: Retrieve **new I/O events**; executes I/O related callbacks (almost all with the exception of close callbacks, the ones scheduled by times and setImmediate()); node will block here when appropriate.
+* **Check**: **setImmediate()** callbacks are invoked here.
+* **Close Callbacks**: some close callbacks e.g., socket.on('close', ...).
+
+[Click here! for better Understandings](https://youtu.be/Pk9J0SvNXUs?t=1016)
