@@ -96,3 +96,58 @@ libuv:
 
 
 ## Async Code:
+
+* Asynchronous code allows certain tasks (like fetching data) to run in the background without blocking the main thread.
+
+Examples of Async Operations:
+* Network requests (e.g., fetch())
+* Reading files (in Node.js)
+* Timers (setTimeout, setInterval)
+* Database queries
+* Event listeners (e.g., click events)
+
+
+## Blocking Code:
+
+* Blocking code stops the execution of other code until the current task is completed.
+* Node.js is single-threaded, so if a task takes too long (like file reading), it will block the entire event loop, delaying other tasks.
+* **Example of blocking code**: Using fs.readFileSync() to read a large file — **nothing else will run until the file is fully read**.
+
+### writeFileSynce (Blocking):
+
+* **fs.writeFileSync()** is the synchronous (blocking) version of writing data to a file.
+* It halts the execution of further code until the writing is done.
+
+Example:
+```js
+const fs = require('fs');
+
+console.log('Start');
+fs.writeFileSync('example.txt', 'Hello, blocking world!');
+console.log('End');
+
+// Output:
+// Start
+// End (only after the file is written)
+```
+
+### writeFile (Non-Blocking / Async):
+* **fs.writeFile()** is asynchronous (non-blocking).
+* It writes data to a file and executes a callback once done, allowing other code to run in the meantime.
+
+Example:
+```js
+const fs = require('fs');
+
+console.log('Start');
+fs.writeFile('example.txt', 'Hello, non-blocking world!', (err) => {
+    if (err) throw err;
+    console.log('File written!');
+});
+console.log('End');
+
+// Output:
+// Start
+// End
+// File written! (printed last after the file is written)
+```
