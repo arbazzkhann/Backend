@@ -93,3 +93,6 @@ libuv:
 * **Close Callbacks**: some close callbacks e.g., socket.on('close', ...).
 
 [Click here! for better Understandings](https://youtu.be/Pk9J0SvNXUs?t=1016)
+
+
+## Async Code:
