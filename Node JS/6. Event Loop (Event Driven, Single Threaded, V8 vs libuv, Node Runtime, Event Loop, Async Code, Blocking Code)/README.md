@@ -116,7 +116,7 @@ Examples of Async Operations:
 ### writeFileSynce (Blocking):
 
 * **fs.writeFileSync()** is the synchronous (blocking) version of writing data to a file.
-* It halts the execution of further code until the writing is done.
+* It holds the execution of further code until the writing is done.
 
 Example:
 ```js
