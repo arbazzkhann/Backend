@@ -56,3 +56,29 @@ npm init -y
 * Install packages with npm install.
 * Run scripts like npm start or npm test.
 * Share your project easily.
+
+
+## NPM Scripts
+* NPM scripts are commands you define inside the package.json file.
+* They are used to automate tasks like running your app, testing, building, etc.
+
+```json
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "node app.js",     // Run using: npm start
+  "arbaz": "node app.js"      // Run using: npm run arbaz
+}
+```
+
+#### Reserved Script Names (No run keyword needed):
+* "start" → run as npm start
+* "test" → run as npm test
+
+> These are special and do not require npm run.
+
+#### Custom Script Names:
+* any other name (like "arbaz", "build", "dev") must be run using:
+
+```bash
+npm run script_name
+```
