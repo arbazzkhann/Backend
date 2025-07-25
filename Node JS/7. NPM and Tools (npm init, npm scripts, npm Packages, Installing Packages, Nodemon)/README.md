@@ -82,3 +82,13 @@ npm init -y
 ```bash
 npm run script_name
 ```
+
+
+## NPM Packages:
+1. NPM: **Node.js package manager** for code sharing.
+2. Package: *Reusable code* or *library*.
+3. package.json: Defines package metadata and dependencies.
+4. Versioning: Manages different package versions.
+5. Local/Global: Install packages Locally and Globally.
+6. Registry: Public storage for open-source packages.
+* Example: **Express**, **React**, **Nodemon**, etc.
