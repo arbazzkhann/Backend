@@ -92,3 +92,21 @@ npm run script_name
 5. Local/Global: Install packages Locally and Globally.
 6. Registry: Public storage for open-source packages.
 * Example: **Express**, **React**, **Nodemon**, etc.
+
+## Installing Packages:
+```bash
+npm install <package_name>
+```
+
+1. **--save**: Adds the package to the *project's dependencies* in package.json.
+2. **--save-dev** OR **-D**: Adds the package to the *project's devDependencies*.
+3. **--global** OR **-g**: Install the package *globally*, making it *available system-wide*, not just in a specific project.
+4. **--save-exact**: Installs the *exact version* specified without updating for newer versions.
+5. **--force**: *Forces npm to fetch and install packages* even if they are already installed.
+
+
+## devDependencies:
+devDependencies are the packages/modules required only during development of a Node.js application, not in production.
+
+> devDependencies are available in package.json file.
+
