@@ -9,3 +9,18 @@
 * An error that occur **while the program is running**, often **due to invalid operations**.
 
 
+## Syntax Error:
+
+```js
+//Missing paranthesis in function call
+console.log("Hello world";
+
+//Unclosed string literal
+let message = "Welcome to Node.js;
+
+//Improper use of reserved keywords
+let new = 5;
+
+//Incorrect variable declaration (const needs an initial value)
+const myVar;
+```
