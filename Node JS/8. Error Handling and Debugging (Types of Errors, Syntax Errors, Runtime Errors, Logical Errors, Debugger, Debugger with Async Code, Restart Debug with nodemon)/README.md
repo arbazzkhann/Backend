@@ -1,4 +1,6 @@
-# Types of Errors
+# Errors and Debugger
+
+## Types of Errors
 1. Syntax Error:
 * An error in the **code's structure**, causing it to **not compile** or **run** (*e.g.,* missing semicolon).
 
