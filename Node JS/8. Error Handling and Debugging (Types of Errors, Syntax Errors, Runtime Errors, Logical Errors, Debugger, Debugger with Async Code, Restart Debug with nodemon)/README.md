@@ -24,3 +24,29 @@ let new = 5;
 //Incorrect variable declaration (const needs an initial value)
 const myVar;
 ```
+
+
+## Runtime Errors:
+
+#### Examples:
+
+* Cannot set Headers after they are sent to the client.
+![alt text](image.png)
+
+```js
+//Reference Error (x is not defined)
+console.log(x);
+
+//Type Error (num is not a function)
+let num = 10;
+num();
+
+//Invalid JSON parse (Syntax Error)
+let jsonString = "{ name: 'Arbaz' }"  // Invalid JSON (single quotes)
+JSON.parse(jsonString);
+
+//File not found error (fs module)
+const fs = require('fs');
+fs.readFileSync('non_existed_file.txt');  // Throws Error: EN0ENT (file not found) 
+```
+
