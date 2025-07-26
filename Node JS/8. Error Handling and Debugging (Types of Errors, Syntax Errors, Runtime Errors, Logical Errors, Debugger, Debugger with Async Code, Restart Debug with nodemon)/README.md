@@ -69,3 +69,27 @@ for(let i=0; i <= arr.length; i++) {
 let num = "10";
 console.log(num + 5);  //Expected result is 15, but prints 105
 ```
+
+
+## Debugger:
+
+### Step 1: <br/>
+![step 1](image-1.png)
+
+### Step 2: <br/>
+![step 2](image-2.png)
+
+### Step 3 - Put a breakpoint:: <br/>
+![step 3 - Put break-points](image-3.png)
+
+### Step 4 - Use the tools: <br/>
+![step 4 - Use the tools](image-4.png)
+
+### Step 5 - Hover: <br/>
+![step 5 - Hover](image-5.png)
+
+### Step 6 - Debugg Pannel: <br/>
+<!-- ![step 6 - debugg pannel](image-6.png) -->
+<img src="image-6.png" alt="step 6 - debug panel" width="170"/>
+
+> YT Video for better understandings - [Debugger YT Video](https://youtu.be/gG47rm_vg8M?t=1082)
