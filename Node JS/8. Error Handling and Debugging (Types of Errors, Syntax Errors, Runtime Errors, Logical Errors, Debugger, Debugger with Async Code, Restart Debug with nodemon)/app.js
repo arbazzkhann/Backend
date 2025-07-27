@@ -1,9 +1,8 @@
+//creating connection
 const http = require('http');
+const handleServer = require('./handleServer');
 
-const PORT = 3001;
-
-http.createServer((req, res) => {
-    console.log(req);
-}).listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+const PORT = 3000;
+http.createServer(handleServer).listen(PORT, () => {
+    console.log(`Your server is running on http://localhost:${PORT}`);
 });
