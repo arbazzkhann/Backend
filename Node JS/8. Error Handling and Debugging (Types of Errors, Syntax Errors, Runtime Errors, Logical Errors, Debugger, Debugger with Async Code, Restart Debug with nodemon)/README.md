@@ -49,7 +49,7 @@ JSON.parse(jsonString);
 
 //File not found error (fs module)
 const fs = require('fs');
-fs.readFileSync('non_existed_file.txt');  // Throws Error: EN0ENT (file not found) 
+fs.readFileSync('non_existed_file.txt');  // Throws Error: ENOENT (file not found) 
 ```
 
 
@@ -93,3 +93,5 @@ console.log(num + 5);  //Expected result is 15, but prints 105
 <img src="image-6.png" alt="step 6 - debug panel" width="170"/>
 
 > YT Video for better understandings - [Debugger YT Video](https://youtu.be/gG47rm_vg8M?t=1082)
+
+
