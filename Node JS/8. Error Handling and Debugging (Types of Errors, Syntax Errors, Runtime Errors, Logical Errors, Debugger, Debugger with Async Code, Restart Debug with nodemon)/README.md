@@ -95,3 +95,13 @@ console.log(num + 5);  //Expected result is 15, but prints 105
 > YT Video for better understandings - [Debugger YT Video](https://youtu.be/gG47rm_vg8M?t=1082)
 
 
+## Debugger with Nodemon:
+
+### Step 1:
+![Menu bar](image-7.png)
+
+
+### Step 2 - Copy these configuration setting:
+![Configurations in launch.json](image-8.png)
+
+> You need to have pre-installed "nodemon".
