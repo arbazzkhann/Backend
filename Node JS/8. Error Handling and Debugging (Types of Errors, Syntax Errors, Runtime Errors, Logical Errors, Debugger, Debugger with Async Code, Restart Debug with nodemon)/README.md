@@ -83,21 +83,45 @@ console.log(num + 5);  //Expected result is 15, but prints 105
 ### Step 1: <br/>
 ![step 1](image-1.png)
 
+- Press F5 or go to Run > Start Debugging.
+- Use .vscode/launch.json to configure how debugging works.
+
 ### Step 2: <br/>
 ![step 2](image-2.png)
 
-### Step 3 - Put a breakpoint:: <br/>
+- A popup will appear.
+- Choose "Node.js" as the debugger environment.
+
+### Step 3 - Put a breakpoint: <br/>
 ![step 3 - Put break-points](image-3.png)
+
+- Click on the left margin beside a line of code.
+- A red dot appears — this is a breakpoint.
+- When code runs, it will pause here.
 
 ### Step 4 - Use the tools: <br/>
 ![step 4 - Use the tools](image-4.png)
 
+- F10: Step Over
+- F11: Step Into
+- Shift + F11: Step Out
+- F5: Continue
+
 ### Step 5 - Hover: <br/>
 ![step 5 - Hover](image-5.png)
+
+- When the code is paused, hover your mouse over variables.
+- VS Code shows their current values instantly.
 
 ### Step 6 - Debugg Pannel: <br/>
 <!-- ![step 6 - debugg pannel](image-6.png) -->
 <img src="image-6.png" alt="step 6 - debug panel" width="170"/>
+
+- VARIABLES: Shows local/global variables and their values.
+- WATCH: Add variables manually to monitor them.
+- CALL STACK: Shows the function call flow (what called what).
+- BREAKPOINTS: Lists all your breakpoints.
+- LOADED SCRIPTS: Shows the running scripts in your app.
 
 > YT Video for better understandings - [Debugger YT Video](https://youtu.be/gG47rm_vg8M?t=1082)
 
