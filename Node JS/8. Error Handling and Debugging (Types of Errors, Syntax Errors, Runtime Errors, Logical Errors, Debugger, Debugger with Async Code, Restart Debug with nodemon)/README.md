@@ -74,7 +74,10 @@ console.log(num + 5);  //Expected result is 15, but prints 105
 ## Debugger:
 
 ### What is a Debugger?
+* Helps you **find** and **fix bugs** in your code.
 * A **tool** to **pause your program at certain lines**.
+* You can **watch how data changes** as code runs.
+* **Saves time** in tracking down **where errors** happen.
 
 
 ### Step 1: <br/>
