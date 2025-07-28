@@ -73,6 +73,10 @@ console.log(num + 5);  //Expected result is 15, but prints 105
 
 ## Debugger:
 
+### What is a Debugger?
+* A **tool** to **pause your program at certain lines**.
+
+
 ### Step 1: <br/>
 ![step 1](image-1.png)
 
