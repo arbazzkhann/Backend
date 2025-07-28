@@ -1,0 +1,12 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "description": "1. Express.js is a minimal and flexible **web application framework for Node.js**.\r 2. It provides a robust set of **features for building single-page**, **multi-page**, and **hybrid** web applications.\r 3. Express.js **simplifies server-side coding** by providing a layer of fundamentals web application features.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
