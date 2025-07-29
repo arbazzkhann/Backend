@@ -41,3 +41,5 @@ npm install express --no-save
 ![middleware example](image-1.png)
 
 
+## What is **next** in Express.js?
+* In Express.js middleware, **next is a function** that tells Express to move to the **next middleware** or **route handler** in the stack.
