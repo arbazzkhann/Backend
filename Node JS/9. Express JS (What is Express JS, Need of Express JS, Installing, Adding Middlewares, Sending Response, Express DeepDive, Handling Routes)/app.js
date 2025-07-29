@@ -1,43 +1,26 @@
-//core modules
-const http = require('http');
-
-//external modules
 const express = require('express');
-
-
-//local Modules
-const handleServer = require('./handleServer');
-
-
 const app = express();
 
+//first middleware
+app.use('/', (req, res, next) => {
+    console.log(`first middleware, method: ${req.method} and url: ${req.url}`)
+    next();
+});
 
-app.use((req, res, next) => {
-    console.log("First middleware", req.url, req.method);
-
+//second middleware
+app.use('/submit-details', (req, res, next) => {
+    console.log(`second middleware, submit-details page`);
     res.send(`
         <html>
             <head><title>Express Introduction</title></head>
             <body>
-                <h1>Hello world</h1>
+                <h1>This is submit-details page.</h1>
             </body>
         </html>    
-    `)
-
-    next();
-})
-app.use((req, res, next) => {
-    console.log("Second middleware", req.url, req.method);
-    next();
-})
-app.use((req, res, next) => {
-    console.log("Third middleware", req.url, req.method);
-    next();
+    `);
 })
 
 
-
-const PORT = 3000;
-http.createServer(app).listen(PORT, () => {
-    console.log(`Your server is running on http://localhost:${PORT}`);
-});
+app.listen(3000, () => {
+    console.log(`Server is running on http://localhost:3000`);
+})

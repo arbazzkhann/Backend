@@ -72,3 +72,48 @@ app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
 ```
+
+
+# Handling Routers:
+
+### Keypoints:
+* **Order matters**,
+* **"/"** matches everything,
+* Can **not call next after res.send()**,
+* Calling **res.send** **implicitly calls res.end()**
+
+
+Syntax:
+```js
+app.use([path], callback [, callback...]);
+```
+
+#### Example:
+```js
+const express = require('express');
+const app = express();
+
+//first middleware
+app.use('/', (req, res, next) => {
+    console.log(`method: ${req.method} and url: ${req.url}`)
+    next();
+});
+
+//second middleware
+app.use('/submit-details', (req, res, next) => {
+    console.log(`submit-details page`);
+    res.send(`
+        <html>
+            <head><title>Express Introduction</title></head>
+            <body>
+                <h1>This is submit-details page.</h1>
+            </body>
+        </html>    
+    `);
+})
+
+
+app.listen(3000, () => {
+    console.log(`Server is running on http://localhost:3000`);
+});
+```
