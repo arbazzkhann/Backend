@@ -28,3 +28,16 @@ To Install Express temporarily and not add it to the dependencies list:
 ```bash
 npm install express --no-save
 ```
+
+
+## Middleware:
+* In Express.js, middleware is a **function** that has **access to the request** (req), **response** (res), and the **next middleware** in the cycle.
+
+* It is used to **modify requests** and **responses**, **execute any code**, **end the request-response cycle**, or **call the next middleware** in the stack.
+
+![middleware](image.png)
+
+### Example:
+![middleware example](image-1.png)
+
+
