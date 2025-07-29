@@ -43,3 +43,32 @@ npm install express --no-save
 
 ## What is **next** in Express.js?
 * In Express.js middleware, **next is a function** that tells Express to move to the **next middleware** or **route handler** in the stack.
+
+
+## Creating Server with Express.js:
+
+```js
+const express = require('express');
+
+const app = express();
+
+app.use((req, res, next) => {
+    console.log("First middleware", req.url, req.method);
+
+    //sending html
+    res.send(`
+        <html>
+            <head><title>Express Introduction</title></head>
+            <body>
+                <h1>Hello world</h1>
+            </body>
+        </html>    
+    `);
+});
+
+//server creation
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
+```
