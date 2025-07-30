@@ -15,16 +15,48 @@ app.use((req, res, next) => {
 });
 
 //Third Middleware
-app.use((req, res, next) => {
-    console.log(`Third middleware, request method is ${req.method}`);
+// app.use((req, res, next) => {
+//     console.log(`Third middleware, request method is ${req.method}`);
+//     res.send(`
+//         <html>
+//             <head><title>Prectice Question</title></head>
+//             <body>
+//                 <h1>DONE</h1>
+//             </body>
+//         </html>
+//     `);
+// });
+
+app.get('/', (req, res, next) => {
+    console.log(`Handling / for get, request method is ${req.method}`);
+});
+
+app.get('/contact-us', (req, res, next) => {
     res.send(`
         <html>
             <head><title>Prectice Question</title></head>
             <body>
-                <h1>DONE</h1>
+                <h2>Enter your details</h2>
+                <form action="/contact-us" method="post">
+                    <label>Name: </label>
+                    <input name="name" type="text" placeholder="Enter full name"> 
+
+                    <br/><br/>
+
+                    <label>Email:</label>
+                    <input name="email" type="email" placeholder="Enter email address">
+                    
+                    <br/><br/>
+
+                    <button type="submit">Submit</button>
+                </form>
             </body>
         </html>
     `);
+});
+
+app.post('/contact-us', (req, res, next) => {
+    console.log(`Handling contact-us on POST request, url: ${req.url} and method: ${req.method}`);
 });
 
 
