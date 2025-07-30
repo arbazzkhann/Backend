@@ -27,10 +27,12 @@ app.use((req, res, next) => {
 //     `);
 // });
 
+// handlig '/' on get
 app.get('/', (req, res, next) => {
     console.log(`Handling / for get, request method is ${req.method}`);
 });
 
+// handling '/contact-us' on GET
 app.get('/contact-us', (req, res, next) => {
     res.send(`
         <html>
@@ -55,6 +57,7 @@ app.get('/contact-us', (req, res, next) => {
     `);
 });
 
+// handling '/contact-us' on POST
 app.post('/contact-us', (req, res, next) => {
     console.log(`Handling contact-us on POST request, url: ${req.url} and method: ${req.method}`);
 });
