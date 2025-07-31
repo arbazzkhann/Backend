@@ -1,0 +1,15 @@
+{
+  "name": "body-parser",
+  "version": "1.0.0",
+  "description": "```bash\r npm install body-parser\r ```",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "arbaz khan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0"
+  }
+}
