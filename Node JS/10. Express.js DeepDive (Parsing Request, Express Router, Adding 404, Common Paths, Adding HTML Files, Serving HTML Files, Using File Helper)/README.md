@@ -30,8 +30,8 @@ const app = express();
 
 //url encoded
 app.use(bodyParser.urlencoded());
-
-// handling '/contact-us' on GET
+:
+// handling '/' form page on GET:
 app.get('/', (req, res, next) => {
     res.send(`
         <html>
@@ -57,7 +57,7 @@ app.get('/', (req, res, next) => {
     next();
 });
 
-
+// submitted page:
 app.post('/submitted', (req, res, next) => {
     //using body-parser
     console.log(`Handling contact-us on POST request, url: ${req.url} and method: ${req.method}, ${req.body.name}`);
