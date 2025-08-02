@@ -3,7 +3,7 @@ const hostRouter = express.Router();
 
 
 //form GET
-hostRouter.get('/host/add-home', (req, res, next) => {
+hostRouter.get('/add-home', (req, res, next) => {
     res.send(`
         <html>
             <head><title>Add Home</title></head>
@@ -23,7 +23,7 @@ hostRouter.get('/host/add-home', (req, res, next) => {
 });
 
 //form POST
-hostRouter.post('/host/add-home', (req, res, next) => {
+hostRouter.post('/add-home', (req, res, next) => {
     res.send(`
         <html>
             <head><title>Add Home</title></head>

@@ -19,7 +19,7 @@ app.use(express.urlencoded());
 app.use(userRouter);
 
 //hostRouter Middleware
-app.use(hostRouter);
+app.use('/host', hostRouter);
 
 //404
 app.use((req, res, next) => {
