@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home - FORM</title>
+</head>
+<body>
+	<h1>Enter your details:</h1>
+	<!-- Form -->
+	<form action="/result" method="post">
+		<label for="name">Name</label>
+		<input name="name" type="text" placeholder="Enter your name">
+		<br/><br/>
+
+		<!-- Age -->
+		<label for="age">Age</label>
+		<input type="number" name="age">
+		<br/><br/>
+
+		<!-- Gender -->
+		<label for="gender">Gender: </label>
+		<input type="radio" value="male" name="gender" id="male">
+		<label for="male">Male</label>
+		<input type="radio" value="female" name="gender" id="female">
+		<label for="female">Female</label>
+		<br/><br/>
+
+		<!-- City -->
+		<label for="city">City</label>
+		<select name="city">
+			<option value="Mumbai">Mumbai</option>
+			<option value="Delhi">Delhi</option>
+			<option value="Uttar_Pradesh">Uttar Pradesh</option>
+			<option value="Bihar">Bihar</option>
+			<option value="Panjab">Panjab</option>
+			<option value="Haryana">Haryana</option>
+		</select>
+		<br/><br/>
+
+		<!-- Buttons -->
+		<button type="reset">Clear</button>
+		<button type="submit">Submit</button>
+	</form>
+</body>
+</html>
