@@ -235,4 +235,6 @@ Question:
 2. Move the code to separate local modules and use the Express router to import and use them in app.js.
 3. Move all the html code to html files and serve them using the file helper.
 4. Also add a 404 page for this app.
+
+NOTE: REUSE THE APP FROM LAST ASSIGNMENT.
 ```
