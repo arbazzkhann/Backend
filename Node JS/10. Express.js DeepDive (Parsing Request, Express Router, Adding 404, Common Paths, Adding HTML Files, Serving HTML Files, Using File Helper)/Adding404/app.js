@@ -6,6 +6,9 @@ const path = require('path');
 const userRouter = require('./Routers/userRouter');
 const hostRouter = require('./Routers/hostRouter');
 
+//root path
+const rootPath = require('./utils/pathUtils');
+
 const app = express();
 
 
@@ -24,7 +27,7 @@ app.use('/host', hostRouter);
 
 //404
 app.use((req, res, next) => {
-    res.status(404).sendFile(path.join(__dirname, "./views/404.html"));
+    res.status(404).sendFile(path.join(rootPath, "./views/404.html"));
 });
 
 app.listen(3000, () => {

@@ -214,3 +214,14 @@ OR
 ```js
 res.sendFile(path.join(__dirname, "_path_from_current_working_directory_"));
 ```
+
+
+## Adding absolute path:
+* Create utils/pathUtils.js
+
+In pathUtils.js
+```js
+const path = require("path");
+
+module.exports = path.dirname(require.main.filename);
+```
