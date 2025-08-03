@@ -115,7 +115,7 @@ Step 2: In Routers directory, create _route_name_.js
 Step 3: Import "express" and "express.Router":
 ```js
 const express = require('express');
-const hostRouter = express.Router();
+const _route_name_ = express.Router();
 ```
 
 Step 4: Create middleware like that:
