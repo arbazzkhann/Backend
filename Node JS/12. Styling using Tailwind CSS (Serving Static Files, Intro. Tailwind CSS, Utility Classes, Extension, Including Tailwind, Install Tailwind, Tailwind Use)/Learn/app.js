@@ -15,6 +15,7 @@ const abosolutePath = require('./utils/pathUtils.js')
 //express app
 const app = express();
 
+app.use(express.static(abosolutePath));
 app.use(express.urlencoded());
 
 // handlig '/' on get
