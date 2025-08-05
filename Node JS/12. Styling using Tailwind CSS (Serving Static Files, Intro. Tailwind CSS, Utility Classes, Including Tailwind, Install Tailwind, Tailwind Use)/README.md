@@ -27,3 +27,36 @@ app.use(express.static(_path_of_static_files_));
 
 ### Predefined Classes:
 ![Predefined Classes](Predefined-Classes.png)
+
+
+## Including Tailwind CSS:
+
+### Method 1 (CDN LINK):
+
+- Add CDN link into markup file.
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+```
+
+---
+
+#### PROS:
+* **Quick Setup**: No need to install Node.js, npm, or configure build tools like PostCSS — just add one line in your HTML file.
+
+* **No Build Tools Needed**: You don’t need to configure Webpack, Vite, or any other bundler — it works out-of-the-box.
+
+* **Always Up-to-Date** (if using latest): You can link to the latest version without worrying about manually updating.
+
+#### CONS:
+* **Large File Size**: The CDN version includes all Tailwind classes, leading to a very large CSS file (~3MB+ unminified). This slows down page load time.
+
+* **No Purge**: You can’t remove unused CSS, which is a huge disadvantage for performance in production.
+
+* **Limited Customization**: You cannot use tailwind.config.js to customize colors, fonts, spacing, breakpoints, etc.
+
+* **No Plugin Support**: You can’t use official or third-party Tailwind plugins (like forms, typography, aspect-ratio) without a build step.
+
+* **Not Recommended for Production**: Due to file size and lack of customization, Tailwind via CDN is not production-optimized.
+
+* **Slower Initial Page Load**: Fetching a large CSS file from the CDN can make the first load slower, especially on poor networks.
