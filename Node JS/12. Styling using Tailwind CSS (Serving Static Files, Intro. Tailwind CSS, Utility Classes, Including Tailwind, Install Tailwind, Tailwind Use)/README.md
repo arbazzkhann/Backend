@@ -68,6 +68,32 @@ app.use(express.static(_path_of_static_files_));
 ### Method 2 (CLI Method):
 
 Step 1 - (Install Tailwind CSS):
+
+- Install this via npm.
 ```bash
 npm install tailwindcss @tailwindcss/cli
 ```
+
+Step 2 - Import Tailwind in your CSS:
+
+- Add this to your **main CSS** file.
+```css
+@import "tailwindcss";
+```
+
+Step 3 - Create **output.css** file:
+
+Step 4 - Start the Tailwind CLI build process:
+
+- Run the CLI tool to scan your source files for classes and build your CSS.
+```bash
+npx @tailwindcss/cli -i _main.css_path_ -o _output.css_path_-watch
+```
+
+Step 5 - Start using Tailwind in your HTML:
+
+- Add your compiled CSS file (**output.css**) to the <head> and start using Tailwind’s utility classes to style your content.
+
+
+#### All Steps:
+![All steps](all-steps.png)
