@@ -28,6 +28,8 @@ app.use(express.static(_path_of_static_files_));
 ### Predefined Classes:
 ![Predefined Classes](Predefined-Classes.png)
 
+* You simply apply them to your HTML elements to get specific styles without writing custom CSS yourself.
+
 
 ## Including Tailwind CSS:
 
@@ -60,3 +62,12 @@ app.use(express.static(_path_of_static_files_));
 * **Not Recommended for Production**: Due to file size and lack of customization, Tailwind via CDN is not production-optimized.
 
 * **Slower Initial Page Load**: Fetching a large CSS file from the CDN can make the first load slower, especially on poor networks.
+
+---
+
+### Method 2 (CLI Method):
+
+Step 1 - (Install Tailwind CSS):
+```bash
+npm install tailwindcss @tailwindcss/cli
+```
