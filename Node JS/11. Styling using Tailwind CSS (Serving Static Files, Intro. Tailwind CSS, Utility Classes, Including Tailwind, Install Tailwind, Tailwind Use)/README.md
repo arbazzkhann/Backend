@@ -81,7 +81,7 @@ Step 2 - Import Tailwind in your CSS:
 @import "tailwindcss";
 ```
 
-Step 3 - Create **output.css** file:
+Step 3 - Create **output.css** file.
 
 Step 4 - Start the Tailwind CLI build process:
 
