@@ -9,7 +9,7 @@ const contactUsGetRouter = require('./Routers/contact-us-get');
 const contactUsPostRouter = require('./Routers/contact-us-post');
 const homeRouter = require('./Routers/home.js');
 const addHomesGETRouter = require('./Routers/add-homes-get.js');
-const addHomesPOSTRouter = require('./Routers/add-homes-post.js');
+const { addHomesPOSTRouter } = require('./Routers/add-homes-post.js');
 
 //import absolutePath
 const abosolutePath = require('./utils/pathUtils.js');
