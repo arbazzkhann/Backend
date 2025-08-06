@@ -87,7 +87,7 @@ Step 4 - Start the Tailwind CLI build process:
 
 - Run the CLI tool to scan your source files for classes and build your CSS.
 ```bash
-npx @tailwindcss/cli -i _main.css_path_ -o _output.css_path_-watch
+npx @tailwindcss/cli -i _main.css_path_ -o _output.css_path_ --watch
 ```
 
 Step 5 - Start using Tailwind in your HTML:
