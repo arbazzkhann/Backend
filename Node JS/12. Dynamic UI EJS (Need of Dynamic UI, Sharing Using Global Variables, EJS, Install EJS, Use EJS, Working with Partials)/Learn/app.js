@@ -8,9 +8,11 @@ const express = require('express');
 const contactUsGetRouter = require('./Routers/contact-us-get');
 const contactUsPostRouter = require('./Routers/contact-us-post');
 const homeRouter = require('./Routers/home.js');
+const addHomesGETRouter = require('./Routers/add-homes-get.js');
+const addHomesPOSTRouter = require('./Routers/add-homes-post.js');
 
 //import absolutePath
-const abosolutePath = require('./utils/pathUtils.js')
+const abosolutePath = require('./utils/pathUtils.js');
 
 //express app
 const app = express();
@@ -26,6 +28,12 @@ app.use(contactUsGetRouter);
 
 // handling '/contact-us' on POST
 app.use(contactUsPostRouter);
+
+// handling '/add-homes' on GET
+app.use(addHomesGETRouter);
+
+// handling '/add-homes' on POST
+app.use(addHomesPOSTRouter);
 
 //404 status
 app.use((req, res, next) => {
