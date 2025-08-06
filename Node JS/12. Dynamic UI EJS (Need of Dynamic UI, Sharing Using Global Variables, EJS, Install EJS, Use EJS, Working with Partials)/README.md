@@ -13,3 +13,16 @@
 * **API Versatility**: Supports multiple client types (web, mobile, IoT) by providing appropriate data formats and structures.
 
 
+## What is EJS?
+
+* **Embedded JavaScript**.
+
+* **Simple Syntax**: Uses **<% %>** for control flow and **<%= %>** for output.
+
+* **Easy to Learn**: Familiar to those who know ***HTML*** and ***JavaScript***.
+
+* **Template Reuse**: Supports ***partials*** for reusing code snippets.
+
+* **Flexible Logic**: Allows full JavaScript expressions in templates.
+
+<img alt="ejs work flow" src="ejs-work-flow.png" height="250px"/>
