@@ -26,3 +26,46 @@
 * **Flexible Logic**: Allows full JavaScript expressions in templates.
 
 <img alt="ejs work flow" src="ejs-work-flow.png" height="250px"/>
+
+
+### Install EJS:
+
+#### Step 1 - Run this command in terminal:
+```bash
+npm install ejs
+```
+
+#### Step 2 - add this in **app.js**:
+```js
+app.set('view engine', 'ejs');
+```
+
+#### Step 3 - Change ***.html*** to ***.ejs***:
+
+#### Step 4 - Use:
+
+* Now you can integrate javascript within HTML with the help of ***<%= _JS_code_here %>***
+
+EXAMPLE:
+```html
+<h1>
+    <%= helloWorldVariable %>
+</h1>
+```
+
+#### Step 5 - Render:
+
+```js
+res.render('_ejs_file_name__', {
+  key1: value1,
+  key2: value2,
+});
+```
+
+EXAMPLE:
+```js
+registeredHomesRoute.get('/registered-homes', (req, res, next) => {
+    //render method
+    res.render('registeredHomes', {registerdHouses: registerdHouses});
+});
+```

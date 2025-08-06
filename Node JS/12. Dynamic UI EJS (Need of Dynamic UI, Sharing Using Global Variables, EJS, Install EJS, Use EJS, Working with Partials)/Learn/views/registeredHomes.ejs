@@ -1,7 +1,7 @@
 <html>
   <head>
-    <title>Success</title>
-    <link rel="stylesheet" href="../public/output.css">
+    <title>Registered Homes</title>
+    <link rel="stylesheet" href="../public/output.css" />
   </head>
   <body>
     <!-- Navbar -->
@@ -35,24 +35,33 @@
             ></span>
           </a>
         </li>
-        <li>
-          <a href="/registered-homes" class="relative text-white group">
-              Registered Houses
-              <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-          </a>
-        </li>
       </ul>
     </nav>
- 
+
     <!-- Main body -->
     <section class="text-center py-20 bg-white">
-            <div class="max-w-2xl mx-auto">
-            <h2 class="text-red-500 text-2xl md:text-5xl font-bold mb-7">House successfully added</h2>
-            <a href="/"
-                class="bg-red-500 text-white px-6 py-3 m-7 rounded-md text-lg font-medium hover:bg-red-600 transition duration-300">
-                Go Home
-            </a>
-        </div>
+      <div class="max-w-2xl mx-auto px-4">
+        <h2 class="text-red-500 text-2xl md:text-5xl font-bold mb-7">
+          🏠 Houses List
+        </h2>
+
+        <!-- Houses names and city code -->
+        <ul class="space-y-4">
+          <% registerdHouses.forEach(house => { %>
+            <li class="border border-gray-200 p-4 rounded-md shadow-sm hover:shadow-md transition duration-300 text-left">
+              <p class="text-lg font-semibold text-gray-800">🏡 <%= house.houseName %></p>
+              <p class="text-sm text-gray-500">📍 State: <%= house.houseState %></p>
+            </li>
+          <% }) %>
+        </ul>
+
+        <a
+          href="/"
+          class="inline-block bg-red-500 text-white px-6 py-3 mt-10 rounded-md text-lg font-medium hover:bg-red-600 transition duration-300"
+        >
+          Go Home
+        </a>
+      </div>
     </section>
 
   </body>
