@@ -5,7 +5,7 @@ const path = require('path');
 
 contactUsGetRouter.get('/contact-us', (req, res, next) => {
     console.log(__dirname);
-    res.sendFile(path.join(__dirname, '../views/contact-us-get.html'));
+    res.render('contact-us-get.ejs', {req});
 });
 
 module.exports = contactUsGetRouter;

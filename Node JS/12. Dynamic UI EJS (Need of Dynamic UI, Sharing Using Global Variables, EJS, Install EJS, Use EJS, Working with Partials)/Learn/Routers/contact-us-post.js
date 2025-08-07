@@ -5,62 +5,7 @@ const contactUsPostRouter = express.Router();
 contactUsPostRouter.post('/contact-us', (req, res, next) => {
     console.log(req.body);
     console.log(`Handling contact-us on POST request, url: ${req.url} and method: ${req.method}`);
-    res.send(`
-        <html>
-        <head>
-            <title>Add Home</title>
-            <link rel="stylesheet" href="../public/output.css">
-        </head>
-        <body>
-            <!-- Navbar -->
-            <nav
-            class="bg-red-500 shadow-md px-6 py-4 flex items-center justify-between"
-            >
-            <div class="text-2xl font-bold text-white">
-                <a href="/">ARBAZ</a>
-            </div>
-
-            <ul class="hidden md:flex space-x-6 font-medium">
-                <li>
-                <a href="/" class="relative text-white group">
-                    Home
-                    <span
-                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"
-                    ></span>
-                </a>
-                </li>
-                <!-- <li>
-                        <a href="/about" class="relative text-white group">
-                            About
-                            <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                    </li> -->
-                <li>
-                <a href="/contact-us" class="relative text-white group">
-                    Contact Us
-                    <span
-                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"
-                    ></span>
-                </a>
-                </li>
-            </ul>
-            </nav>
-        
-            <!-- Main body -->
-            <section class="text-center py-20 bg-white">
-                    <div class="max-w-2xl mx-auto">
-                    <h2 class="text-red-500 text-2xl md:text-5xl font-bold mb-7">Welcome, ${req.body.name}</h2>
-                    <p class="text-lg text-gray-600 mb-8">You are logged-in with ${req.body.email}.</p>
-                    <a href="/"
-                        class="bg-red-500 text-white px-6 py-3 m-7 rounded-md text-lg font-medium hover:bg-red-600 transition duration-300">
-                        Go Home
-                    </a>
-                </div>
-            </section>
-
-        </body>
-        </html>
-    `) 
+    res.render('contact-us-post.ejs', {req});
 });
 
 module.exports = contactUsPostRouter;
