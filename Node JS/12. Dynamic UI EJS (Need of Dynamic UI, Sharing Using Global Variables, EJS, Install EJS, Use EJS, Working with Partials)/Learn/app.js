@@ -44,7 +44,7 @@ app.use(registeredHomesRoute);
 
 //404 status
 app.use((req, res, next) => {
-    res.status(404).sendFile(path.join(abosolutePath, './views/404.html'));
+res.status(404).render('404.ejs', {req});
 });
 
 const PORT = 3000;
