@@ -11,6 +11,8 @@ const homeRouter = require('./Routers/home.js');
 const addHomesGETRouter = require('./Routers/add-homes-get.js');
 const { addHomesPOSTRouter } = require('./Routers/add-homes-post.js');
 const { registeredHomesRoute } = require('./Routers/registeredHomes.js');
+const { passwordRoute } = require('./Routers/passwordRoute.js');
+const { passwordRoutePost } = require('./Routers/passwordRoutePost.js');
 
 //import absolutePath
 const abosolutePath = require('./utils/pathUtils.js');
@@ -23,6 +25,12 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(abosolutePath));
 app.use(express.urlencoded());
+
+//universal middleware
+app.use((req, res, next) => {
+    console.log('url: ', req.url, "method: ", req.method);
+    next();
+});
 
 // handlig '/' on get
 app.use(homeRouter);
@@ -41,6 +49,12 @@ app.use(addHomesPOSTRouter);
 
 // handling '/registered-homes' on POST
 app.use(registeredHomesRoute);
+
+// handling '/password' on GET
+app.use(passwordRoute);
+
+// handling '/password' on POST
+app.use(passwordRoutePost);
 
 //404 status
 app.use((req, res, next) => {
