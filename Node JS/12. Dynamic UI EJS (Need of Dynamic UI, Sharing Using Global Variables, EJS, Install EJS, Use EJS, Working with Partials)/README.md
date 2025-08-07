@@ -40,7 +40,7 @@ npm install ejs
 app.set('view engine', 'ejs');
 ```
 
-#### Step 3 - Change ***.html*** to ***.ejs***:
+#### Step 3 - Change ***.html*** to ***.ejs***
 
 #### Step 4 - Use:
 
@@ -69,3 +69,38 @@ registeredHomesRoute.get('/registered-homes', (req, res, next) => {
     res.render('registeredHomes', {registerdHouses: registerdHouses});
 });
 ```
+
+
+## Partials:
+
+* Used for Code Reuse:
+  * Common parts like headers, footers, navbars, etc., can be put in separate files.
+  * Saves you from repeating the same code in every .ejs file.
+
+---
+
+* File Naming Convention (optional but common):
+  * Partials are usually created with an underscore, e.g., _header.ejs, _footer.ejs.
+
+---
+
+* Syntax:
+```ejs
+<%- include('_partials_path_') %>
+```
+
+---
+
+* Partials can **accept data** (optional):
+  * We can pass variables to partials:
+```ejs
+<%- include('partials/header', { title: "Home Page" }) %>
+```
+
+* Then in _header.ejs:
+  * We can pass variables to partials:
+```ejs
+<h1><%= title %></h1>
+```
+
+
