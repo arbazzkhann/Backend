@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <title>Registered Homes</title>
+    <link rel="stylesheet" href="../public/output.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="bg-red-500 shadow-md px-6 py-4 flex items-center justify-between"
+    >
+      <div class="text-2xl font-bold text-white">
+        <a href="/">ARBAZ</a>
+      </div>
+
+      <ul class="hidden md:flex space-x-6 font-medium">
+        <li>
+          <a href="/" class="relative text-white group">
+            Home
+            <span
+              class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+        </li>
+        <!-- <li>
+                <a href="/about" class="relative text-white group">
+                    About
+                    <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </li> -->
+        <li>
+          <a href="/contact-us" class="relative text-white group">
+            Contact Us
+            <span
+              class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main body -->
+    <section class="text-center py-20 bg-white">
+      <div class="max-w-2xl mx-auto px-4">
+        <h2 class="text-red-500 text-2xl md:text-5xl font-bold mb-7">
+          🏠 Houses List
+        </h2>
+
+        <!-- Houses names and city code -->
+        <!-- Houses Listing -->
+        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+          <% registerdHouses.forEach(house => { %>
+            <li class="bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden">
+              
+              <!-- House Photo -->
+              <img 
+                src="<%= house.housePhotoLink %>" 
+                alt="<%= house.houseName %>" 
+                class="w-full h-48 object-cover"
+              />
+
+              <!-- House Info -->
+              <div class="p-4">
+                <h3 class="text-xl font-semibold text-gray-800 mb-1">🏡 <%= house.houseName %></h3>
+                <p class="text-sm text-gray-600 mb-1">📍 State: <%= house.houseState %></p>
+              </div>
+
+              <!-- Price Footer -->
+              <div class="bg-red-500 text-white text-sm font-medium text-center py-2">
+                💰 ₹<%= house.housePrice %>
+              </div>
+
+            </li>
+          <% }) %>
+        </ul>
+
+        <a
+          href="/"
+          class="inline-block bg-red-500 text-white px-6 py-3 mt-10 rounded-md text-lg font-medium hover:bg-red-600 transition duration-300"
+        >
+          Go Home
+        </a>
+      </div>
+    </section>
+
+  </body>
+</html>
