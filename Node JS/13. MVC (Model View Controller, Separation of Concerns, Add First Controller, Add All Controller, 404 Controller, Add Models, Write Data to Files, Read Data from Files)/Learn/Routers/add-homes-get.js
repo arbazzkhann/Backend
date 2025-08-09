@@ -1,11 +1,17 @@
-const path = require('path');
-
+//external modules
 const express = require('express')
 
+//local modules
+const { addHomesGET }= require('../controllers/Add-homes');
+
+//router from express
 const addHomesGETRouter = express.Router();
 
-addHomesGETRouter.get('/add-homes', (req, res, next) => {
-    res.render("add-homes-get.ejs", {req});
-});
+//middleware
+addHomesGETRouter.get('/add-homes', addHomesGET);
 
+//function export
 module.exports = addHomesGETRouter;
+
+
+

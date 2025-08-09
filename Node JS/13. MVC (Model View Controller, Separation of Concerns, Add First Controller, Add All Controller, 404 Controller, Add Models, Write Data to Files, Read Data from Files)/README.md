@@ -21,6 +21,7 @@
     * Acts as a bridge between Model and View.
     * Handles requests from users.
     * Calls the Model to fetch data and returns a View.
+    (**Routes** are also part of controller)
 
 
 ## How MVC works in Express.js
@@ -31,3 +32,21 @@
 * View renders the result to the user.
 
 <img src="./MVC.png" alt="MVC" height="325px">
+
+
+## Adding First Controller:
+
+* Making **controllers** directory in main project. <br/>
+![controller dir](controller_dir.png)
+
+#### EXAMPLE:
+* We extract from **Routers/add-homes-get.js** middleware's function and putting into *controllers directory* with the name of **Add-homes.js**.
+
+* Now we can put all the functions that related to Add-homes into **controllers/Add-homes.js**.
+
+> Router/add-homes.get.js: <br/>
+![Router-add-homes-get.js](Router-add-homes-get.png)
+
+> controllers/Add-homes.js: <br/>
+![controllers-Add-homes.js](controllers-Add-homes.js.png)
+
