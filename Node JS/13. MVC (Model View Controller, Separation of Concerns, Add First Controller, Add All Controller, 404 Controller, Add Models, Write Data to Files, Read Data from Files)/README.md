@@ -29,3 +29,5 @@
 * Model is called to access/update data.
 * Controller gets the result and sends it to the View.
 * View renders the result to the user.
+
+<img src="./MVC.png" alt="MVC" height="325px">
