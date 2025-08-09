@@ -44,9 +44,9 @@
 
 * Now we can put all the functions that related to Add-homes into **controllers/Add-homes.js**.
 
-> Router/add-homes.get.js: <br/>
+> **Router/add-homes.get.js:** <br/>
 ![Router-add-homes-get.js](Router-add-homes-get.png)
 
-> controllers/Add-homes.js: <br/>
+> **controllers/Add-homes.js:** <br/>
 ![controllers-Add-homes.js](controllers-Add-homes.js.png)
 
