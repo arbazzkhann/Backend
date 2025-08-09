@@ -1,12 +1,13 @@
+//external modules
 const express = require('express');
-const path = require('path');
-const { registeredHouses} = require('../controllers/Add-homes');
 
+//router from express module
 const registeredHomesRoute = express.Router();
 
-registeredHomesRoute.get('/registered-homes', (req, res, next) => {
-    res.render('registeredHomes', {registeredHouses: registeredHouses});
-});
+//registeredHomes array
+const { registeredHomes } = require('../controllers/homes');
 
-//export
+registeredHomesRoute.get('/registered-homes', registeredHomes);
+
+//exports
 exports.registeredHomesRoute = registeredHomesRoute;

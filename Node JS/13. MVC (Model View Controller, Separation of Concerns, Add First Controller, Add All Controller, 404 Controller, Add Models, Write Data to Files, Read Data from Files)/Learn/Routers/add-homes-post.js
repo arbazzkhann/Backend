@@ -2,7 +2,7 @@
 const express = require('express');
 
 //local modules
-const { addHomesPOST } = require('../controllers/Add-homes');
+const { addHomesPOST } = require('../controllers/homes');
 
 
 //Router from express-module
