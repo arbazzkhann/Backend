@@ -1,11 +1,11 @@
 const express = require('express');
 const path = require('path');
-const { registerdHouses } = require('./add-homes-post');
+const { registeredHouses} = require('../controllers/Add-homes');
 
 const registeredHomesRoute = express.Router();
 
 registeredHomesRoute.get('/registered-homes', (req, res, next) => {
-    res.render('registeredHomes', {registerdHouses: registerdHouses});
+    res.render('registeredHomes', {registeredHouses: registeredHouses});
 });
 
 //export
