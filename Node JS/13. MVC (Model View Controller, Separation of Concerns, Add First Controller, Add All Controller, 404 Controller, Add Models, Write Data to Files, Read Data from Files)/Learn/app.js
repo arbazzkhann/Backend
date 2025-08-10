@@ -10,6 +10,9 @@ const { addHouseGETRouter } = require('./Routers/add-house-get.js');
 const { addHousePOSTRouter } = require('./Routers/add-house-post.js');
 const { registeredHousesRoute } = require('./Routers/registeredHouses.js');
 
+//errors
+const { pageNotFount } = require('./controllers/errors.js');
+
 //import absolutePath
 const abosolutePath = require('./utils/pathUtils.js');
 
@@ -47,9 +50,7 @@ app.use(addHousePOSTRouter);
 app.use(registeredHousesRoute);
 
 //404 status
-app.use((req, res, next) => {
-res.status(404).render('404.ejs', {req});
-});
+app.use(pageNotFount);
 
 const PORT = 3000;
 app.listen(PORT, () => {
