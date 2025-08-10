@@ -37,16 +37,15 @@
 ## Adding First Controller:
 
 * Making **controllers** directory in main project. <br/>
-![controller dir](controller_dir.png)
+<img src="controller_dir.png" height="200px">
 
 #### EXAMPLE:
 * We extract from **Routers/add-house-get.js** middleware's function and putting into *controllers directory* with the name of **Add-house.js**.
 
 * Now we can put all the functions that related to Add-house into **controllers/Add-house.js**.
 
-> **Router/add-house.get.js:** <br/>
-![Router-add-house-get.js](Router-add-house-get.png)
+> **Router/add-house-get.js:** <br/>
+<img src="add-house.png" height="255px">
 
-> **controllers/Add-house.js:** <br/>
-![controllers-Add-house.js](controllers-Add-house.js.png)
-
+> **controllers/houses.js:** <br/>
+<img src="controllers-houses.png" height="155px">
