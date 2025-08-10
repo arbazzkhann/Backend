@@ -40,13 +40,13 @@
 ![controller dir](controller_dir.png)
 
 #### EXAMPLE:
-* We extract from **Routers/add-homes-get.js** middleware's function and putting into *controllers directory* with the name of **Add-homes.js**.
+* We extract from **Routers/add-house-get.js** middleware's function and putting into *controllers directory* with the name of **Add-house.js**.
 
-* Now we can put all the functions that related to Add-homes into **controllers/Add-homes.js**.
+* Now we can put all the functions that related to Add-house into **controllers/Add-house.js**.
 
-> **Router/add-homes.get.js:** <br/>
-![Router-add-homes-get.js](Router-add-homes-get.png)
+> **Router/add-house.get.js:** <br/>
+![Router-add-house-get.js](Router-add-house-get.png)
 
-> **controllers/Add-homes.js:** <br/>
-![controllers-Add-homes.js](controllers-Add-homes.js.png)
+> **controllers/Add-house.js:** <br/>
+![controllers-Add-house.js](controllers-Add-house.js.png)
 

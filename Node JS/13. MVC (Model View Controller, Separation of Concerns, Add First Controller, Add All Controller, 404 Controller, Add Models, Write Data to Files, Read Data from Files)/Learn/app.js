@@ -1,6 +1,3 @@
-//core modules
-const path = require('path');
-
 //external modules
 const express = require('express');
 
@@ -8,9 +5,11 @@ const express = require('express');
 const contactUsGetRouter = require('./Routers/contact-us-get');
 const contactUsPostRouter = require('./Routers/contact-us-post');
 const homeRouter = require('./Routers/home.js');
-const addHomesGETRouter = require('./Routers/add-homes-get.js');
-const { addHomesPOSTRouter } = require('./Routers/add-homes-post.js');
-const { registeredHomesRoute } = require('./Routers/registeredHomes.js');
+
+const { addHouseGETRouter } = require('./Routers/add-house-get.js');
+const { addHousePOSTRouter } = require('./Routers/add-house-post.js');
+const { registeredHousesRoute } = require('./Routers/registeredHouses.js');
+
 const { passwordRoute } = require('./Routers/passwordRoute.js');
 const { passwordRoutePost } = require('./Routers/passwordRoutePost.js');
 
@@ -41,14 +40,26 @@ app.use(contactUsGetRouter);
 // handling '/contact-us' on POST
 app.use(contactUsPostRouter);
 
-// handling '/add-homes' on GET
-app.use(addHomesGETRouter);
 
-// handling '/add-homes' on POST
-app.use(addHomesPOSTRouter);
 
-// handling '/registered-homes' on POST
-app.use(registeredHomesRoute);
+
+
+
+// handling '/add-house' on GET
+app.use(addHouseGETRouter);
+
+// handling '/add-house' on POST
+app.use(addHousePOSTRouter);
+
+// handling '/registered-house' on POST
+app.use(registeredHousesRoute);
+
+
+
+
+
+
+
 
 // handling '/password' on GET
 app.use(passwordRoute);

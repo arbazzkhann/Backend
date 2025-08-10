@@ -1,11 +1,8 @@
 const express = require('express');
 const contactUsGetRouter = express.Router();
 
-const path = require('path');
+const { contactUsGET } = require('../controllers/contact');
 
-contactUsGetRouter.get('/contact-us', (req, res, next) => {
-    console.log(__dirname);
-    res.render('contact-us-get.ejs', {req});
-});
+contactUsGetRouter.get('/contact-us', contactUsGET);
 
 module.exports = contactUsGetRouter;
