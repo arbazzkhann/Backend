@@ -1,9 +1,14 @@
+//External modules
 const express = require('express');
+
+//router from express
 const homeRouter = express.Router();
 
-homeRouter.get('/', (req, res, next) => {
-    console.log(`Handling / for get, request method is ${req.method}`);
-    res.render("home.ejs", {req});
-});
+//homeGET function
+const { homeGET } = require('../controllers/home')
 
+//homeGET Router
+homeRouter.get('/', homeGET);
+
+//Exports
 module.exports = homeRouter;

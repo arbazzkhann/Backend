@@ -10,9 +10,6 @@ const { addHouseGETRouter } = require('./Routers/add-house-get.js');
 const { addHousePOSTRouter } = require('./Routers/add-house-post.js');
 const { registeredHousesRoute } = require('./Routers/registeredHouses.js');
 
-const { passwordRoute } = require('./Routers/passwordRoute.js');
-const { passwordRoutePost } = require('./Routers/passwordRoutePost.js');
-
 //import absolutePath
 const abosolutePath = require('./utils/pathUtils.js');
 
@@ -40,11 +37,6 @@ app.use(contactUsGetRouter);
 // handling '/contact-us' on POST
 app.use(contactUsPostRouter);
 
-
-
-
-
-
 // handling '/add-house' on GET
 app.use(addHouseGETRouter);
 
@@ -53,19 +45,6 @@ app.use(addHousePOSTRouter);
 
 // handling '/registered-house' on POST
 app.use(registeredHousesRoute);
-
-
-
-
-
-
-
-
-// handling '/password' on GET
-app.use(passwordRoute);
-
-// handling '/password' on POST
-app.use(passwordRoutePost);
 
 //404 status
 app.use((req, res, next) => {
