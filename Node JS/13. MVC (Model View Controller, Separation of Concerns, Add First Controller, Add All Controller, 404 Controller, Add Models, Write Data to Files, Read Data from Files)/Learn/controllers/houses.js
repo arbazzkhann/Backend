@@ -1,24 +1,23 @@
+//local modules
+const Home = require('../models/home');
+
 //addHousesGET middleware
 const addHouseGET = (req, res, next) => {
     res.render("add-house-get.ejs", {req});
 }
 
-//registeredHouses Array
-const registeredHousesArray = [];
-
 //addHousePOST middleware
 const addHousePOST = (req, res, next) => {
-    registeredHousesArray.push({ 
-        houseName: req.body.houseName, 
-        houseState: req.body.houseState, 
-        housePrice: req.body.housePrice, 
-        housePhoto: req.body.housePhoto,
-        housePhotoLink: req.body.housePhotoLink
-    });
+    //destructuting
+    const { houseName, housePrice, houseState, housePhotoLink } = req.body;
+
+    const home = new Home(houseName, housePrice, houseState, housePhotoLink);
+    home.save();
     res.render('add-house-post.ejs', {req});
 }
 
 const registeredHouses = (req, res, next) => {
+    const registeredHousesArray = Home.fetchAll();
     res.render('registeredHouses', {registeredHousesArray: registeredHousesArray});
 }
 
@@ -26,6 +25,3 @@ const registeredHouses = (req, res, next) => {
 exports.addHouseGET = addHouseGET;
 exports.addHousePOST = addHousePOST;
 exports.registeredHouses = registeredHouses;
-
-//export registeredHouses Array
-exports.registeredHousesArray = registeredHousesArray;
