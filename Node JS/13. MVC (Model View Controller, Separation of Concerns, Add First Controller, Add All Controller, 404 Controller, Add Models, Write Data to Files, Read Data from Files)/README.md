@@ -49,3 +49,32 @@
 
 > **controllers/houses.js:** <br/>
 <img src="controllers-houses.png" height="155px">
+
+
+## Nodemon.json:
+* create nodemon.json and put this code:
+```json
+{
+    "watch": ["."],
+    "ext": "js, json, ejs",
+    "ignore": ["node_modules/", "data/"],
+    "exec": "node app.js"
+}
+```
+
+* "**watch**": ["."]
+    * Tells the watcher (likely nodemon) to *monitor all files in the current directory* (".") for changes.
+
+* "**ext**": "js, json, ejs"
+    * Specifies the *file extensions to watch*.
+    * Here it’s .js, .json, and .ejs. If any of these change, the app will restart automatically.
+
+* "**ignore**": ["node_modules/", "data/"]
+    * Lists folders to *ignore when watching for changes*.
+    * In your case:
+        * node_modules/ → likely meant to be node_modules/ (you have a typo).
+        * data/ → changes here will also be ignored.
+
+* "**exec**": "node app.js"
+    * Specifies the command to *execute* when a change is detected.
+    * Runs node app.js to start the application.
