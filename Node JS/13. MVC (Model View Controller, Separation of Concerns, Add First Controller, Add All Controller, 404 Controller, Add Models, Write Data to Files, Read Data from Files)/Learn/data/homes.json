@@ -1,14 +1,1 @@
-[
-  {
-    "houseName": "Arbaz's house",
-    "housePrice": "22",
-    "houseState": "madhya-pradesh",
-    "housePhotoLink": "https://m.media-amazon.com/images/I/81fKPLgYlBL._SL1500_.jpg"
-  },
-  {
-    "houseName": "Farhan's house",
-    "housePrice": "9",
-    "houseState": "madhya-pradesh",
-    "housePhotoLink": "https://m.media-amazon.com/images/I/81fKPLgYlBL._SL1500_.jpg"
-  }
-]
+[{"houseName":"Arbaz's house","housePrice":"22","houseState":"madhya-pradesh","housePhotoLink":"https://m.media-amazon.com/images/I/81fKPLgYlBL._SL1500_.jpg"},{"houseName":"Farhan's house","housePrice":"9","houseState":"madhya-pradesh","housePhotoLink":"https://m.media-amazon.com/images/I/81fKPLgYlBL._SL1500_.jpg"},{"houseName":"Spiderman","housePrice":"34","houseState":"madhya-pradesh","housePhotoLink":"https://m.media-amazon.com/images/I/81fKPLgYlBL._SL1500_.jpg"},{"houseName":"Farhan's House","housePrice":"2358563874","houseState":"madhya-pradesh","housePhotoLink":"https://m.media-amazon.com/images/I/81fKPLgYlBL._SL1500_.jpg"}]

@@ -6,7 +6,7 @@ const path = require('path');
 const absolutePath = require('../utils/pathUtils');
 
 //dummy Database
-let registeredHousesArray = [];
+// let registeredHousesArray = [];
 
 //Model
 module.exports = class House {
@@ -19,13 +19,15 @@ module.exports = class House {
 
     //Save house data into the array
     save() {
-        const housesDataPath = path.join(absolutePath, 'data', 'homes.json'); //path
-        registeredHousesArray.push(this);
-        fs.writeFile(housesDataPath, JSON.stringify(registeredHousesArray), err => {
-            if(err) console.log('error occur: ', err);
-            else console.log("Save done!");
-        }); 
-    }
+        House.fetchAll(registeredHouse => {
+            const housesDataPath = path.join(absolutePath, 'data', 'homes.json'); //path
+            registeredHouse.push(this);
+            fs.writeFile(housesDataPath, JSON.stringify(registeredHouse), err => {
+                if(err) console.log('error occur: ', err);
+                else console.log("Save done!");
+            }); 
+        }) 
+}
 
     //Retrieve all houses
     static fetchAll(callback) {
