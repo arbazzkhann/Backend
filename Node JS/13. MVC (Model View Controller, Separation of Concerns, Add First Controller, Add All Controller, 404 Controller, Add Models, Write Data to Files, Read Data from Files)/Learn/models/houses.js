@@ -19,23 +19,27 @@ module.exports = class House {
 
     //Save house data into the array
     save() {
+        const housesDataPath = path.join(absolutePath, 'data', 'homes.json'); //path
         registeredHousesArray.push(this);
-        const housesDataPath = path.join(absolutePath, 'data', 'homes.json');
-
         fs.writeFile(housesDataPath, JSON.stringify(registeredHousesArray), err => {
             if(err) console.log('error occur: ', err);
-            return registeredHousesArray;
+            else console.log("Save done!");
         }); 
     }
 
     //Retrieve all houses
-    static fetchAll() {
+    static fetchAll(callback) {
         const housesDataPath = path.join(absolutePath, 'data', 'homes.json');
         fs.readFile(housesDataPath, (error, data) => {
+            // callback(!error ? JSON.parse(data) : []);
             if(!error) {
-                return registeredHousesArray = JSON.parse(data);
+                console.log(data);
+                callback(JSON.parse(data));
+            }
+            else {
+                console.log(error)
+                callback([]);
             }
         });
-        return registeredHousesArray;
     }
 }

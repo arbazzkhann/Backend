@@ -1,20 +1,14 @@
 [
   {
     "houseName": "Arbaz's house",
-    "housePrice": "2",
+    "housePrice": "22",
     "houseState": "madhya-pradesh",
-    "housePhotoLink": "https://i.ytimg.com/vi/o18u3Mgksj4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAK3ZcTkN5f-ihlxLiRVr3512aqjw"
+    "housePhotoLink": "https://m.media-amazon.com/images/I/81fKPLgYlBL._SL1500_.jpg"
   },
   {
-    "houseName": "Arbaz's house",
-    "housePrice": "2",
-    "houseState": "karnataka",
-    "housePhotoLink": "https://i.ytimg.com/vi/o18u3Mgksj4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAK3ZcTkN5f-ihlxLiRVr3512aqjw"
-  },
-  {
-    "houseName": "Spiderman",
-    "housePrice": "23",
-    "houseState": "ladakh",
+    "houseName": "Farhan's house",
+    "housePrice": "9",
+    "houseState": "madhya-pradesh",
     "housePhotoLink": "https://m.media-amazon.com/images/I/81fKPLgYlBL._SL1500_.jpg"
   }
 ]

@@ -17,8 +17,9 @@ const addHousePOST = (req, res, next) => {
 }
 
 const registeredHouses = (req, res, next) => {
-    const registeredHousesArray = Houses.fetchAll();
-    res.render('registeredHouses', {registeredHousesArray: registeredHousesArray});
+    Houses.fetchAll(registeredHouses => {
+        res.render('registeredHouses', {registeredHouses: registeredHouses});
+    });
 }
 
 
