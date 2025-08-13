@@ -2,17 +2,15 @@
 const express = require('express');
 
 //routers from express
-const contactUsGETRouter = express.Router();
-const contactUsPOSTRouter = express.Router();
+const contactUsRouter = express.Router();
 
 //middleware function
 const { contactUsGET, contactUsPOST } = require('../../controllers/contact');
 
 //contact-us-GET router
-contactUsGETRouter.get('/contact-us', contactUsGET);
+contactUsRouter.get('/contact-us', contactUsGET);
 //contact-us-POST router
-contactUsPOSTRouter.post('/contact-us', contactUsPOST);
+contactUsRouter.post('/contact-us', contactUsPOST);
 
 //exports
-exports.contactUsGETRouter = contactUsGETRouter;
-exports.contactUsPOSTRouter = contactUsPOSTRouter;
+module.exports = contactUsRouter;

@@ -2,13 +2,11 @@
 const express = require('express');
 
 //local modules
-const { contactUsGETRouter } = require('./Routers/user-routers/contact-us.js');
-const { contactUsPOSTRouter } = require('./Routers/user-routers/contact-us.js');
-const { homeRouter } = require('./Routers/user-routers/home.js');
+const contactUsRouter = require('./Routers/user-routers/contact-us.js');
+const storeRouter = require('./Routers/user-routers/storeRouter.js');
 
-const { addHouseGETRouter } = require('./Routers/host-routers/add-house.js');
-const { addHousePOSTRouter } = require('./Routers/host-routers/add-house.js');
-const { registeredHousesRoute } = require('./Routers/user-routers/registeredHouses.js');
+const addHouseRouter = require('./Routers/host-routers/add-house.js');
+const registeredHousesRoute = require('./Routers/user-routers/registeredHouses.js');
 
 //errors
 const { pageNotFount } = require('./controllers/errors.js');
@@ -32,21 +30,15 @@ app.use((req, res, next) => {
 });
 
 // handlig '/' on get
-app.use(homeRouter);
+app.use(storeRouter);
 
 // handling '/contact-us' on GET
-app.use(contactUsGETRouter);
+app.use(contactUsRouter);
 
-// handling '/contact-us' on POST
-app.use(contactUsPOSTRouter);
+// handling '/add-house'
+app.use(addHouseRouter);
 
-// handling '/add-house' on GET
-app.use(addHouseGETRouter);
-
-// handling '/add-house' on POST
-app.use(addHousePOSTRouter);
-
-// handling '/registered-house' on POST
+// handling '/registered-house'
 app.use(registeredHousesRoute);
 
 //404 status

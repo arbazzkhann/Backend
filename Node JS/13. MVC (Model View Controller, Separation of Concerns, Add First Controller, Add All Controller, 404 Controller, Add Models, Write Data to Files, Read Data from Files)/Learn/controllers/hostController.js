@@ -16,13 +16,5 @@ const addHousePOST = (req, res, next) => {
     res.render('host/add-house-post.ejs', {req});
 }
 
-const registeredHouses = (req, res, next) => {
-    Houses.fetchAll(registeredHouses => {
-        res.render('store/registeredHouses', {registeredHouses: registeredHouses});
-    });
-}
-
-
 exports.addHouseGET = addHouseGET;
 exports.addHousePOST = addHousePOST;
-exports.registeredHouses = registeredHouses;
