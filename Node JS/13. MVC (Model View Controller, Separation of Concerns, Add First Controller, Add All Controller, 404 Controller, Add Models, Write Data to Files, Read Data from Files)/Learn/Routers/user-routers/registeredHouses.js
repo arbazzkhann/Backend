@@ -5,7 +5,7 @@ const express = require('express');
 const registeredHousesRoute = express.Router();
 
 //registeredHouses array
-const { registeredHouses } = require('../controllers/houses');
+const { registeredHouses } = require('../../controllers/houses');
 
 
 registeredHousesRoute.get('/registered-houses', registeredHouses);

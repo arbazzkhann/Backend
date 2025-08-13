@@ -2,13 +2,13 @@
 const express = require('express');
 
 //local modules
-const contactUsGetRouter = require('./Routers/contact-us-get');
-const contactUsPostRouter = require('./Routers/contact-us-post');
-const homeRouter = require('./Routers/home.js');
+const { contactUsGETRouter } = require('./Routers/user-routers/contact-us.js');
+const { contactUsPOSTRouter } = require('./Routers/user-routers/contact-us.js');
+const { homeRouter } = require('./Routers/user-routers/home.js');
 
-const { addHouseGETRouter } = require('./Routers/add-house-get.js');
-const { addHousePOSTRouter } = require('./Routers/add-house-post.js');
-const { registeredHousesRoute } = require('./Routers/registeredHouses.js');
+const { addHouseGETRouter } = require('./Routers/host-routers/add-house.js');
+const { addHousePOSTRouter } = require('./Routers/host-routers/add-house.js');
+const { registeredHousesRoute } = require('./Routers/user-routers/registeredHouses.js');
 
 //errors
 const { pageNotFount } = require('./controllers/errors.js');
@@ -35,10 +35,10 @@ app.use((req, res, next) => {
 app.use(homeRouter);
 
 // handling '/contact-us' on GET
-app.use(contactUsGetRouter);
+app.use(contactUsGETRouter);
 
 // handling '/contact-us' on POST
-app.use(contactUsPostRouter);
+app.use(contactUsPOSTRouter);
 
 // handling '/add-house' on GET
 app.use(addHouseGETRouter);

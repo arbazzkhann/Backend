@@ -5,10 +5,10 @@ const express = require('express');
 const homeRouter = express.Router();
 
 //homeGET function
-const { homeGET } = require('../controllers/home')
+const { homeGET } = require('../../controllers/home')
 
 //homeGET Router
 homeRouter.get('/', homeGET);
 
 //Exports
-module.exports = homeRouter;
+exports.homeRouter = homeRouter;
