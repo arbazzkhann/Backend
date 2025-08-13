@@ -3,7 +3,7 @@ const Houses = require('../models/houses');
 
 //addHousesGET middleware
 const addHouseGET = (req, res, next) => {
-    res.render("add-house-get.ejs", {req});
+    res.render("host/add-house-get.ejs", {req});
 }
 
 //addHousePOST middleware
@@ -13,12 +13,12 @@ const addHousePOST = (req, res, next) => {
 
     const house = new Houses(houseName, housePrice, houseState, housePhotoLink);
     house.save();
-    res.render('add-house-post.ejs', {req});
+    res.render('host/add-house-post.ejs', {req});
 }
 
 const registeredHouses = (req, res, next) => {
     Houses.fetchAll(registeredHouses => {
-        res.render('registeredHouses', {registeredHouses: registeredHouses});
+        res.render('store/registeredHouses', {registeredHouses: registeredHouses});
     });
 }
 
