@@ -78,3 +78,17 @@
 * "**exec**": "node app.js"
     * Specifies the command to *execute* when a change is detected.
     * Runs node app.js to start the application.
+
+
+## Prectice Question:
+```
+Question: Taking your website forward:
+    1. Structure the views folder into "host" & "store" and move the respective views files there.
+    2. Add more views to store like: "house-list", "house-details", favourite-list, reserve, booking. 
+       And to host view: "edit-house", "host-house-list".
+    3. Improve the "header with navigation to all pages".
+    4. Register all the "new routes" and "add dummy views" there.
+    5. Change "conrollers to store" and host setup.
+    6. "Add Edit and Delete buttons" to the "host-house-list" view.
+    7. Keep the logic for "Edit", "Delete", "Favourite" pending.
+```
