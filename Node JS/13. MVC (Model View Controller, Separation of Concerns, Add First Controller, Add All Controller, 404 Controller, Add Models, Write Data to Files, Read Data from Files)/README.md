@@ -84,8 +84,9 @@
 ```
 Question: Taking your website forward:
     1. Structure the views folder into "host" & "store" and move the respective views files there.
-    2. Add more views to store like: "house-list", "house-details", favourite-list, reserve, booking. 
-       And to host view: "edit-house", "host-house-list".
+    2. Add more views to store like: "registeredHouses", "house-details", favourite-list, reserve, 
+       bookings. 
+       And to host view: "edit-house", "host-registeredHouses".
     3. Improve the "header with navigation to all pages".
     4. Register all the "new routes" and "add dummy views" there.
     5. Change "conrollers to store" and host setup.
