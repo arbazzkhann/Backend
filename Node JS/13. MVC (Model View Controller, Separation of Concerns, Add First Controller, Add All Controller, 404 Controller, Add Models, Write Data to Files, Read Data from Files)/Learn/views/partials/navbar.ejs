@@ -11,12 +11,6 @@
                 <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
             </a>
         </li>
-        <!-- <li>
-            <a href="/about" class="relative text-white group">
-                About
-                <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-            </a>
-        </li> -->
         <li>
             <a href="/contact-us" class="relative text-white group">
                 Contact Us
@@ -30,7 +24,7 @@
             </a>
         </li>
         <li>
-            <a href="/favourite" class="relative text-white group">
+            <a href="/favourite-list" class="relative text-white group">
                 Favourite
                 <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
             </a>
@@ -41,13 +35,18 @@
                 <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
             </a>
         </li>
-        <li>
-            <% if(!(req.url === '/registered-houses' && req.method === 'POST')) { %>
+        <!-- <li>
             <a href="/registered-houses" class="relative text-white group">
                 Registered Houses
                 <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <% } %>
+        </li>   -->
+        <li> <% if(!(req.url === '/registered-houses' && req.method === 'POST')) { %>
+            <a href="/registered-houses" class="relative text-white group"> 
+                Registered Houses 
+            <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span> 
+            </a> 
+        <% } %> 
         </li>
     </ul>
 </nav>
