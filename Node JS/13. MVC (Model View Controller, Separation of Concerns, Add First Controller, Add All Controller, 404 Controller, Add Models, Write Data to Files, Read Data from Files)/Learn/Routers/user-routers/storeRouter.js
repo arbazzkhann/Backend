@@ -5,11 +5,13 @@ const express = require('express');
 const storeRouter = express.Router();
 
 //homeGET function
-const { homeGET, BookingsGET} = require('../../controllers/storeController');
+const { homeGET, BookingsGET, FavouriteListGET, index } = require('../../controllers/storeController');
 
 //homeGET Router
 storeRouter.get('/', homeGET);
+storeRouter.get('/index', index);
 storeRouter.get('/bookings', BookingsGET);
+storeRouter.get('/favourite', FavouriteListGET);
 
 //Exports
 module.exports = storeRouter;

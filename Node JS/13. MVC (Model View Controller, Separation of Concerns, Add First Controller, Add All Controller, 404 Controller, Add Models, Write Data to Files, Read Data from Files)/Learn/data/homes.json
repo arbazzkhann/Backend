@@ -4,5 +4,29 @@
     "housePrice": "22",
     "houseState": "madhya-pradesh",
     "housePhotoLink": "https://m.media-amazon.com/images/I/81fKPLgYlBL._SL1500_.jpg"
+  },
+  {
+    "houseName": "Arbaz's house",
+    "housePrice": "5",
+    "houseState": "karnataka",
+    "housePhotoLink": "https://m.media-amazon.com/images/I/81fKPLgYlBL._SL1500_.jpg"
+  },
+  {
+    "houseName": "Spiderman",
+    "housePrice": "221",
+    "houseState": "lakshadweep",
+    "housePhotoLink": "https://i.ytimg.com/vi/o18u3Mgksj4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAK3ZcTkN5f-ihlxLiRVr3512aqjw"
+  },
+  {
+    "houseName": "Farhan's House",
+    "housePrice": "33",
+    "houseState": "delhi",
+    "housePhotoLink": "https://i.ytimg.com/vi/o18u3Mgksj4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAK3ZcTkN5f-ihlxLiRVr3512aqjw"
+  },
+  {
+    "houseName": "Superman",
+    "housePrice": "2",
+    "houseState": "gujarat",
+    "housePhotoLink": "https://i.ytimg.com/vi/o18u3Mgksj4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAK3ZcTkN5f-ihlxLiRVr3512aqjw"
   }
 ]

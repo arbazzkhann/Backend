@@ -8,17 +8,25 @@ const homeGET = (req, res, next) => {
 
 const registeredHouses = (req, res, next) => {
     Houses.fetchAll(registeredHouses => {
-        res.render('store/registeredHouses.ejs', {registeredHouses: registeredHouses});
+        res.render('store/registeredHouses.ejs', {registeredHouses});
     });
+}
+
+const index = (req, res, next) => {
+    res.render('store/index.ejs', {registeredHouses, req});
 }
 
 const BookingsGET = (req, res, next) => {
-    Houses.fetchAll(registeredHouses => {
-        res.render('store/bookings.ejs', {registeredHouses: registeredHouses, req: req});
-    });
+    res.render('store/bookings.ejs', {registeredHouses, req});
+}
+
+const FavouriteListGET = (req, res, next) => {
+    res.render('store/favouriteListGET.ejs', {registeredHouses, req});
 }
 
 
-exports.registeredHouses = registeredHouses;
-exports.BookingsGET = BookingsGET;
 exports.homeGET = homeGET;
+exports.registeredHouses = registeredHouses;
+exports.index = index;
+exports.BookingsGET = BookingsGET;
+exports.FavouriteListGET = FavouriteListGET;
