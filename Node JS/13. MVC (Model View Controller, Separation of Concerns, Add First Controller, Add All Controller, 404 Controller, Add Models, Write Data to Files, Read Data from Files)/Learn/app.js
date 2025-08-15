@@ -6,7 +6,6 @@ const contactUsRouter = require('./Routers/user-routers/contact-us.js');
 const storeRouter = require('./Routers/user-routers/storeRouter.js');
 
 const addHouseRouter = require('./Routers/host-routers/add-house.js');
-const registeredHousesRoute = require('./Routers/user-routers/registeredHouses.js');
 
 //errors
 const { pageNotFount } = require('./controllers/errors.js');
@@ -37,9 +36,6 @@ app.use(contactUsRouter);
 
 // handling '/add-house'
 app.use(addHouseRouter);
-
-// handling '/registered-house'
-app.use(registeredHousesRoute);
 
 //404 status
 app.use(pageNotFount);
