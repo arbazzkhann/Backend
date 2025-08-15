@@ -4,7 +4,7 @@ const express = require('express');
 //local modules
 const storeRouter = require('./Routers/user-routers/storeRouter.js');
 
-const addHouseRouter = require('./Routers/host-routers/add-house.js');
+const hostRouter = require('./Routers/host-routers/hostRouter.js');
 
 //errors
 const { pageNotFount } = require('./controllers/errors.js');
@@ -27,11 +27,11 @@ app.use((req, res, next) => {
     next();
 });
 
-// handlig '/' on get
+// handlig store routers
 app.use(storeRouter);
 
-// handling '/add-house'
-app.use(addHouseRouter);
+// handling host routers
+app.use(hostRouter);
 
 //404 status
 app.use(pageNotFount);

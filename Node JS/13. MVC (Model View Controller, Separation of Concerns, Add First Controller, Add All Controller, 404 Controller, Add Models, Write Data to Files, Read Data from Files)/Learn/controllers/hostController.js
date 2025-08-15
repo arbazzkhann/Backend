@@ -16,5 +16,13 @@ const addHousePOST = (req, res, next) => {
     res.render('host/add-house-post.ejs', {req, activePath: '/add-house'});
 }
 
+const hostRegisteredHouses = (req, res, next) => {
+    Houses.fetchAll(registeredHouses => {
+        res.render('host/host-registeredHouses.ejs', {registeredHouses, req, activePath: '/host-registered-houses'});
+    });
+}
+
+
 exports.addHouseGET = addHouseGET;
 exports.addHousePOST = addHousePOST;
+exports.hostRegisteredHouses = hostRegisteredHouses;
