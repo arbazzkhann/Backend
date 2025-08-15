@@ -10,3 +10,12 @@
 
 ### Example:
 <img src="./dynamic-path-example.png" height="140px">
+
+
+### Prectice:
+
+1. Add a **details button** in **/home-list** to go link path **/house/:house-id**
+2. Add a **random id to each home** in the data file.
+3. Add a **random id on home object** before saving in the house model.
+4. Add a **route in the storeRouter** for /house/:house-id
+5. Add a **method in storeController to get the house-id using req.params** and log it, before sending out a dummy response with house-id.
