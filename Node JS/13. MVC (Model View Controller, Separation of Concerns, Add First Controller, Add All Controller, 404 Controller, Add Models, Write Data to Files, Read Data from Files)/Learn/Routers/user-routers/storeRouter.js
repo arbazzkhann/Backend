@@ -5,13 +5,15 @@ const express = require('express');
 const storeRouter = express.Router();
 
 //homeGET function
-const { homeGET, BookingsGET, FavouriteListGET, registeredHouses } = require('../../controllers/storeController');
+const { homeGET, BookingsGET, FavouriteListGET, registeredHouses, contactUsGET, contactUsPOST } = require('../../controllers/storeController');
 
 //homeGET Router
 storeRouter.get('/', homeGET);
 storeRouter.get('/bookings', BookingsGET);
 storeRouter.get('/favourite-list', FavouriteListGET);
 storeRouter.get('/registered-houses', registeredHouses);
+storeRouter.get('/contact-us', contactUsGET);
+storeRouter.post('/contact-us', contactUsPOST);
 
 //Exports
 module.exports = storeRouter;

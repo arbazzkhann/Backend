@@ -2,7 +2,6 @@
 const express = require('express');
 
 //local modules
-const contactUsRouter = require('./Routers/user-routers/contact-us.js');
 const storeRouter = require('./Routers/user-routers/storeRouter.js');
 
 const addHouseRouter = require('./Routers/host-routers/add-house.js');
@@ -30,9 +29,6 @@ app.use((req, res, next) => {
 
 // handlig '/' on get
 app.use(storeRouter);
-
-// handling '/contact-us' on GET
-app.use(contactUsRouter);
 
 // handling '/add-house'
 app.use(addHouseRouter);
