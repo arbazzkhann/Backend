@@ -14,8 +14,17 @@
 
 ### Prectice:
 
-1. Add a **details button** in **/home-list** to go link path **/house/:house-id**
-2. Add a **random id to each home** in the data file.
-3. Add a **random id on home object** before saving in the house model.
+1. Add a **details button** in ** house-list** to go link path **/house/:house-id**
+2. Add a **random id to each house** in the data file.
+3. Add a **random id on house object** before saving in the house model.
 4. Add a **route in the storeRouter** for /house/:house-id
 5. Add a **method in storeController to get the house-id using req.params** and log it, before sending out a dummy response with house-id.
+
+
+## Showing Real Hous Data:
+1. Add a static findById method in Houses Model that takes a callback.
+2. Use this findById method in the controller to load house details and log them.
+3. Now change the controller:
+    a. Redirect to /houses in case the house is not found, logging an error.
+    b. Rendering the /house-details page with house data.
+4. Create a house-details page to use the entire page to show all the data. 
