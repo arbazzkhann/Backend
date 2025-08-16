@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>House Details</title>
+    <link rel="stylesheet" href="../public/output.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <%- include('../partials/navbar.ejs') %>
+
+    <!-- Main body -->
+    <section class="text-center py-20 bg-white">
+      <div class="max-w-2xl mx-auto px-4">
+        <h2 class="text-red-500 text-2xl md:text-5xl font-bold mb-7">
+          🏠 House Details Page
+        </h2>
+
+        <a
+          href="/"
+          class="inline-block bg-red-500 text-white px-6 py-3 mt-10 rounded-md text-lg font-medium hover:bg-red-600 transition duration-300"
+        >
+          Go Home
+        </a>
+      </div>
+
+      <h1>House ID: <%= houseId %></h1>
+
+    </section>
+
+  </body>
+</html>

@@ -32,6 +32,11 @@ const contactUsPOST = (req, res, next) => {
     res.render('store/contact-us-post.ejs', {req, activePath: '/contact-us'});
 }
 
+const houseDetails = (req, res, next) => {
+    const houseId = req.params.houseId;
+    res.render('store/house-details.ejs', {req, houseId, activePath: '/house-details'});
+}
+
 
 exports.homeGET = homeGET;
 exports.registeredHouses = registeredHouses;
@@ -39,3 +44,4 @@ exports.BookingsGET = BookingsGET;
 exports.FavouriteListGET = FavouriteListGET;
 exports.contactUsGET = contactUsGET;
 exports.contactUsPOST = contactUsPOST;
+exports.houseDetails = houseDetails;

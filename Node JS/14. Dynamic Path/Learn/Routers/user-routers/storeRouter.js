@@ -5,15 +5,18 @@ const express = require('express');
 const storeRouter = express.Router();
 
 //homeGET function
-const { homeGET, BookingsGET, FavouriteListGET, registeredHouses, contactUsGET, contactUsPOST } = require('../../controllers/storeController');
+const { homeGET, BookingsGET, FavouriteListGET, registeredHouses, contactUsGET, contactUsPOST, houseDetails } = require('../../controllers/storeController');
 
-//homeGET Router
+//Store Routers
 storeRouter.get('/', homeGET);
 storeRouter.get('/bookings', BookingsGET);
 storeRouter.get('/favourite-list', FavouriteListGET);
 storeRouter.get('/registered-houses', registeredHouses);
 storeRouter.get('/contact-us', contactUsGET);
 storeRouter.post('/contact-us', contactUsPOST);
+
+storeRouter.get("/house/:houseId", houseDetails);
+
 
 //Exports
 module.exports = storeRouter;
