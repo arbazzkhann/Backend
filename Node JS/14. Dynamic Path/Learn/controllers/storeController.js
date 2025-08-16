@@ -34,7 +34,17 @@ const contactUsPOST = (req, res, next) => {
 
 const houseDetails = (req, res, next) => {
     const houseId = req.params.houseId;
-    res.render('store/house-details.ejs', {req, houseId, activePath: '/house-details'});
+
+    Houses.findById(houseId, (house) => {
+        if(!house) {
+            res.redirect("/registered-houses");
+        }
+        else {
+            console.log("House details found", house);
+            res.render('store/house-details.ejs', {req, houseId, activePath: '/house-details'});
+        }
+
+    });
 }
 
 
