@@ -41,9 +41,8 @@ const houseDetails = (req, res, next) => {
         }
         else {
             console.log("House details found", house);
-            res.render('store/house-details.ejs', {req, houseId, activePath: '/house-details'});
+            res.render('store/house-details.ejs', {req, houseId, activePath: '/house-details', house: house});
         }
-
     });
 }
 
