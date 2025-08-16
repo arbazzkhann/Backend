@@ -12,6 +12,7 @@ module.exports = class House {
         this.housePrice = housePrice,
         this.houseState = houseState,
         this.housePhotoLink = housePhotoLink
+        this.houseId = Math.floor(10000000 + Math.random() * 90000000);
     }
 
     //Save house data into the json file

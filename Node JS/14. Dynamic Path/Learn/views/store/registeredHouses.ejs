@@ -21,6 +21,7 @@
             <li class="bg-white border border-gray-200 rounded-xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden w-full">
               
               <!-- House Photo -->
+              <a href="/house/<%=house.houseId%>">
               <img 
                 src="<%= house.housePhotoLink %>" 
                 alt="<%= house.houseName %>" 
@@ -29,7 +30,7 @@
 
               <!-- House Info -->
               <div class="p-4">
-                <h3 class="text-lg font-semibold text-gray-800 truncate"><%= house.houseName %></h3>
+                <h3 class="text-lg font-semibold text-gray-800 truncate"><%= house.houseName %></h3></a>
                 <p class="text-sm text-gray-500">📍 <%= house.houseState %></p>
               </div>
 
