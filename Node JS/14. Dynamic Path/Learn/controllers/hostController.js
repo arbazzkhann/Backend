@@ -22,7 +22,6 @@ const hostRegisteredHouses = (req, res, next) => {
     });
 }
 
-
 exports.addHouseGET = addHouseGET;
 exports.addHousePOST = addHousePOST;
 exports.hostRegisteredHouses = hostRegisteredHouses;

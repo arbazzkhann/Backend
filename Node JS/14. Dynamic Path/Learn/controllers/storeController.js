@@ -46,6 +46,11 @@ const houseDetails = (req, res, next) => {
     });
 }
 
+const addToFavouritePOST = (req, res, next) => {
+    console.log("Cam to add to Favourite", req.body);
+    res.redirect("/favourite-list");
+}
+
 
 exports.homeGET = homeGET;
 exports.registeredHouses = registeredHouses;
@@ -54,3 +59,4 @@ exports.FavouriteListGET = FavouriteListGET;
 exports.contactUsGET = contactUsGET;
 exports.contactUsPOST = contactUsPOST;
 exports.houseDetails = houseDetails;
+exports.addToFavouritePOST = addToFavouritePOST;
