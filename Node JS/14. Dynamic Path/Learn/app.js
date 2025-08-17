@@ -21,12 +21,6 @@ app.set('view engine', 'ejs');
 app.use(express.static(abosolutePath));
 app.use(express.urlencoded());
 
-//universal middleware
-app.use((req, res, next) => {
-    console.log('url: ', req.url, "method: ", req.method);
-    next();
-});
-
 // handlig store routers
 app.use(storeRouter);
 
