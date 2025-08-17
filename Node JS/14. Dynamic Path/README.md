@@ -37,3 +37,12 @@
 3. Add this **partial to house-list page**.
 4. Add router for **handling POST request to /favourite** path.
 5. Add a method in store controller to add a home id as favourites, logging the id for now, before redirecting to /favourites path.
+
+
+## Adding Favourite Model:
+1. Create a **new Model** to handle favourite:
+    a. A static method **getFavourite** that **reads the favourite.json file** and **return the ids of all homes marked favourte**.
+    b. A **static method addFavourite** that adds the **houseId to favourite-id array** if not already there, updates the file.
+2. Use this **model in addFavourite controller**.
+3. Use this **model in getFavourite controller** while also fetching details of all homes from House Model.
+4. **Change the UI of favourite** page to show new content.
