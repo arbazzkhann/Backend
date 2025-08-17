@@ -1,4 +1,5 @@
 //local modules
+const Favourite = require('../models/favourite');
 const Houses = require('../models/houses');
 
 const homeGET = (req, res, next) => {
@@ -48,7 +49,13 @@ const houseDetails = (req, res, next) => {
 
 const addToFavouritePOST = (req, res, next) => {
     console.log("Cam to add to Favourite", req.body);
-    res.redirect("/favourite-list");
+    Favourite.addToFavourite(req.body.houseId, err => {
+        if(err) console.log("Error occur while add to favourite", err);
+        else {
+            console.log("Done! Item is added successfully to favourite list");
+            res.redirect("/favourite-list");
+        }
+    });
 }
 
 
