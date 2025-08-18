@@ -18,8 +18,13 @@ const BookingsGET = (req, res, next) => {
 }
 
 const FavouriteListGET = (req, res, next) => {
-    Houses.fetchAll(registeredHouses => {
-        res.render('store/favouriteListGET.ejs', {registeredHouses, req, activePath: '/favourite-list'});
+    Favourite.getFavourites(favourites => {
+        Houses.fetchAll((registeredHouses) => {
+            const favouriteHouses = registeredHouses.filter(house =>
+                favourites.includes(String(house.houseId))
+            );
+            res.render("store/favourite-list.ejs", {favouriteHouses, req, activePath: '/favourite-list'});
+        });
     });
 }
 
