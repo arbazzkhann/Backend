@@ -48,13 +48,12 @@ const houseDetails = (req, res, next) => {
 }
 
 const addToFavouritePOST = (req, res, next) => {
-    console.log("Cam to add to Favourite", req.body);
+    console.log("Came to add to Favourite", req.body);
     Favourite.addToFavourite(req.body.houseId, err => {
-        if(err) console.log("Error occur while add to favourite", err);
-        else {
-            console.log("Done! Item is added successfully to favourite list");
-            res.redirect("/favourite-list");
-        }
+        if(err) {
+            console.log("Error occur while add to favourite", err);
+        };
+        res.redirect("/favourite-list");
     });
 }
 

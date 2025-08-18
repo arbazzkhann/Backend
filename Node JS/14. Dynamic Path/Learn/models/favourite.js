@@ -13,7 +13,7 @@ module.exports = class Favourite {
     static addToFavourite(houseId, callback) {
         Favourite.getFavourites((favourites) => {
             if(favourites.includes(houseId)) {
-                console.log("This item is already included.");
+                callback("This House is already marked as favourite.");
             }
             else {
                 favourites.push(houseId);
@@ -28,3 +28,6 @@ module.exports = class Favourite {
         }) 
     }
 }
+
+
+
