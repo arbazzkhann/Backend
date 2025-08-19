@@ -5,7 +5,7 @@ const express = require('express');
 const storeRouter = express.Router();
 
 //homeGET function
-const { homeGET, BookingsGET, FavouriteListGET, registeredHouses, contactUsGET, contactUsPOST, houseDetails, addToFavouritePOST } = require('../../controllers/storeController');
+const { homeGET, BookingsGET, FavouriteListGET, registeredHouses, contactUsGET, contactUsPOST, houseDetails, addToFavouritePOST, removeFromFavouritePOST } = require('../../controllers/storeController');
 
 //Store Routers
 storeRouter.get('/', homeGET);
@@ -16,7 +16,8 @@ storeRouter.get('/contact-us', contactUsGET);
 storeRouter.post('/contact-us', contactUsPOST);
 
 storeRouter.get("/house/:houseId", houseDetails);
-storeRouter.post("/favourite", addToFavouritePOST);
+storeRouter.post("/addfavourite", addToFavouritePOST);
+storeRouter.post("/removefavourite", removeFromFavouritePOST);
 
 
 //Exports

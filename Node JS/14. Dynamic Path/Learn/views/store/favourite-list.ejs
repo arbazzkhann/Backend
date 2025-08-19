@@ -30,6 +30,8 @@
               <div class="p-4">
                 <h3 class="text-lg font-semibold text-gray-800 truncate"><%= house.houseName %></h3>
                 <p class="text-sm text-gray-500">📍 <%= house.houseState %></p>
+                <!-- remove from favourte button -->
+                <%- include('../partials/remove-favourite-button.ejs', {house: house})%>
               </div>
 
               <!-- Price Footer -->
@@ -37,6 +39,7 @@
                 ₹<%= house.housePrice %> / day
               </div>
 
+              
             </li>
           <% }) %>
         </ul>

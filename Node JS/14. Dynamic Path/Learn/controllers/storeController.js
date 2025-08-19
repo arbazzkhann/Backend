@@ -62,6 +62,20 @@ const addToFavouritePOST = (req, res, next) => {
     });
 }
 
+const removeFromFavouritePOST = (req, res, next) => {
+    console.log("Came to remove from Favourite", req.body);
+    Favourite.removeFromFavourite(req.body.houseId, (err) => {
+        if (err && err.startsWith("Error")) {
+            console.log("Error occurred while removing from favourite:", err);
+        } else {
+            console.log(err); // "House removed from favourites." OR "This House is not in favourites."
+        }
+
+        res.redirect("/favourite-list");
+    });
+};
+
+
 
 exports.homeGET = homeGET;
 exports.registeredHouses = registeredHouses;
@@ -71,3 +85,4 @@ exports.contactUsGET = contactUsGET;
 exports.contactUsPOST = contactUsPOST;
 exports.houseDetails = houseDetails;
 exports.addToFavouritePOST = addToFavouritePOST;
+exports.removeFromFavouritePOST = removeFromFavouritePOST;
