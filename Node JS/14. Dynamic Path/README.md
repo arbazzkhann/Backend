@@ -48,10 +48,24 @@
 4. **Change the UI of favourite** page to show new content.
 
 
-## Edit house - Adding Features Skeleton:
+## 1. Edit house - Adding Features Skeleton:
 1. Rename the **add-house.ejs to edit-house.ejs**
 2. Fix it's usage in the **add-house controller**.
 3. Change the **path of edit button** everywhere.
 4. Add a **new router for GET /edit-house/:house-id**
 5. Add a **new controller method** in host controller, passing query param of **editing=true** to view.
 
+
+## 2. Edit House - Showing Existing Data:
+1. Change the **controller to now fetch the house details**, *if not found - redirect to /host/host-house-list* otherwise passing the data to view.
+2. Change the **edit-house.ejs** to **show dynamic content** basesd on values:
+    a. Different **submit path**.
+    b. Different **button text**.
+    c. **Pre-filled values if present**.
+
+
+## 3. Handling Edit Request:
+1. **Add a router for POST /edit-house**
+2. **Add a controller for /edit-house**, which **creates a house model object** and saves it, before redirecting to /host-registered-houses
+3. **Add hidden id input field** in the edit-house.ejs to get the **id as part of POST request**.
+4. **Change the save method in model** to **handle creation of new** as well as **updation of existing house**.

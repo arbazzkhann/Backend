@@ -15,20 +15,28 @@ module.exports = class House {
         this.housePrice = housePrice,
         this.houseState = houseState,
         this.housePhotoLink = housePhotoLink
-        this.houseId = Math.floor(10000000 + Math.random() * 90000000);
     }
 
-    //Save house data into the json file
-    save() {
-        House.fetchAll(registeredHouse => {
-            registeredHouse.push(this);
-            fs.writeFile(housesDataPath, JSON.stringify(registeredHouse), err => {
+    // //Save house data into the json file
+    save(id) {
+        House.fetchAll(registeredHouses => {
+            if(id) { // edit house case
+                this.houseId = id;
+                registeredHouses = registeredHouses.map(house => 
+                    house.houseId === this.houseId ? this : house
+                );
+            }
+            else { //add house case
+                this.houseId = Math.floor(10000000 + Math.random() * 90000000);
+                registeredHouses.push(this);
+            }
+            fs.writeFile(housesDataPath, JSON.stringify(registeredHouses), err => {
                 if(err) console.log('error occur: ', err);
                 else console.log("Save done!");
             });
         }) 
     }
-
+    
     //Retrieve all houses
     static fetchAll(callback) {
         fs.readFile(housesDataPath, (error, data) => {

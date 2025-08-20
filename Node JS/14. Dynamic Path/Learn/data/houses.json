@@ -1,1 +1,30 @@
-[{"houseName":"4BHK House","housePrice":"12599","houseState":"chandigarh","housePhotoLink":"https://homezonline.in/wp-content/uploads/2022/07/Beautiful-flat-roofing-duplex-home.jpeg","houseId":93195807},{"houseName":"3BHK House","housePrice":"17999","houseState":"tamil-nadu","housePhotoLink":"https://i.ytimg.com/vi/H89KFMgtZus/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBO0nu2uUDHqdpzZBiTifUfghGfaQ","houseId":68028281},{"houseName":"4BHK House","housePrice":"11599","houseState":"ladakh","housePhotoLink":"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiya_GvpER-q8XQ9L1VF2NucO_5zngblOR5JMVkjV-ia2hKF82rPgEPk9WBCPgfqNTbuMSp8LIXkeaWSRx9apuB4DxQ_1dh4H0ze_6l3Rr_ovjZ1o4yrERr48FLGFRq-5Ju7X_GYO02fgE/s1600/grand-and-beautiful-home.jpg","houseId":12172817},{"houseName":"Spiderman","housePrice":"1","houseState":"kerala","housePhotoLink":"https://i.ytimg.com/vi/H89KFMgtZus/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBO0nu2uUDHqdpzZBiTifUfghGfaQ","houseId":86880351},{"houseName":"Superman","housePrice":"2466625","houseState":"kerala","housePhotoLink":"https://m.media-amazon.com/images/I/81fKPLgYlBL._SL1500_.jpg","houseId":18500064}]
+[
+  {
+    "houseName": "4BHK House",
+    "housePrice": "12599",
+    "houseState": "chandigarh",
+    "housePhotoLink": "https://homezonline.in/wp-content/uploads/2022/07/Beautiful-flat-roofing-duplex-home.jpeg",
+    "houseId": 93195807
+  },
+  {
+    "houseName": "3BHK House",
+    "housePrice": "17999",
+    "houseState": "tamil-nadu",
+    "housePhotoLink": "https://i.ytimg.com/vi/H89KFMgtZus/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBO0nu2uUDHqdpzZBiTifUfghGfaQ",
+    "houseId": 68028281
+  },
+  {
+    "houseName": "4BHK House",
+    "housePrice": "11599",
+    "houseState": "ladakh",
+    "housePhotoLink": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiya_GvpER-q8XQ9L1VF2NucO_5zngblOR5JMVkjV-ia2hKF82rPgEPk9WBCPgfqNTbuMSp8LIXkeaWSRx9apuB4DxQ_1dh4H0ze_6l3Rr_ovjZ1o4yrERr48FLGFRq-5Ju7X_GYO02fgE/s1600/grand-and-beautiful-home.jpg",
+    "houseId": 12172817
+  },
+  {
+    "houseName": "5BHK House",
+    "housePrice": "115990",
+    "houseState": "ladakh",
+    "housePhotoLink": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiya_GvpER-q8XQ9L1VF2NucO_5zngblOR5JMVkjV-ia2hKF82rPgEPk9WBCPgfqNTbuMSp8LIXkeaWSRx9apuB4DxQ_1dh4H0ze_6l3Rr_ovjZ1o4yrERr48FLGFRq-5Ju7X_GYO02fgE/s1600/grand-and-beautiful-home.jpg",
+    "houseId": 48740430
+  }
+]

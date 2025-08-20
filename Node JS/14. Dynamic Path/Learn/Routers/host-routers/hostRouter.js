@@ -2,7 +2,7 @@
 const express = require('express')
 
 //local modules
-const { addHouseGET, addHousePOST, hostRegisteredHouses, editHomeGET } = require('../../controllers/hostController');
+const { addHouseGET, addHousePOST, hostRegisteredHouses, editHouseGET, editHousePOST } = require('../../controllers/hostController');
 
 
 //routers from express
@@ -16,7 +16,9 @@ hostRouter.post('/add-house', addHousePOST);
 
 hostRouter.get('/host-registered-houses', hostRegisteredHouses);
 
-hostRouter.get('/host/edit-house/:houseId', editHomeGET);
+hostRouter.get('/host/edit-house/:houseId', editHouseGET);
+hostRouter.post('/host/edit-house', editHousePOST);
+
 
 //function export
 module.exports = hostRouter;
