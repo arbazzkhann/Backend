@@ -3,7 +3,7 @@ const Houses = require('../models/houses');
 
 //addHousesGET middleware
 const addHouseGET = (req, res, next) => {
-    res.render("host/add-house-get.ejs", {req, activePath: '/add-house'});
+    res.render("host/edit-house.ejs", {req, activePath: '/add-house'});
 }
 
 //addHousePOST middleware
@@ -22,6 +22,18 @@ const hostRegisteredHouses = (req, res, next) => {
     });
 }
 
+const editHomeGET = (req, res, next) => {
+    const houseId = req.params.houseId;
+    const editing = req.query.edit;
+
+    res.render("host/edit-house.ejs", {
+        req, 
+        activePath: '/add-house'
+    });
+}
+
+
 exports.addHouseGET = addHouseGET;
 exports.addHousePOST = addHousePOST;
 exports.hostRegisteredHouses = hostRegisteredHouses;
+exports.editHomeGET = editHomeGET;

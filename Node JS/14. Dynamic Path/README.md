@@ -22,12 +22,12 @@
 
 
 ## Showing Real House Data:
-1. Add a static findById method in Houses Model that takes a callback.
-2. Use this findById method in the controller to load house details and log them.
+1. Add a **static findById method** in Houses Model that takes a callback.
+2. Use this findById **method in the controller to load house details** and log them.
 3. Now change the controller:
-    a. Redirect to /houses in case the house is not found, logging an error.
-    b. Rendering the /house-details page with house data.
-4. Create a house-details page to use the entire page to show all the data. 
+    a. Redirect to **/houses in case the house is not found**, logging an error.
+    b. Rendering the **/house-details page with house data**.
+4. **Create a house-details page** to use the entire page to show all the data. 
 
 
 ## Adding Favourite Feature:
@@ -36,13 +36,22 @@
 2. Add this **partial to house-details page**.
 3. Add this **partial to house-list page**.
 4. Add router for **handling POST request to /favourite** path.
-5. Add a method in store controller to add a home id as favourites, logging the id for now, before redirecting to /favourites path.
+5. Add a method in store controller to add a house id as favourites, logging the id for now, before redirecting to /favourites path.
 
 
 ## Adding Favourite Model:
 1. Create a **new Model** to handle favourite:
-    a. A static method **getFavourite** that **reads the favourite.json file** and **return the ids of all homes marked favourte**.
+    a. A static method **getFavourite** that **reads the favourite.json file** and **return the ids of all houses marked favourte**.
     b. A **static method addFavourite** that adds the **houseId to favourite-id array** if not already there, updates the file.
 2. Use this **model in addFavourite controller**.
-3. Use this **model in getFavourite controller** while also fetching details of all homes from House Model.
+3. Use this **model in getFavourite controller** while also fetching details of all houses from House Model.
 4. **Change the UI of favourite** page to show new content.
+
+
+## Edit house - Adding Features Skeleton:
+1. Rename the **add-house.ejs to edit-house.ejs**
+2. Fix it's usage in the **add-house controller**.
+3. Change the **path of edit button** everywhere.
+4. Add a **new router for GET /edit-house/:house-id**
+5. Add a **new controller method** in host controller, passing query param of **editing=true** to view.
+
