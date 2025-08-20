@@ -18,8 +18,13 @@ const app = express();
 //view engine
 app.set('view engine', 'ejs');
 
-app.use(express.static(abosolutePath));
-app.use(express.urlencoded());
+//static files intigration
+// app.use(express.static(abosolutePath));
+// app.use(express.urlencoded());
+const path = require("path");
+app.use(express.static(path.join(__dirname, "public")));
+
+
 
 // handlig store routers
 app.use(storeRouter);
@@ -30,6 +35,7 @@ app.use(hostRouter);
 //404 status
 app.use(pageNotFount);
 
+//server connect
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Your server is running on http://localhost:${PORT}`);
