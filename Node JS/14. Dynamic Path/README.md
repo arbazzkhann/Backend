@@ -57,7 +57,7 @@
 
 
 ## 2. Edit House - Showing Existing Data:
-1. Change the **controller to now fetch the house details**, *if not found - redirect to /host/host-house-list* otherwise passing the data to view.
+1. Change the **controller to now fetch the house details**, *if not found - redirect to /host-registered-houses* otherwise passing the data to view.
 2. Change the **edit-house.ejs** to **show dynamic content** basesd on values:
     a. Different **submit path**.
     b. Different **button text**.
@@ -69,3 +69,11 @@
 2. **Add a controller for /edit-house**, which **creates a house model object** and saves it, before redirecting to /host-registered-houses
 3. **Add hidden id input field** in the edit-house.ejs to get the **id as part of POST request**.
 4. **Change the save method in model** to **handle creation of new** as well as **updation of existing house**.
+
+
+## Adding Delete Feature:
+1. Surround the **Delete button** with a form that submits to path /host/delete-house/:houseId
+2. **Add a route** in the host routes.
+3. **Add a static delete method to the House model** that takes an id and deletes the house.
+4. **Add a method in host controller** to handles the request, delete the house and redirect to **/host-registered-houses** page.
+5. **Pending**: *Deleted houses might still be in favourites list*.
