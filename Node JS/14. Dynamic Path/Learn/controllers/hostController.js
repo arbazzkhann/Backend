@@ -58,8 +58,20 @@ const editHousePOST = (req, res, next) => {
     res.redirect('/host-registered-houses');
 }
 
+const deleteHousePOST = (req, res, next) => {
+    const houseId = req.params.houseId;
+    console.log("Came for delete by id!", houseId);
+    Houses.deleteById(houseId, err => {
+        if(err) {
+            console.log("Error while deleting item: ", err);
+        }
+        res.redirect('/host-registered-houses');
+    });
+}
+
 exports.addHouseGET = addHouseGET;
 exports.addHousePOST = addHousePOST;
 exports.hostRegisteredHouses = hostRegisteredHouses;
 exports.editHouseGET = editHouseGET;
 exports.editHousePOST = editHousePOST;
+exports.deleteHousePOST = deleteHousePOST;

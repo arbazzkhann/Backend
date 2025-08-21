@@ -21,9 +21,9 @@ module.exports = class House {
     save(id) {
         House.fetchAll(registeredHouses => {
             if(id) { // edit house case
-                this.houseId = id;
+                this.houseId = Number(id);
                 registeredHouses = registeredHouses.map(house => 
-                    house.houseId === this.houseId ? this : house
+                    String(house.houseId) === String(this.houseId) ? this : house
                 );
             }
             else { //add house case
@@ -55,6 +55,13 @@ module.exports = class House {
         this.fetchAll((houses) => {
             const houseFound = houses.find(house => house.houseId == houseId);
             callback(houseFound);
+        });
+    }
+
+    static deleteById(houseId, callback) {
+        this.fetchAll(houses => {
+            houses = houses.filter(house => house.houseId !== +houseId);
+            fs.writeFile(housesDataPath, JSON.stringify(houses), callback);
         });
     }
 }
