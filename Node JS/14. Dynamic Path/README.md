@@ -77,3 +77,12 @@
 3. **Add a static delete method to the House model** that takes an id and deletes the house.
 4. **Add a method in host controller** to handles the request, delete the house and redirect to **/host-registered-houses** page.
 5. **Pending**: *Deleted houses might still be in favourites list*.
+
+
+## Removing Houses from Favourites after delete:
+1. **Add a static method** to the favourites model to delete the house.
+2. **Add a form to the favourite-list** in each house to path /favourites/delete/:houseId
+3. **Add  a route for POST delete-favourites** in the **store router**.
+4. **Add a method in store controller** to **use the model's static method** and then **redirect to favourite-list**.
+5. **Use this model method** in **house-delete** to make sure **any deleted house is also removed from favourites**.
+
