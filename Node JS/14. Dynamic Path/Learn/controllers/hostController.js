@@ -1,5 +1,6 @@
 //local modules
 const Houses = require('../models/houses');
+const Favourite = require('../models/favourite');
 
 //addHousesGET middleware
 const addHouseGET = (req, res, next) => {
@@ -61,12 +62,26 @@ const editHousePOST = (req, res, next) => {
 const deleteHousePOST = (req, res, next) => {
     const houseId = req.params.houseId;
     console.log("Came for delete by id!", houseId);
+
+    //delete house by id
     Houses.deleteById(houseId, err => {
         if(err) {
             console.log("Error while deleting item: ", err);
         }
-        res.redirect('/host-registered-houses');
     });
+
+    //removing from favourites
+    Favourite.removeFromFavourite(req.body.houseId, (err) => {
+        if (err && err.startsWith("Error")) {
+            console.log("Error occurred while removing from favourite:", err);
+        } else {
+            console.log(err); // "House removed from favourites." OR "This House is not in favourites."
+        }
+    });
+
+    //redirecting to host-registered-houses
+    res.redirect('/host-registered-houses');
+
 }
 
 exports.addHouseGET = addHouseGET;
