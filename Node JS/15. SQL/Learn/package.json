@@ -1,0 +1,22 @@
+{
+  "name": "precticequestion",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"nodemon app.js\" \"npm run tailwindcss\"",
+    "tailwindcss": "npx tailwindcss -i ./public/home.css -o ./public/output.css --watch"
+  },
+  "author": "arbaz",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}

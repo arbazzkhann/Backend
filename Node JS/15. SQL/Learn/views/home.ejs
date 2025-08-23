@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link rel="stylesheet" href="/output.css"></link>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <%- include('./partials/navbar.ejs') %>
+
+        <!-- Main page content -->
+        <section class="text-center py-20 bg-white">
+                <div class="max-w-2xl mx-auto">
+                <h2 class="text-red-500 text-4xl md:text-5xl font-bold mb-4">Welcome to My Website</h2>
+                <p class="text-lg text-gray-600 mb-8">Get your house listed at unbeatable prices.</p>
+                <a href="/add-house"
+                    class="bg-red-500 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-red-600 transition duration-300">
+                    Add House
+                </a>
+            </div>
+        </section>
+    </body>
+</html>
