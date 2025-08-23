@@ -37,5 +37,8 @@
 
 ## SQL VS NoSQL
 
-> SQL VS NoSQL: <br/>
+> Structure <br/>
 <img src="sql-vs-nosql.png" height="300px"/>
+
+> Comparison <br/>
+![sqlVSnoSql-table](sqlVSnoSql-table.png)
