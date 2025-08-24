@@ -65,3 +65,10 @@ STEP 3: Enter schema name (e.g., college_db).
 STEP 4: Click Apply → Review SQL → Apply → Finish.
 
 
+## Connecting MySQL with Express.js:
+### Install MySQL with NPM:
+
+```bash
+npm install mysql2
+```
+* This package helps us to connect with MySQL Databases.
