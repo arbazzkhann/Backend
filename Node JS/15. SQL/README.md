@@ -55,3 +55,13 @@ Download: https://dev.mysql.com/downloads/
 👉 Installation is straightforward — just keep clicking Next.
 
 
+## Creating a Schema in MySQL Workbench:
+STEP 1: Open MySQL Workbench & connect to your server (use the password you set during installation).
+
+STEP 2: In the Navigator panel, right-click Schemas → Create Schema…
+
+STEP 3: Enter schema name (e.g., college_db).
+
+STEP 4: Click Apply → Review SQL → Apply → Finish.
+
+
