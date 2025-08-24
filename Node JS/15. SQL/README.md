@@ -42,3 +42,16 @@
 
 > Comparison - SQL VS NoSQL <br/>
 ![sqlVSnoSql-table](sqlVSnoSql-table.png)
+
+
+## Setup of MySQL:
+
+STEP 1: Download and Install - MySQL (choose based on your OS).:
+Download: https://dev.mysql.com/downloads/
+
+STEP 2: Download and Install - MySQL Workbench:
+Download: https://dev.mysql.com/downloads/
+
+👉 Installation is straightforward — just keep clicking Next.
+
+
