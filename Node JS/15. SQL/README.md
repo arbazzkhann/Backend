@@ -66,9 +66,63 @@ STEP 4: Click Apply → Review SQL → Apply → Finish.
 
 
 ## Connecting MySQL with Express.js:
-### Install MySQL with NPM:
+STEP 1: Install MySQL with NPM:
 
 ```bash
 npm install mysql2
 ```
 * This package helps us to connect with MySQL Databases.
+
+
+STEP 2: Create **databaseUtils.js** in utils directory:
+
+> databaseUtils.js:
+```js
+const mysql = require('mysql2');
+```
+
+STEP 3: Creating table in database:
+
+> EXAMPLE:
+```sql
+CREATE TABLE houses(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    houseName VARCHAR(255) NOT NULL,
+    price DOUBLE NOT NULL,
+    description LONGTEXT NOT NULL,
+    imageURL VARCHAR(255) NOT NULL,
+    state VARCHAR(45) NOT NULL
+);
+```
+
+STEP 4: Put all the database connection code into databaseUtils.js:
+
+> EXAMPLE:
+```js
+const mysql = require('mysql2');
+
+const pool = mysql.createPool({
+    host: "localhost",
+    user: "root",
+    password: "1234",
+    database: 'prectice_website'
+});
+
+module.exports = pool.promise();
+```
+
+STEP 5: Import Database and Use:
+
+> EXAMPLE:
+```js
+//Database
+const db = require('./utils/databaseUtils.js');
+
+db.execute('SELECT * FROM houses')
+.then(([rows, fields]) => {
+    console.log('getting from database: ', rows);
+})
+.catch(err => {
+    console.log("error while db houses records: ", err);
+});
+```
