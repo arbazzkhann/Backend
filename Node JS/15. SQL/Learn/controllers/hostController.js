@@ -14,11 +14,12 @@ exports.addHouseGET = (req, res, next) => {
 //addHousePOST middleware
 exports.addHousePOST = (req, res, next) => {
     //destructuting
-    const { houseName, housePrice, houseState, housePhotoLink, houseDescription } = req.body;
+    const { houseName, housePrice, houseLocation, houseImageURL, houseDescription } = req.body;
 
-    const house = new House(houseName, housePrice, houseState, housePhotoLink, houseDescription);
-    house.save();
-    res.redirect('/host-registered-houses');
+    const house = new House(null, houseName, housePrice, houseLocation, houseImageURL, houseDescription);
+    house.save()
+    .then(() => res.redirect('/host-registered-houses'))
+    .catch(err =>  console.log("Error while adding: ", err))
 }
 
 exports.hostRegisteredHouses = (req, res, next) => {
@@ -35,7 +36,8 @@ exports.editHouseGET = (req, res, next) => {
     const houseId = req.params.houseId;
     const editing = req.query.edit === "true";
 
-    House.findById(houseId, house => {
+     House.findById(houseId).then(([houses]) => {
+        const house = houses[0];
         if(!house) {
             console.log("Invalid house id");
             return res.redirect('/host-registered-houses')
@@ -51,12 +53,21 @@ exports.editHouseGET = (req, res, next) => {
 }
 
 exports.editHousePOST = (req, res, next) => {
-    const { houseId, houseName, housePrice, houseState, housePhotoLink } = req.body;
+    const { houseId, houseName, housePrice, houseLocation, houseImageURL, houseDescription } = req.body;
+    console.log(req.body);
 
-    const house = new House(houseName, housePrice, houseState, housePhotoLink);
-    house.save(houseId);
+    const house = new House(
+        houseId,
+        houseName, 
+        housePrice, 
+        houseLocation, 
+        houseImageURL, 
+        houseDescription
+    );
 
-    res.redirect('/host-registered-houses');
+    house.save()
+    .then(() => res.redirect('/host-registered-houses'))
+    .catch(err => console.log("Error while saving: ", err)) 
 }
 
 exports.deleteHousePOST = (req, res, next) => {
@@ -64,11 +75,11 @@ exports.deleteHousePOST = (req, res, next) => {
     console.log("Came for delete by id!", houseId);
 
     //delete house by id
-    House.deleteById(houseId, err => {
-        if(err) {
-            console.log("Error while deleting item: ", err);
-        }
-    });
+    House.deleteById(houseId)
+    .then()
+    .catch(err => {
+        console.log("Error while deleting: ", err);
+    }) 
 
     //removing from favourites
     Favourite.removeFromFavourite(req.body.houseId, (err) => {

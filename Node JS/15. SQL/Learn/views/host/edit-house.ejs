@@ -7,18 +7,19 @@
     <!-- Navbar -->
     <%- include('../partials/navbar.ejs') %>
 
-    <!-- Form -->
+    <!-- Heading -->
     <div class="max-w-md mx-auto mt-10 p-6 bg-white shadow-md rounded-lg">
       <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">
         <%= editing ? "Edit" : "Register" %> Your House
       </h2>
 
+      <!-- Form -->
       <form action="<%= editing ? '/host/edit-house' : '/add-house' %>" method="post" class="space-y-5">
         <% if (editing) { %>
           <input 
-            type="text" 
+            type="text"
             name="houseId"
-            value="<%= house.houseId %>" 
+            value="<%= house.id %>" 
             hidden
           >
         <% } %>
@@ -33,7 +34,7 @@
             name="houseName"
             id="houseName"
             placeholder="Enter your house name"
-            value="<%= editing ? house.houseName : '' %>"
+            value="<%= editing ? house.name : '' %>"
             required
             class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
           />
@@ -42,50 +43,50 @@
         <!-- City Field -->
         <div>
           <select
-              name="houseState"
-              id="houseState"
+              name="houseLocation"
+              id="houseLocation"
               required
               class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
           >
               <option value="" disabled <%= !editing ? "selected" : "" %>>Select a state</option>
-              <option value="andhra-pradesh" <%= editing && house.houseState === "andhra-pradesh" ? "selected" : "" %>>Andhra Pradesh</option>
-              <option value="arunachal-pradesh" <%= editing && house.houseState === "arunachal-pradesh" ? "selected" : "" %>>Arunachal Pradesh</option>
-              <option value="assam" <%= editing && house.houseState === "assam" ? "selected" : "" %>>Assam</option>
-              <option value="bihar" <%= editing && house.houseState === "bihar" ? "selected" : "" %>>Bihar</option>
-              <option value="chhattisgarh" <%= editing && house.houseState === "chhattisgarh" ? "selected" : "" %>>Chhattisgarh</option>
-              <option value="goa" <%= editing && house.houseState === "goa" ? "selected" : "" %>>Goa</option>
-              <option value="gujarat" <%= editing && house.houseState === "gujarat" ? "selected" : "" %>>Gujarat</option>
-              <option value="haryana" <%= editing && house.houseState === "haryana" ? "selected" : "" %>>Haryana</option>
-              <option value="himachal-pradesh" <%= editing && house.houseState === "himachal-pradesh" ? "selected" : "" %>>Himachal Pradesh</option>
-              <option value="jharkhand" <%= editing && house.houseState === "jharkhand" ? "selected" : "" %>>Jharkhand</option>
-              <option value="karnataka" <%= editing && house.houseState === "karnataka" ? "selected" : "" %>>Karnataka</option>
-              <option value="kerala" <%= editing && house.houseState === "kerala" ? "selected" : "" %>>Kerala</option>
-              <option value="madhya-pradesh" <%= editing && house.houseState === "madhya-pradesh" ? "selected" : "" %>>Madhya Pradesh</option>
-              <option value="maharashtra" <%= editing && house.houseState === "maharashtra" ? "selected" : "" %>>Maharashtra</option>
-              <option value="manipur" <%= editing && house.houseState === "manipur" ? "selected" : "" %>>Manipur</option>
-              <option value="meghalaya" <%= editing && house.houseState === "meghalaya" ? "selected" : "" %>>Meghalaya</option>
-              <option value="mizoram" <%= editing && house.houseState === "mizoram" ? "selected" : "" %>>Mizoram</option>
-              <option value="nagaland" <%= editing && house.houseState === "nagaland" ? "selected" : "" %>>Nagaland</option>
-              <option value="odisha" <%= editing && house.houseState === "odisha" ? "selected" : "" %>>Odisha</option>
-              <option value="punjab" <%= editing && house.houseState === "punjab" ? "selected" : "" %>>Punjab</option>
-              <option value="rajasthan" <%= editing && house.houseState === "rajasthan" ? "selected" : "" %>>Rajasthan</option>
-              <option value="sikkim" <%= editing && house.houseState === "sikkim" ? "selected" : "" %>>Sikkim</option>
-              <option value="tamil-nadu" <%= editing && house.houseState === "tamil-nadu" ? "selected" : "" %>>Tamil Nadu</option>
-              <option value="telangana" <%= editing && house.houseState === "telangana" ? "selected" : "" %>>Telangana</option>
-              <option value="tripura" <%= editing && house.houseState === "tripura" ? "selected" : "" %>>Tripura</option>
-              <option value="uttar-pradesh" <%= editing && house.houseState === "uttar-pradesh" ? "selected" : "" %>>Uttar Pradesh</option>
-              <option value="uttarakhand" <%= editing && house.houseState === "uttarakhand" ? "selected" : "" %>>Uttarakhand</option>
-              <option value="west-bengal" <%= editing && house.houseState === "west-bengal" ? "selected" : "" %>>West Bengal</option>
+              <option value="andhra-pradesh" <%= editing && house.location === "andhra-pradesh" ? "selected" : "" %>>Andhra Pradesh</option>
+              <option value="arunachal-pradesh" <%= editing && house.location === "arunachal-pradesh" ? "selected" : "" %>>Arunachal Pradesh</option>
+              <option value="assam" <%= editing && house.location === "assam" ? "selected" : "" %>>Assam</option>
+              <option value="bihar" <%= editing && house.location === "bihar" ? "selected" : "" %>>Bihar</option>
+              <option value="chhattisgarh" <%= editing && house.location === "chhattisgarh" ? "selected" : "" %>>Chhattisgarh</option>
+              <option value="goa" <%= editing && house.location === "goa" ? "selected" : "" %>>Goa</option>
+              <option value="gujarat" <%= editing && house.location === "gujarat" ? "selected" : "" %>>Gujarat</option>
+              <option value="haryana" <%= editing && house.location === "haryana" ? "selected" : "" %>>Haryana</option>
+              <option value="himachal-pradesh" <%= editing && house.location === "himachal-pradesh" ? "selected" : "" %>>Himachal Pradesh</option>
+              <option value="jharkhand" <%= editing && house.location === "jharkhand" ? "selected" : "" %>>Jharkhand</option>
+              <option value="karnataka" <%= editing && house.location === "karnataka" ? "selected" : "" %>>Karnataka</option>
+              <option value="kerala" <%= editing && house.location === "kerala" ? "selected" : "" %>>Kerala</option>
+              <option value="madhya-pradesh" <%= editing && house.location === "madhya-pradesh" ? "selected" : "" %>>Madhya Pradesh</option>
+              <option value="maharashtra" <%= editing && house.location === "maharashtra" ? "selected" : "" %>>Maharashtra</option>
+              <option value="manipur" <%= editing && house.location === "manipur" ? "selected" : "" %>>Manipur</option>
+              <option value="meghalaya" <%= editing && house.location === "meghalaya" ? "selected" : "" %>>Meghalaya</option>
+              <option value="mizoram" <%= editing && house.location === "mizoram" ? "selected" : "" %>>Mizoram</option>
+              <option value="nagaland" <%= editing && house.location === "nagaland" ? "selected" : "" %>>Nagaland</option>
+              <option value="odisha" <%= editing && house.location === "odisha" ? "selected" : "" %>>Odisha</option>
+              <option value="punjab" <%= editing && house.location === "punjab" ? "selected" : "" %>>Punjab</option>
+              <option value="rajasthan" <%= editing && house.location === "rajasthan" ? "selected" : "" %>>Rajasthan</option>
+              <option value="sikkim" <%= editing && house.location === "sikkim" ? "selected" : "" %>>Sikkim</option>
+              <option value="tamil-nadu" <%= editing && house.location === "tamil-nadu" ? "selected" : "" %>>Tamil Nadu</option>
+              <option value="telangana" <%= editing && house.location === "telangana" ? "selected" : "" %>>Telangana</option>
+              <option value="tripura" <%= editing && house.location === "tripura" ? "selected" : "" %>>Tripura</option>
+              <option value="uttar-pradesh" <%= editing && house.location === "uttar-pradesh" ? "selected" : "" %>>Uttar Pradesh</option>
+              <option value="uttarakhand" <%= editing && house.location === "uttarakhand" ? "selected" : "" %>>Uttarakhand</option>
+              <option value="west-bengal" <%= editing && house.location === "west-bengal" ? "selected" : "" %>>West Bengal</option>
 
               <!-- Union Territories -->
-              <option value="andaman-nicobar" <%= editing && house.houseState === "andaman-nicobar" ? "selected" : "" %>>Andaman and Nicobar Islands</option>
-              <option value="chandigarh" <%= editing && house.houseState === "chandigarh" ? "selected" : "" %>>Chandigarh</option>
-              <option value="dadra-nagar-haveli" <%= editing && house.houseState === "dadra-nagar-haveli" ? "selected" : "" %>>Dadra and Nagar Haveli and Daman and Diu</option>
-              <option value="delhi" <%= editing && house.houseState === "delhi" ? "selected" : "" %>>Delhi (NCT)</option>
-              <option value="jammu-kashmir" <%= editing && house.houseState === "jammu-kashmir" ? "selected" : "" %>>Jammu and Kashmir</option>
-              <option value="ladakh" <%= editing && house.houseState === "ladakh" ? "selected" : "" %>>Ladakh</option>
-              <option value="lakshadweep" <%= editing && house.houseState === "lakshadweep" ? "selected" : "" %>>Lakshadweep</option>
-              <option value="puducherry" <%= editing && house.houseState === "puducherry" ? "selected" : "" %>>Puducherry</option>
+              <option value="andaman-nicobar" <%= editing && house.location === "andaman-nicobar" ? "selected" : "" %>>Andaman and Nicobar Islands</option>
+              <option value="chandigarh" <%= editing && house.location === "chandigarh" ? "selected" : "" %>>Chandigarh</option>
+              <option value="dadra-nagar-haveli" <%= editing && house.location === "dadra-nagar-haveli" ? "selected" : "" %>>Dadra and Nagar Haveli and Daman and Diu</option>
+              <option value="delhi" <%= editing && house.location === "delhi" ? "selected" : "" %>>Delhi (NCT)</option>
+              <option value="jammu-kashmir" <%= editing && house.location === "jammu-kashmir" ? "selected" : "" %>>Jammu and Kashmir</option>
+              <option value="ladakh" <%= editing && house.location === "ladakh" ? "selected" : "" %>>Ladakh</option>
+              <option value="lakshadweep" <%= editing && house.location === "lakshadweep" ? "selected" : "" %>>Lakshadweep</option>
+              <option value="puducherry" <%= editing && house.location === "puducherry" ? "selected" : "" %>>Puducherry</option>
           </select>
         </div>
 
@@ -99,7 +100,7 @@
             name="housePrice"
             id="housePrice"
             placeholder="Enter price per day"
-            value="<%= editing ? house.housePrice : '' %>"
+            value="<%= editing ? house.price : '' %>"
             required
             class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
           />
@@ -121,19 +122,19 @@
           />
         </div> -->
 
-        <!-- with link input -->
+        <!-- imageURL input -->
         <div>
           <label
-            for="housePhotoLink"
+            for="houseImageURL"
             class="block mb-1 font-medium text-gray-700"
             >House Photo Link:</label
           >
           <input
             type="text"
-            name="housePhotoLink"
-            id="housePhotoLink"
+            name="houseImageURL"
+            id="houseImageURL"
             placeholder="Enter your house photo link"
-            value="<%= editing ? house.housePhotoLink : '' %>"
+            value="<%= editing ? house.imageURL : '' %>"
             required
             class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
           />

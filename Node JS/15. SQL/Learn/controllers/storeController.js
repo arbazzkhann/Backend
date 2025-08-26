@@ -49,7 +49,8 @@ exports.contactUsPOST = (req, res, next) => {
 exports.houseDetails = (req, res, next) => {
     const houseId = req.params.houseId;
 
-    House.findById(houseId, (house) => {
+    House.findById(houseId).then(([houses]) => {
+        const house = houses[0];
         if(!house) {
             res.redirect("/registered-houses");
         }

@@ -137,3 +137,10 @@ db.execute('SELECT * FROM houses')
     * *fetchAll will not take a callback but return a promise.*
 5. Go to **storeController.js** and use the promise to get the data here.
 6. **Fix all** the **usages of fetchAll**.
+
+
+## Adding House into Database:
+1. **Add the description field** in houses. **Change constructor** and **usage**.
+2. Make **changes in UI** to input and show it everywhere.
+3. Implement the **save method** using the **insert query**.
+4. Change the **usage of save method** to **use the promise**.
