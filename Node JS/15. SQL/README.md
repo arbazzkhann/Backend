@@ -66,8 +66,8 @@ STEP 4: Click Apply → Review SQL → Apply → Finish.
 
 
 ## Connecting MySQL with Express.js:
-STEP 1: Install MySQL with NPM:
 
+STEP 1: Install MySQL with NPM:
 ```bash
 npm install mysql2
 ```
@@ -126,3 +126,14 @@ db.execute('SELECT * FROM houses')
     console.log("error while db houses records: ", err);
 });
 ```
+
+
+## Adding Database in Models:
+1. Change the **houses.js** model file to remove all code related to file operations.
+2. Import the **Database from the utils**.
+3. Change **photoURL to imageURL** and **houseName to name** in the entire project.
+4. Implement **fetchAll**:
+    * **Using the query** we used while testing.
+    * *fetchAll will not take a callback but return a promise.*
+5. Go to **storeController.js** and use the promise to get the data here.
+6. **Fix all** the **usages of fetchAll**.
