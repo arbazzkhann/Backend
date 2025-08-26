@@ -4,11 +4,13 @@ const db = require('../utils/databaseUtils');
 
 //Model
 module.exports = class House {
-    constructor(houseName, housePrice, houseState, housePhotoLink) {
-        this.houseName = houseName,
-        this.housePrice = housePrice,
-        this.houseState = houseState,
-        this.housePhotoLink = housePhotoLink
+    constructor(name, price, location, imageURL, description, id) {
+        this.name = name,
+        this.price = price,
+        this.location = location,
+        this.imageURL = imageURL,
+        this.description = description,
+        this.id = id
     }
 
     // //Save house data into the json file
