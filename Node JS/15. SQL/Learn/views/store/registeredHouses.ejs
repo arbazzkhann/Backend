@@ -23,7 +23,7 @@
               <!-- House Photo -->
               <a href="/house/<%=house.houseId%>">
               <img 
-                src="<%= house.housePhotoLink %>" 
+                src="<%= house.imageURL %>" 
                 alt="<%= house.houseName %>" 
                 class="w-full h-56 object-cover"
               />
@@ -33,12 +33,12 @@
 
               <div class="p-4 mt-0 pt-0">
                 <h3 class="text-lg font-semibold text-gray-800 truncate"><%= house.houseName %></h3></a>
-                <p class="text-sm text-gray-500">📍 <%= house.houseState %></p>
+                <p class="text-sm text-gray-500">📍 <%= house.location %></p>
               </div>
 
               <!-- Price Footer -->
               <div class="bg-red-500 text-white text-base font-semibold text-center py-2">
-                ₹<%= house.housePrice %> / day
+                ₹<%= house.price %> / day
               </div>
 
             </li>
