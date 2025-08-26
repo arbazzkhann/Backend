@@ -21,17 +21,17 @@
           <li class="bg-white border border-gray-200 rounded-xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden w-full">
             <!-- House Photo -->
             <img
-              src="<%= house.housePhotoLink %>"
-              alt="<%= house.houseName %>"
+              src="<%= house.imageURL %>"
+              alt="<%= house.name %>"
               class="w-full h-56 object-cover"
             />
 
             <!-- House Info -->
             <div class="p-4">
               <h3 class="text-lg font-semibold text-gray-800 truncate">
-                <%= house.houseName %>
+                <%= house.name %>
               </h3>
-              <p class="text-sm text-gray-500">📍 <%= house.houseState %></p>
+              <p class="text-sm text-gray-500">📍 <%= house.location %></p>
 
               <!-- Action Buttons -->
               <div class="mt-4 flex flex-wrap gap-2">
@@ -42,7 +42,7 @@
                     Edit
                   </button>
                 </a>
-                <form method="POST" action="/host/delete-house/<%= house.houseId %>">
+                <form method="POST" action="/host/delete-house/<%= house.id %>">
                   <button
                     type="submit"
                     class="focus:outline-none text-white bg-red-500 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
@@ -57,7 +57,7 @@
             <div
               class="bg-red-500 text-white text-base font-semibold text-center py-2"
             >
-              ₹<%= house.housePrice %> / day
+              ₹<%= house.price %> / day
             </div>
           </li>
           <% }) %>

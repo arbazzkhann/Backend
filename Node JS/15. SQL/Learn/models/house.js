@@ -14,8 +14,16 @@ module.exports = class House {
     }
 
     // //Save house data into the json file
-    save(id) {
-        
+    save() {
+        return db.execute(
+            'INSERT INTO houses (name, price, location, imageURL, description) VALUES (?, ?, ?, ?, ?)', [
+                this.name, 
+                this.price, 
+                this.location, 
+                this.imageURL, 
+                this.description
+            ]
+        );
     }
     
     //Retrieve all houses

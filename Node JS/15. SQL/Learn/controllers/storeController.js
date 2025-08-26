@@ -1,6 +1,6 @@
 //local modules
 const Favourite = require('../models/favourite');
-const Houses = require('../models/houses');
+const House = require('../models/house');
 
 exports.homeGET = (req, res, next) => {
     console.log(`Handling / for get, request method is ${req.method}`);
@@ -8,7 +8,7 @@ exports.homeGET = (req, res, next) => {
 }
 
 exports.registeredHouses = (req, res, next) => {
-    Houses.fetchAll().then(([registeredHouses, fields]) => {
+    House.fetchAll().then(([registeredHouses, fields]) => {
         console.log(registeredHouses);
         res.render('store/registeredHouses.ejs', {
             registeredHouses, 
@@ -27,7 +27,7 @@ exports.BookingsGET = (req, res, next) => {
 
 exports.FavouriteListGET = (req, res, next) => {
     Favourite.getFavourites(favourites => {
-        Houses.fetchAll((registeredHouses) => {
+        House.fetchAll().then(([registeredHouses, fields]) => {
             const favouriteHouses = registeredHouses.filter(house =>
                 favourites.includes(String(house.houseId))
             );
@@ -49,7 +49,7 @@ exports.contactUsPOST = (req, res, next) => {
 exports.houseDetails = (req, res, next) => {
     const houseId = req.params.houseId;
 
-    Houses.findById(houseId, (house) => {
+    House.findById(houseId, (house) => {
         if(!house) {
             res.redirect("/registered-houses");
         }
