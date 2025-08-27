@@ -12,3 +12,21 @@
 11. **Easy Integration**: **Interates smoothly** with ***modern developments***.
 
 
+## Setting up MongoDB:
+**STEP 1**: Goto MongoDB Atlas - [MongoDB Atlas](https://www.mongodb.com/products/platform)
+
+**STEP 2**: Login in MongoDB Website.
+
+**STEP 3**: Choose Plan (Free) and Set Configurations => Create Deployment (Given in image 1).
+
+**STEP 4**: Set username and password => Create Database User (Given in image 2).
+
+**STEP 5**: Choose connection Method => Drivers (Given in image 3).
+
+**STEP 6**: Connect:
+1. Select driver and version - Choose Node.js and latest version (Given in image 4).
+2. Run this command in terminal: 
+```bash
+npm install mongodb
+```
+3. Copy **connection string** for connecting database to Website (Given in image 4).
