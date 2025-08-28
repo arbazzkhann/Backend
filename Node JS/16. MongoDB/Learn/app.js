@@ -15,13 +15,14 @@ const abosolutePath = require('./utils/pathUtils.js');
 //Database
 const db = require('./utils/databaseUtils.js');
 
-db.execute('SELECT * FROM houses')
-.then(([rows, fields]) => {
-    console.log('getting from database: ', rows);
-})
-.catch(err => {
-    console.log("error while db houses records: ", err);
-});
+//MySQL
+// db.execute('SELECT * FROM houses')
+// .then(([rows, fields]) => {
+//     console.log('getting from database: ', rows);
+// })
+// .catch(err => {
+//     console.log("error while db houses records: ", err);
+// });
 
 //express app
 const app = express();
@@ -48,6 +49,12 @@ app.use(pageNotFount);
 
 //server connect
 const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Your server is running on http://localhost:${PORT}`);
+
+//MongoClient
+db(client => {
+    console.log(client);
+    app.listen(PORT, () => {
+        console.log(`Your server is running on http://localhost:${PORT}`);
+    });
 });
+
