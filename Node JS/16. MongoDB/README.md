@@ -25,8 +25,47 @@
 
 **STEP 6**: Connect:
 1. Select driver and version - Choose Node.js and latest version (Given in image 4).
-2. Run this command in terminal: 
+2. Run this command in terminal to install MongoDB: 
 ```bash
 npm install mongodb
 ```
 3. Copy **connection string** for connecting database to Website (Given in image 4).
+
+
+## Installtion of MongoDB:
+1. Install MongoDB with Node.js:
+```bash
+npm install mongodb
+```
+2. Create **databaseUtils.js** in utils directory.
+
+3. Put this code in **databaseUtils.js**:
+
+```js
+const mongodb = require('mongodb');
+
+const MongoClient = mongodb.MongoClient;
+
+const MONGO_URL = "mongodb+srv://arbazfanda3:root@arbazkhan.nmsxldo.mongodb.net/?retryWrites=true&w=majority&appName=ArbazKhan";
+
+
+module.exports = mongoConnect = (callback) => {
+    MongoClient.connect(MONGO_URL)
+    .then(client => {
+        callback(client);
+    })
+    .catch(err => {
+        console.log('Error while connect to mongoDB', err);
+    });
+}
+```
+
+4. Use MongoDB:
+```js
+MongoClient(client => {
+    console.log(client);
+    app.listen(PORT, () => {
+        console.log(`Your server is running on http://localhost:${PORT}`);
+    });
+});
+```
