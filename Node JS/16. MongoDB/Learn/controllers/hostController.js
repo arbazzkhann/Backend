@@ -23,7 +23,7 @@ exports.addHousePOST = (req, res, next) => {
 }
 
 exports.hostRegisteredHouses = (req, res, next) => {
-    House.fetchAll().then(([registeredHouses, fields]) => {
+    House.fetchAll().then(registeredHouses => {
         res.render('host/host-registeredHouses.ejs', {
             registeredHouses, 
             req,

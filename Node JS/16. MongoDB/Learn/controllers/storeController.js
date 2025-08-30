@@ -8,7 +8,7 @@ exports.homeGET = (req, res, next) => {
 }
 
 exports.registeredHouses = (req, res, next) => {
-    House.fetchAll().then(([registeredHouses, fields]) => {
+    House.fetchAll().then(registeredHouses => {
         console.log(registeredHouses);
         res.render('store/registeredHouses.ejs', {
             registeredHouses, 
@@ -27,7 +27,7 @@ exports.BookingsGET = (req, res, next) => {
 
 exports.FavouriteListGET = (req, res, next) => {
     Favourite.getFavourites(favourites => {
-        House.fetchAll().then(([registeredHouses, fields]) => {
+        House.fetchAll().then(registeredHouses => {
             const favouriteHouses = registeredHouses.filter(house =>
                 favourites.includes(String(house.houseId))
             );

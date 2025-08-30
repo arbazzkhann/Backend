@@ -13,7 +13,7 @@ const { pageNotFount } = require('./controllers/errors.js');
 const abosolutePath = require('./utils/pathUtils.js');
 
 //Database
-const db = require('./utils/databaseUtils.js');
+const { mongoConnect } = require('./utils/databaseUtils.js');
 
 //MySQL
 // db.execute('SELECT * FROM houses')
@@ -51,10 +51,8 @@ app.use(pageNotFount);
 const PORT = 3000;
 
 //MongoClient
-db(client => {
-    console.log(client);
+mongoConnect(() => {
     app.listen(PORT, () => {
         console.log(`Your server is running on http://localhost:${PORT}`);
     });
 });
-

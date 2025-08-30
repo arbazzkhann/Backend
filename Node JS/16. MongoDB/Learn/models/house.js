@@ -1,5 +1,5 @@
 //database
-const db = require('../utils/databaseUtils');
+const { mongoConnect, getDB } = require('../utils/databaseUtils');
 
 
 //Model
@@ -15,46 +15,23 @@ module.exports = class House {
 
     // //Save house data into the json file
     save() {
-        if(this.id) {  //update house
-           return db.execute(
-                `UPDATE houses 
-                SET name=?, price=?, location=?, imageURL=?, description=? 
-                WHERE id=?`, 
-                [
-                    this.name, 
-                    this.price, 
-                    this.location, 
-                    this.imageURL,
-                    this.description,
-                    this.id
-                ]
-            );  
-        }
-        else { //insert new houses
-            return db.execute(
-                `INSERT INTO houses (name, price, location, imageURL, description) 
-                VALUES (?, ?, ?, ?, ?)`, 
-                [
-                    this.name, 
-                    this.price, 
-                    this.location, 
-                    this.imageURL, 
-                    this.description
-                ]
-            );
-        }
+        const db = getDB();
+        return db.collection('houses').insertOne(this).then((result) => {
+            console.log(result);
+        });
     }
     
     //Retrieve all houses
     static fetchAll() {
-        return db.execute('SELECT * FROM houses')
+        const db = getDB();
+        return db.collection('houses').find().toArray();
     }
 
     static findById(houseId) {
-        return db.execute('SELECT * FROM houses WHERE id=?', [houseId]);
+
     }
 
     static deleteById(houseId) {
-      return db.execute('DELETE FROM houses WHERE id=?', [houseId]);
+
     }
 }
