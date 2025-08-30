@@ -46,8 +46,7 @@ const mongodb = require('mongodb');
 
 const MongoClient = mongodb.MongoClient;
 
-const MONGO_URL = "mongodb+srv://arbazfanda3:root@arbazkhan.nmsxldo.mongodb.net/?retryWrites=true&w=majority&appName=ArbazKhan";
-
+const MONGO_URL = "<MongoDB_Connection_STRING>";
 
 module.exports = mongoConnect = (callback) => {
     MongoClient.connect(MONGO_URL)
@@ -69,3 +68,27 @@ MongoClient(client => {
     });
 });
 ```
+
+
+## Installtion of MongoDB Compass:
+1. Download and Install MongoDB Compass as per your Operating System.
+[MongoDB Compass](https://www.mongodb.com/try/download/compass)
+
+2. Create Connection.
+
+3. Paste **Connection String** and set name for connection and **Save and Connect**.
+
+Now, You can access your MongoDB Database through MongoDB Compass.
+
+
+## MongoDB for VS Code (Extension):
+![MongoDB for VS Code](MongoDB_for_VS_Code.png)
+
+1. Install **MongoDB For VS CODE** Extension from VS code extension store.
+
+2. Click on Add Connection.<br/>
+
+3. Connect with Connection String:
+![connection_String](connection_String.png)
+
+Now, You can access your MongoDB Database through MongoDB For VS Code Extension.
