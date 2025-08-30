@@ -36,11 +36,10 @@ exports.editHouseGET = (req, res, next) => {
     const houseId = req.params.houseId;
     const editing = req.query.edit === "true";
 
-     House.findById(houseId).then(([houses]) => {
-        const house = houses[0];
+     House.findById(houseId).then(house => {
         if(!house) {
             console.log("Invalid house id");
-            return res.redirect('/host-registered-houses')
+            return res.redirect('/host-registered-houses');
         }
     
         res.render("host/edit-house.ejs", {

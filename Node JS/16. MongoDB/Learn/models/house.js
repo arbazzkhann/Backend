@@ -1,15 +1,18 @@
 //database
+const { ObjectId } = require('mongodb');
 const { mongoConnect, getDB } = require('../utils/databaseUtils');
 
 
 //Model
 module.exports = class House {
-    constructor(id, name, price, location, imageURL, description ) {
-        this.id = id,
-        this.name = name,
-        this.price = price,
-        this.location = location,
-        this.imageURL = imageURL,
+    constructor(_id, name, price, location, imageURL, description ) {
+        if(_id) {
+            this._id = _id
+        }
+        this.name = name
+        this.price = price
+        this.location = location
+        this.imageURL = imageURL
         this.description = description
     }
 
@@ -28,7 +31,8 @@ module.exports = class House {
     }
 
     static findById(houseId) {
-
+        const db = getDB();
+        return db.collection('houses').find({_id: new ObjectId (String(houseId))}).next();
     }
 
     static deleteById(houseId) {
