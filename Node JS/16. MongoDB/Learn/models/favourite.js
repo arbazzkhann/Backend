@@ -9,14 +9,21 @@ module.exports = class Favourite {
     //add to favourite
     save() {
         const db = getDB();
-        return db.collection('favourites').insertOne(this);
+        return db.collection('favourites').findOne({houseId: this.houseId})
+        .then(existingFav => {
+            if(!existingFav) {
+                return db.collection("favourites").insertOne(this);
+            }
+            return new Promise.resolve();
+        })
+
     }
 
     //Remove from Favourite
-    static removeFromFavourite(houseId, callback) {
-        
+    static removeFromFavourite(deleteHouseId, callback) {
+        const db = getDB();
+        return db.collection('favourites').deleteOne({houseId: deleteHouseId});
     }
-
 
     static getFavourites() {
         const db = getDB();

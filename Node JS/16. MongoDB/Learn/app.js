@@ -9,9 +9,6 @@ const hostRouter = require('./Routers/host-routers/hostRouter.js');
 //errors
 const { pageNotFount } = require('./controllers/errors.js');
 
-//import absolutePath
-const abosolutePath = require('./utils/pathUtils.js');
-
 //Database
 const { mongoConnect } = require('./utils/databaseUtils.js');
 
