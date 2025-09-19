@@ -16,12 +16,25 @@ module.exports = class House {
         this.description = description
     }
 
-    // //Save house data into the json file
     save() {
         const db = getDB();
-        return db.collection('houses').insertOne(this).then((result) => {
-            console.log(result);
-        });
+        if(this._id) { //update
+            console.log("Save method: ", this);
+            return db.collection('houses')
+            .updateOne({
+                _id: new ObjectId(String(this._id)) },
+                    { $set: (() => { 
+                        const copy = { ...this };
+                        delete copy._id;
+                        return copy;
+                    })() 
+                }
+            );
+        }
+        else { //new
+            return db.collection('houses')
+            .insertOne(this);
+        }
     }
     
     //Retrieve all houses
@@ -36,6 +49,7 @@ module.exports = class House {
     }
 
     static deleteById(houseId) {
-
+        const db = getDB();
+        return db.collection('houses').deleteOne({_id: new ObjectId (String(houseId))});
     }
 }

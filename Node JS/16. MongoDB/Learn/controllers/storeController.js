@@ -25,11 +25,13 @@ exports.BookingsGET = (req, res, next) => {
     res.render('store/bookings.ejs', {registeredHouses, req, activePath: '/bookings'});
 }
 
-exports.FavouriteListGET = (req, res, next) => {
-    Favourite.getFavourites(favourites => {
+exports.FavouriteListGET = (req, res) => {
+    Favourite.getFavourites().then(favourites => {
+        favourites = favourites.map(fav => fav.houseId);
+
         House.fetchAll().then(registeredHouses => {
             const favouriteHouses = registeredHouses.filter(house =>
-                favourites.includes(String(house.houseId))
+                favourites.includes(String(house._id))
             );
             res.render("store/favourite-list.ejs", {favouriteHouses, req, activePath: '/favourite-list'});
         });
@@ -61,13 +63,17 @@ exports.houseDetails = (req, res, next) => {
 }
 
 exports.addToFavouritePOST = (req, res, next) => {
+    const houseId = req.body.houseId;
+    console.log("House ID: ", houseId);
+    const fav = new Favourite(houseId);
+    fav.save().then(result => {
+        console.log(result);
+    }).catch(err => {
+        console.log("Error occur while add to favourite", err);
+    }).finally(() => {
+        res.redirect('/favourite-list');
+    })
     console.log("Came to add to Favourite", req.body);
-    Favourite.addToFavourite(req.body.houseId, err => {
-        if(err) {
-            console.log("Error occur while add to favourite", err);
-        };
-        res.redirect("/favourite-list");
-    });
 }
 
 exports.removeFromFavouritePOST = (req, res, next) => {

@@ -21,22 +21,22 @@
               
               <!-- House Photo -->
               <img 
-                src="<%= house.housePhotoLink %>" 
+                src="<%= house.imageURL %>" 
                 alt="<%= house.houseName %>" 
                 class="w-full h-56 object-cover"
               />
 
               <!-- House Info -->
               <div class="p-4">
-                <h3 class="text-lg font-semibold text-gray-800 truncate"><%= house.houseName %></h3>
-                <p class="text-sm text-gray-500">📍 <%= house.houseState %></p>
+                <h3 class="text-lg font-semibold text-gray-800 truncate"><%= house.name %></h3>
+                <p class="text-sm text-gray-500">📍 <%= house.location %></p>
                 <!-- remove from favourte button -->
                 <%- include('../partials/remove-favourite-button.ejs', {house: house})%>
               </div>
 
               <!-- Price Footer -->
               <div class="bg-red-500 text-white text-base font-semibold text-center py-2">
-                ₹<%= house.housePrice %> / day
+                ₹<%= house.price %> / day
               </div>
 
               
