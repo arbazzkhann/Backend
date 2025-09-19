@@ -14,7 +14,7 @@ module.exports = class Favourite {
             if(!existingFav) {
                 return db.collection("favourites").insertOne(this);
             }
-            return new Promise.resolve();
+            return Promise.resolve();
         })
 
     }
