@@ -88,7 +88,23 @@ Now, You can access your MongoDB Database through MongoDB Compass.
 
 2. Click on Add Connection.<br/>
 
-3. Connect with Connection String:
+3. Connect with Connection String:<br/>
 ![connection_String](connection_String.png)
 
 Now, You can access your MongoDB Database through MongoDB For VS Code Extension.
+
+
+## Adding MongoDB to Favourite:
+1. **Remove all the file handling** related code from **Favourite model**
+
+2. Delete the data folder.
+
+3. Change the following methods in Favourite model to use mongo:
+    * fetchAll
+    * Change addToFavourites to save method.
+    * deleteById
+
+4. Change the usages of Favourite model in storeController to use the promise syntax.
+    * getFavourites
+    * postAddFavourites
+    * postRemoveFavourites
