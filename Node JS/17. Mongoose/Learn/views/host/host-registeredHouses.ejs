@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title>Registered Houses</title>
+    <link rel="stylesheet" href="/output.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <%- include('../partials/navbar.ejs') %>
+
+    <!-- Main body -->
+    <section class="text-center py-20 bg-white">
+      <div class="max-w-2xl mx-auto px-4">
+        <h2 class="text-red-500 text-2xl md:text-5xl font-bold mb-7">
+          🏠 Host Houses List
+        </h2>
+
+        <!-- Houses names and city code -->
+        <!-- Houses Listing -->
+        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 mt-8 max-w-7xl mx-auto px-4">
+          <% registeredHouses.forEach(house => { %>
+          <li class="bg-white border border-gray-200 rounded-xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden w-full">
+            <!-- House Photo -->
+            <img
+              src="<%= house.imageURL %>"
+              alt="<%= house.name %>"
+              class="w-full h-56 object-cover"
+            />
+
+            <!-- House Info -->
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-gray-800 truncate">
+                <%= house.name %>
+              </h3>
+              <p class="text-sm text-gray-500">📍 <%= house.location %></p>
+
+              <!-- Action Buttons -->
+              <div class="mt-4 flex flex-wrap gap-2">
+                <a href="/host/edit-house/<%= house._id%>?edit=true">
+                  <button
+                    class="text-white bg-blue-500 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                  >
+                    Edit
+                  </button>
+                </a>
+                <form method="POST" action="/host/delete-house/<%= house._id %>">
+                  <button
+                    type="submit"
+                    class="focus:outline-none text-white bg-red-500 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+                  >
+                    Delete
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Price Footer -->
+            <div
+              class="bg-red-500 text-white text-base font-semibold text-center py-2"
+            >
+              ₹<%= house.price %> / day
+            </div>
+          </li>
+          <% }) %>
+        </ul>
+
+        <a
+          href="/"
+          class="inline-block bg-red-500 text-white px-6 py-3 mt-10 rounded-md text-lg font-medium hover:bg-red-600 transition duration-300"
+        >
+          Go Home
+        </a>
+      </div>
+    </section>
+  </body>
+</html>
