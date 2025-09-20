@@ -11,3 +11,19 @@
 5. **Supports middleware** for pre and post-processing of data.
 6. Helps to **manage relationships between data with built-in functions**.
 
+
+## Setting up Mongoose
+
+1. Install Mongoose package
+```bash
+npm install mongoose
+```
+
+2. Mongoose connect:
+```js
+//import mongoose
+const { default: mongoose } = require('mongoose');
+
+//
+mongoose.connect('<db_connect_string/<db_name>>')
+```

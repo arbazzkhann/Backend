@@ -12,6 +12,9 @@ const { pageNotFount } = require('./controllers/errors.js');
 //Database
 const { mongoConnect } = require('./utils/databaseUtils.js');
 
+//Mongoose  
+const { default: mongoose } = require('mongoose');
+
 //MySQL
 // db.execute('SELECT * FROM houses')
 // .then(([rows, fields]) => {
@@ -30,6 +33,7 @@ app.set('view engine', 'ejs');
 //static files intigration
 // app.use(express.static(abosolutePath));
 const path = require("path");
+
 app.use(express.static(path.join(__dirname, "public")));
 
 //for req.body
@@ -47,9 +51,18 @@ app.use(pageNotFount);
 //server connect
 const PORT = 3000;
 
-//MongoClient
-mongoConnect(() => {
+
+//database path string
+const DB_PATH = "mongodb+srv://arbazfanda3:root@arbazkhan.nmsxldo.mongodb.net/?retryWrites=true&w=majority&appName=ArbazKhan/mywebsite";
+
+//db connect with mongoose
+mongoose.connect(DB_PATH)
+.then(() => {
+    console.log(`Connected to MongoDB`);
     app.listen(PORT, () => {
         console.log(`Your server is running on http://localhost:${PORT}`);
     });
-});
+})
+.catch(err => {
+    console.log("Error while connecting to MongoDB: ", err);
+})
