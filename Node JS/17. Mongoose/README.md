@@ -57,3 +57,5 @@ Example:
 ```js
 module.exports = mongoose.model("House", schema);
 ```
+
+## Mongoose Default functions:

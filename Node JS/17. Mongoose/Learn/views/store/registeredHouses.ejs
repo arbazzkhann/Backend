@@ -23,7 +23,7 @@
               <!-- House Photo -->
               <a href="/house/<%=house._id%>">
               <img 
-                src="<%= house.imageURL %>" 
+                src="<%= house.houseImageURL %>" 
                 alt="<%= house.houseName %>" 
                 class="w-full h-56 object-cover"
               />
@@ -32,13 +32,13 @@
               <%- include('../partials/favourite-button.ejs', {house: house})%>
 
               <div class="p-4 mt-0 pt-0">
-                <h3 class="text-lg font-semibold text-gray-800 truncate"><%= house.name %></h3></a>
-                <p class="text-sm text-gray-500">📍 <%= house.location %></p>
+                <h3 class="text-lg font-semibold text-gray-800 truncate"><%= house.houseName %></h3></a>
+                <p class="text-sm text-gray-500">📍 <%= house.houseLocation %></p>
               </div>
 
               <!-- Price Footer -->
               <div class="bg-red-500 text-white text-base font-semibold text-center py-2">
-                ₹<%= house.price %> / day
+                ₹<%= house.housePrice %> / day
               </div>
 
             </li>

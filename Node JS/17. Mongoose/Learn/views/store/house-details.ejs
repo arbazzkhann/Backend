@@ -17,13 +17,13 @@
         <!-- Card -->
         <div class="max-w-md w-full bg-white shadow-lg rounded-2xl overflow-hidden border border-red-500">
             <!-- House Image -->
-            <img src="<%= house.imageURL %>" alt="House Image" class="w-full h-64 object-cover" />
+            <img src="<%= house.houseImageURL %>" alt="House Image" class="w-full h-64 object-cover" />
 
             <%- include('../partials/favourite-button.ejs')%>
 
             <!-- Content -->
             <div class="p-6 mt-0 pt-0">
-                <h1 class="text-2xl font-bold text-red-600 mb-4"><%= house.name %></h1>
+                <h1 class="text-2xl font-bold text-red-600 mb-4"><%= house.houseName %></h1>
 
                 <!-- House ID -->
                 <p class="text-gray-700 mb-2">
@@ -34,17 +34,23 @@
                 <!-- Location -->
                 <p class="text-gray-700 mb-2">
                     <span class="font-semibold text-red-600">Location:</span>
-                    <%= house.location %>
+                    <%= house.houseLocation %>
                 </p>
-
+                
                 <!-- Price -->
                 <p class="flex justify-between items-center text-gray-700 mb-2">
                     <span>
-                        <span class="font-semibold text-red-600">Price:</span> <%= house.price %>/-
+                        <span class="font-semibold text-red-600">Price:</span> <%= house.housePrice %>/-
                     </span>
                 </p>
 
-
+                <!-- Description -->
+                <p class="text-gray-700 mb-2">
+                    <span class="font-semibold text-red-600">Description:</span>
+                    <%= house.houseDescription %>
+                </p>
+                
+                
 
                 
 

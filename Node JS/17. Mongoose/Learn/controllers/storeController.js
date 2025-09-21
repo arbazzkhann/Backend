@@ -9,7 +9,7 @@ exports.homeGET = (req, res, next) => {
 
 exports.registeredHouses = (req, res, next) => {
     House.find().then(registeredHouses => {
-        console.log(registeredHouses);
+        console.log("registered Houses: ", registeredHouses);
         res.render('store/registeredHouses.ejs', {
             registeredHouses, 
             req, 

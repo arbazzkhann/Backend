@@ -55,18 +55,22 @@ exports.editHousePOST = (req, res, next) => {
     const { houseId, houseName, housePrice, houseLocation, houseImageURL, houseDescription } = req.body;
     console.log(req.body);
 
-    const house = new House(
-        houseId,
-        houseName, 
-        housePrice, 
-        houseLocation, 
-        houseImageURL, 
-        houseDescription
-    );
+    House.findById(houseId).then(house => {
+        house.houseName = houseName;
+        house.housePrice = housePrice;
+        house.houseLocation = houseLocation;
+        house.houseImageURL = houseImageURL;
+        house.houseDescription = houseDescription;
 
-    house.save()
-    .then(() => res.redirect('/host-registered-houses'))
-    .catch(err => console.log("Error while saving: ", err)) 
+        house.save().then(result => {
+            console.log("House updated: ", result);
+        }).catch(err => {
+            console.log("Error while updating house: ", err);
+        })
+        res.redirect("/host-registered-houses");
+    }).catch(err => {
+        console.log("House id not found: ", err);
+    });
 }
 
 exports.deleteHousePOST = (req, res, next) => {
