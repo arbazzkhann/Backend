@@ -85,7 +85,7 @@ exports.addToFavouritePOST = (req, res, next) => {
 exports.removeFromFavouritePOST = (req, res, next) => {
     console.log("Came to remove from Favourite", req.body);
     const houseId = req.body.houseId;
-    Favourite.removeFromFavourite(houseId)
+    Favourite.findOneAndDelete(houseId)
     .then(result => {
         console.log("Removed from favourites: ", result);
     }).catch(err => {
