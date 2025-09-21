@@ -16,14 +16,14 @@ exports.addHousePOST = (req, res, next) => {
     //destructuting
     const { houseName, housePrice, houseLocation, houseImageURL, houseDescription } = req.body;
 
-    const house = new House(null, houseName, housePrice, houseLocation, houseImageURL, houseDescription);
+    const house = new House({houseName, housePrice, houseLocation, houseImageURL, houseDescription});
     house.save()
     .then(() => res.redirect('/host-registered-houses'))
     .catch(err =>  console.log("Error while adding: ", err))
 }
 
 exports.hostRegisteredHouses = (req, res, next) => {
-    House.fetchAll().then(registeredHouses => {
+    House.find().then(registeredHouses => {
         res.render('host/host-registeredHouses.ejs', {
             registeredHouses, 
             req,

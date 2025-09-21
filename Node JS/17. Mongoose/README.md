@@ -27,3 +27,33 @@ const { default: mongoose } = require('mongoose');
 //
 mongoose.connect('<db_connect_string/<db_name>>')
 ```
+
+3. Mongoose Schema:
+```js
+const schema = mongoose.Schema({
+    key: "value",
+    key2: "value2",
+    ...
+});
+```
+
+Example:
+```js
+const schema = mongoose.Schema({
+    houseName: {type: String, required: true},
+    price: {type: Number, required: true},
+    location: {type: String, required: true},
+    imageURL: String,
+    description: String,
+});
+```
+
+4. Exports as model:
+```js
+module.exports = mongoose.model("<model_name>", "<schema>");
+```
+
+Example:
+```js
+module.exports = mongoose.model("House", schema);
+```

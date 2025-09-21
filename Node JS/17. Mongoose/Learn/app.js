@@ -9,9 +9,6 @@ const hostRouter = require('./Routers/host-routers/hostRouter.js');
 //errors
 const { pageNotFount } = require('./controllers/errors.js');
 
-//Database
-const { mongoConnect } = require('./utils/databaseUtils.js');
-
 //Mongoose  
 const { default: mongoose } = require('mongoose');
 
@@ -53,7 +50,7 @@ const PORT = 3000;
 
 
 //database path string
-const DB_PATH = "mongodb+srv://arbazfanda3:root@arbazkhan.nmsxldo.mongodb.net/?retryWrites=true&w=majority&appName=ArbazKhan/mywebsite";
+const DB_PATH = "mongodb+srv://arbazfanda3:root@arbazkhan.nmsxldo.mongodb.net/mywebsite?retryWrites=true&w=majority&appName=ArbazKhan";
 
 //db connect with mongoose
 mongoose.connect(DB_PATH)
@@ -65,4 +62,4 @@ mongoose.connect(DB_PATH)
 })
 .catch(err => {
     console.log("Error while connecting to MongoDB: ", err);
-})
+});
