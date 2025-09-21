@@ -78,7 +78,7 @@ exports.deleteHousePOST = (req, res, next) => {
     console.log("Came for delete by id!", houseId);
 
     //delete house by id
-    House.deleteById(houseId)
+    House.findByIdAndDelete(houseId)
     .then()
     .catch(err => {
         console.log("Error while deleting: ", err);
