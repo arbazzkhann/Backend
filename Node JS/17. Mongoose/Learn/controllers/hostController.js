@@ -84,16 +84,7 @@ exports.deleteHousePOST = (req, res, next) => {
         console.log("Error while deleting: ", err);
     }) 
 
-    //removing from favourites
-    Favourite.removeFromFavourite(req.body.houseId, (err) => {
-        if (err && err.startsWith("Error")) {
-            console.log("Error occurred while removing from favourite:", err);
-        } else {
-            console.log(err); // "House removed from favourites." OR "This House is not in favourites."
-        }
-    });
-
     //redirecting to host-registered-houses
     res.redirect('/host-registered-houses');
 
-}
+}   
