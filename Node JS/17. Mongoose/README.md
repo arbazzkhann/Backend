@@ -14,12 +14,12 @@
 
 ## Setting up Mongoose
 
-1. Install Mongoose package
+### 1. Install Mongoose package
 ```bash
 npm install mongoose
 ```
 
-2. Mongoose connect:
+### 2. Mongoose connect:
 ```js
 //import mongoose
 const { default: mongoose } = require('mongoose');
@@ -28,7 +28,7 @@ const { default: mongoose } = require('mongoose');
 mongoose.connect('<db_connect_string/<db_name>>')
 ```
 
-3. Mongoose Schema:
+### 3. Mongoose Schema:
 ```js
 const schema = mongoose.Schema({
     key: "value",
@@ -48,7 +48,7 @@ const schema = mongoose.Schema({
 });
 ```
 
-4. Exports as model:
+### 4. Exports as model:
 ```js
 module.exports = mongoose.model("<model_name>", "<schema>");
 ```
@@ -59,3 +59,8 @@ module.exports = mongoose.model("House", schema);
 ```
 
 ## Mongoose Default functions:
+
+1. find()
+2. findById()
+3. findByIdAndDelete()
+4. findOneAndDelete()
