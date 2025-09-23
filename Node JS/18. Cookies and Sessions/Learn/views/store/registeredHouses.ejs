@@ -5,7 +5,7 @@
   </head>
   <body>
     <!-- Navbar -->
-    <%- include('../partials/navbar.ejs') %>
+    <%- include('../partials/navbar.ejs', {activePath}) %>
 
     <!-- Main body -->
     <section class="text-center py-20 bg-white">
@@ -23,7 +23,7 @@
               <!-- House Photo -->
               <a href="/house/<%=house._id%>">
               <img 
-                src="<%= house.houseImageURL %>" 
+                src="<%= house.houseImageURL %>"
                 alt="<%= house.houseName %>" 
                 class="w-full h-56 object-cover"
               />
