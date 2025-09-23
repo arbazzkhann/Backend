@@ -6,6 +6,8 @@ const storeRouter = require('./Routers/user-routers/storeRouter.js');
 
 const hostRouter = require('./Routers/host-routers/hostRouter.js');
 
+const authRouter = require('./Routers/auth-routers/authRouter.js');
+
 //errors
 const { pageNotFount } = require('./controllers/errors.js');
 
@@ -36,7 +38,10 @@ app.use(express.static(path.join(__dirname, "public")));
 //for req.body
 app.use(express.urlencoded());
 
-// handlig store routers
+// handling auth router
+app.use(authRouter);
+
+// handling store routers
 app.use(storeRouter);
 
 // handling host routers
