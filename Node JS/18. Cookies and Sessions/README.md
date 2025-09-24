@@ -25,3 +25,13 @@
 
 5. ***Assume the person logged-in*** and ***redirect them to the home page***.
 
+
+## Checking Login State:
+
+1. Add a **isLoggedIn** field in the **req** object and use it everywhere.
+
+2. **Add a condition** in the **navigation ejs** file that no path other then **home and login** should be visible until a user has logged-in.
+
+3. **Fix** all the **render calls** to send the flag.
+
+4. Also add a **middleware for host routes** that if the user is **not logged** in they should be **redirected to the login page**.
