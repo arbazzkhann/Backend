@@ -4,7 +4,11 @@ const House = require('../models/house');
 
 exports.homeGET = (req, res, next) => {
     console.log(`Handling / for get, request method is ${req.method}`);
-    res.render("home.ejs", {req, activePath: '/'});
+    res.render("home.ejs", {
+        req, 
+        activePath: '/',
+        isLoggedIn: req.isLoggedIn
+    });
 }
 
 exports.registeredHouses = (req, res, next) => {
@@ -13,7 +17,8 @@ exports.registeredHouses = (req, res, next) => {
         res.render('store/registeredHouses.ejs', {
             registeredHouses, 
             req, 
-            activePath: '/registered-houses'
+            activePath: '/registered-houses',
+            isLoggedIn: req.isLoggedIn
         });
     })
     .catch(err => {
@@ -22,7 +27,12 @@ exports.registeredHouses = (req, res, next) => {
 }
 
 exports.BookingsGET = (req, res, next) => {
-    res.render('store/bookings.ejs', {registeredHouses, req, activePath: '/bookings'});
+    res.render('store/bookings.ejs', {
+        registeredHouses, 
+        req, 
+        activePath: '/bookings',
+        isLoggedIn: req.isLoggedIn
+    });
 }
 
 exports.FavouriteListGET = (req, res) => {
@@ -33,19 +43,32 @@ exports.FavouriteListGET = (req, res) => {
             const favouriteHouses = registeredHouses.filter(house =>
                 favourites.includes(String(house._id))
             );
-            res.render("store/favourite-list.ejs", {favouriteHouses, req, activePath: '/favourite-list'});
+            res.render("store/favourite-list.ejs", {
+                favouriteHouses, 
+                req, 
+                activePath: '/favourite-list',
+                isLoggedIn: req.isLoggedIn
+            });
         });
     });
 }
 
 exports.contactUsGET = (req, res, next) => {
-    res.render('store/contact-us-get.ejs', {req, activePath: '/contact-us'});
+    res.render('store/contact-us-get.ejs', {
+        req, 
+        activePath: '/contact-us',
+        isLoggedIn: req.isLoggedIn
+    });
 }
 
 exports.contactUsPOST = (req, res, next) => {
     console.log(req.body);
     console.log(`Handling contact-us on POST request, url: ${req.url} and method: ${req.method}`);
-    res.render('store/contact-us-post.ejs', {req, activePath: '/contact-us'});
+    res.render('store/contact-us-post.ejs', {
+        req, 
+        activePath: '/contact-us',
+        isLoggedIn: req.isLoggedIn
+    });
 }
 
 exports.houseDetails = (req, res, next) => {
@@ -57,7 +80,13 @@ exports.houseDetails = (req, res, next) => {
         }
         else {
             console.log("House details found", house);
-            res.render('store/house-details.ejs', {req, houseId, activePath: '/house-details', house: house});
+            res.render('store/house-details.ejs', {
+                req, 
+                houseId, 
+                activePath: '/house-details',
+                house: house,
+                isLoggedIn: req.isLoggedIn
+            });
         }
     });
 }

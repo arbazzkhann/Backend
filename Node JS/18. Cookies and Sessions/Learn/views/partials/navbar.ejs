@@ -17,77 +17,79 @@
                 <% } %>
             </a>          
         </li>
-        <li>
-            <a href="/contact-us" class="relative text-white group">
-                Contact Us
-                <% if (activePath === "/contact-us") { %>
-                    <!-- Active tab: underline is full, shrinks on hover out -->
-                    <span class="absolute left-0 bottom-0 w-full h-0.5 bg-white transition-all duration-300 group-hover:w-0"></span>
-                    <% } else { %>
-                    <!-- Inactive tab: underline grows on hover -->
-                    <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-                <% } %>
-            </a>
-        </li>
-        <li>
-            <a href="/bookings" class="relative text-white group">
-                Bookings
-                <% if (activePath === "/bookings") { %>
-                    <!-- Active tab: underline is full, shrinks on hover out -->
-                    <span class="absolute left-0 bottom-0 w-full h-0.5 bg-white transition-all duration-300 group-hover:w-0"></span>
-                    <% } else { %>
-                    <!-- Inactive tab: underline grows on hover -->
-                    <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-                <% } %>
-            </a>
-        </li>
-        <li>
-            <a href="/favourite-list" class="relative text-white group">
-                Favourite
-                                <% if (activePath === "/favourite-list") { %>
-                    <!-- Active tab: underline is full, shrinks on hover out -->
-                    <span class="absolute left-0 bottom-0 w-full h-0.5 bg-white transition-all duration-300 group-hover:w-0"></span>
-                    <% } else { %>
-                    <!-- Inactive tab: underline grows on hover -->
-                    <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-                <% } %>
-            </a>
-        </li>
-        <li>
-            <a href="/registered-houses" class="relative text-white group"> 
-                Registered Houses 
-                <% if (activePath === "/registered-houses") { %>
-                    <!-- Active tab: underline is full, shrinks on hover out -->
-                    <span class="absolute left-0 bottom-0 w-full h-0.5 bg-white transition-all duration-300 group-hover:w-0"></span>
-                    <% } else { %>
-                    <!-- Inactive tab: underline grows on hover -->
-                    <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-                <% } %>
-            </a> 
-        </li>
-        <li>
-            <a href="/host-registered-houses" class="relative text-white group"> 
-                Host Houses 
-                <% if (activePath === "/host-registered-houses") { %>
-                    <!-- Active tab: underline is full, shrinks on hover out -->
-                    <span class="absolute left-0 bottom-0 w-full h-0.5 bg-white transition-all duration-300 group-hover:w-0"></span>
-                    <% } else { %>
-                    <!-- Inactive tab: underline grows on hover -->
-                    <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-                <% } %>
-            </a> 
-        </li>
+
             <li>
-            <a href="/login" class="relative text-white group"> 
-                Login 
-                <% if (activePath === "/login") { %>
-                    <!-- Active tab: underline is full, shrinks on hover out -->
-                    <span class="absolute left-0 bottom-0 w-full h-0.5 bg-white transition-all duration-300 group-hover:w-0"></span>
-                    <% } else { %>
-                    <!-- Inactive tab: underline grows on hover -->
-                    <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-                <% } %>
-            </a> 
-        </li>
+                <a href="/contact-us" class="relative text-white group">
+                    Contact Us
+                    <% if (activePath === "/contact-us") { %>
+                        <!-- Active tab: underline is full, shrinks on hover out -->
+                        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-white transition-all duration-300 group-hover:w-0"></span>
+                        <% } else { %>
+                        <!-- Inactive tab: underline grows on hover -->
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                    <% } %>
+                </a>
+            </li>
+            <li>
+                <a href="/bookings" class="relative text-white group">
+                    Bookings
+                    <% if (activePath === "/bookings") { %>
+                        <!-- Active tab: underline is full, shrinks on hover out -->
+                        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-white transition-all duration-300 group-hover:w-0"></span>
+                        <% } else { %>
+                        <!-- Inactive tab: underline grows on hover -->
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                    <% } %>
+                </a>
+            </li>
+            <li>
+                <a href="/favourite-list" class="relative text-white group">
+                    Favourite
+                                    <% if (activePath === "/favourite-list") { %>
+                        <!-- Active tab: underline is full, shrinks on hover out -->
+                        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-white transition-all duration-300 group-hover:w-0"></span>
+                        <% } else { %>
+                        <!-- Inactive tab: underline grows on hover -->
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                    <% } %>
+                </a>
+            </li>
+            <li>
+                <a href="/registered-houses" class="relative text-white group"> 
+                    Registered Houses 
+                    <% if (activePath === "/registered-houses") { %>
+                        <!-- Active tab: underline is full, shrinks on hover out -->
+                        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-white transition-all duration-300 group-hover:w-0"></span>
+                        <% } else { %>
+                        <!-- Inactive tab: underline grows on hover -->
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                    <% } %>
+                </a> 
+            </li>
+            <li>
+                <a href="/host/registered-houses" class="relative text-white group"> 
+                    Host Houses 
+                    <% if (activePath === "/host-registered-houses") { %>
+                        <!-- Active tab: underline is full, shrinks on hover out -->
+                        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-white transition-all duration-300 group-hover:w-0"></span>
+                        <% } else { %>
+                        <!-- Inactive tab: underline grows on hover -->
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                    <% } %>
+                </a> 
+            </li>
+
+            <li>
+                <a href="/login" class="relative text-white group"> 
+                    Login 
+                    <% if (activePath === "/login") { %>
+                        <!-- Active tab: underline is full, shrinks on hover out -->
+                        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-white transition-all duration-300 group-hover:w-0"></span>
+                        <% } else { %>
+                        <!-- Inactive tab: underline grows on hover -->
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                    <% } %>
+                </a> 
+            </li>
     </ul>
 </nav>

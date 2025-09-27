@@ -7,7 +7,8 @@ exports.addHouseGET = (req, res, next) => {
     res.render("host/edit-house.ejs", {
         req, 
         activePath: '/add-house',
-        editing: false
+        editing: false,
+        isLoggedIn: req.isLoggedIn
     });
 }
 
@@ -18,7 +19,7 @@ exports.addHousePOST = (req, res, next) => {
 
     const house = new House({houseName, housePrice, houseLocation, houseImageURL, houseDescription});
     house.save()
-    .then(() => res.redirect('/host-registered-houses'))
+    .then(() => res.redirect('/host/registered-houses'))
     .catch(err =>  console.log("Error while adding: ", err))
 }
 
@@ -27,7 +28,8 @@ exports.hostRegisteredHouses = (req, res, next) => {
         res.render('host/host-registeredHouses.ejs', {
             registeredHouses, 
             req,
-            activePath: '/host-registered-houses'
+            activePath: '/host-registered-houses',
+            isLoggedIn: req.isLoggedIn
         });
     });
 }
@@ -46,7 +48,8 @@ exports.editHouseGET = (req, res, next) => {
             req, 
             activePath: '/add-house',
             house,
-            editing
+            editing,
+            isLoggedIn: req.isLoggedIn
         });
     })
 }
@@ -67,7 +70,7 @@ exports.editHousePOST = (req, res, next) => {
         }).catch(err => {
             console.log("Error while updating house: ", err);
         })
-        res.redirect("/host-registered-houses");
+        res.redirect("/host/registered-houses");
     }).catch(err => {
         console.log("House id not found: ", err);
     });
@@ -85,6 +88,5 @@ exports.deleteHousePOST = (req, res, next) => {
     }) 
 
     //redirecting to host-registered-houses
-    res.redirect('/host-registered-houses');
-
+    res.redirect('/host/registered-houses');
 }   

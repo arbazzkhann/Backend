@@ -16,11 +16,11 @@ const {
 const hostRouter = express.Router();
 
 //add-house routers
-hostRouter.get('/add-house', addHouseGET);
-hostRouter.post('/add-house', addHousePOST);
+hostRouter.get('/host/add-house', addHouseGET);
+hostRouter.post('/host/add-house', addHousePOST);
 
 //host registered houses router
-hostRouter.get('/host-registered-houses', hostRegisteredHouses);
+hostRouter.get('/host/registered-houses', hostRegisteredHouses);
 
 //edit house routers
 hostRouter.get('/host/edit-house/:houseId', editHouseGET);
