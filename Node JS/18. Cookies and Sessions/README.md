@@ -79,3 +79,16 @@ app.use((req, res, next) => {
 2. **Hide the login button** in case **user is loggedIn**.
 
 3. Handle the **logout path** and set the **isLoggedIn cookie to false**.
+
+
+## Problem with Cookies?
+
+1. Cookies can be **intercepted** or **stolen**, posting **security risks**.
+
+2. They have **limited storage capacity** (***about 4KB***).
+
+3. Users can **delete** or **modify** cookies, leading to **data loss** or **tampering**.
+
+4. Data in cookies is **not encrypted**, making **sensitive information vulnerable**.
+
+5. Storing important information in cookies exposes it to **client-side attacks**.
