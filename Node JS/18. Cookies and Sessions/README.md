@@ -35,3 +35,38 @@
 3. **Fix** all the **render calls** to send the flag.
 
 4. Also add a **middleware for host routes** that if the user is **not logged** in they should be **redirected to the login page**.
+
+
+## Using a Cookie:
+
+1. Understand why a **global variable** would **not work**.
+
+2. Set a **cookie on successful login**. See it in storage, also on the next request.
+
+3. Read the cookie using syntax and Define a middleware to set this value to the request object.
+
+```js
+console.log(req.get("Cookie").split("=")[1]);
+```
+
+4. **Change the cookie from the browser** and see the result.
+
+
+## How to use Cookie:
+
+### Setting Cookie:
+```js
+const postLogin = (req, res, next) => {
+    res.cookie("isLoggedIn", "true");   //setting cookie
+    res.redirect('/');  //redirect to home
+}
+```
+
+### Using Cookie:
+```js
+app.use((req, res, next) => {
+    console.log("Cookie check middlware.", req.get('Cookie'));
+    req.isLoggedIn = req.get('Cookie')?.split('=')[1] || false;
+    next();  //next middleware
+});
+```

@@ -38,6 +38,28 @@ app.use(express.static(path.join(__dirname, "public")));
 //for req.body
 app.use(express.urlencoded());
 
+//checking user isLoggedIn or not
+app.use((req, res, next) => {
+    console.log("Cookie check middlware.", req.get('Cookie'));
+    req.isLoggedIn = req.get('Cookie') ? req.get("Cookie").split("=")[1] === "true" : false;
+    next();  //next middleware
+});
+
+
+//authentication middleware
+app.use('/host', (req, res, next) => {
+    console.log("isLoggedIn:", req.isLoggedIn)
+    if(req.isLoggedIn){
+        next();
+    }
+    else {
+        res.redirect('/login');
+    }
+});
+
+
+
+
 // handling auth router
 app.use(authRouter);
 
