@@ -70,3 +70,12 @@ app.use((req, res, next) => {
     next();  //next middleware
 });
 ```
+
+
+## Define the Logout Feature:
+
+1. Define a **logout button** in **nav bar** that should come only **when user is loggedIn**. Button should be a form that submits to link **/logout**.
+
+2. **Hide the login button** in case **user is loggedIn**.
+
+3. Handle the **logout path** and set the **isLoggedIn cookie to false**.

@@ -11,3 +11,10 @@ exports.getLoginPOST = (req, res, next) => {
     res.cookie("isLoggedIn", "true");
     res.redirect('/');
 }
+
+exports.logoutPOST = (req, res, next) => {
+    res.clearCookie("isLoggedIn");  //clear cookie
+    // res.cookie("isLoggedIn", false);   //setting isLoggedIn-cookie as false
+    console.log("Now, you are logged out.");
+    res.redirect('/');
+}
