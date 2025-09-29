@@ -87,8 +87,19 @@ app.use((req, res, next) => {
 
 2. They have **limited storage capacity** (***about 4KB***).
 
-3. Users can **delete** or **modify** cookies, leading to **data loss** or **tampering**.
+3. Users can **delete** or **modify** cookies, leading to **data loss** or **tampering**. (*Tempering means unwanted modifying*)
 
 4. Data in cookies is **not encrypted**, making **sensitive information vulnerable**.
 
 5. Storing important information in cookies exposes it to **client-side attacks**.
+
+
+## What are Sessions?
+
+<img src="session.png" height="330px"/>
+
+1. Sessions are **server-side storage mechanisms** that track user interactions with a website.
+
+2. They **maintain user state** and **data across multiple requests** in a web applications.
+
+3. Sessions enable **persistent user experiences** by **maintaining state between the client and server** ***over stateless HTTP***.
