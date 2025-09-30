@@ -103,3 +103,39 @@ app.use((req, res, next) => {
 2. They **maintain user state** and **data across multiple requests** in a web applications.
 
 3. Sessions enable **persistent user experiences** by **maintaining state between the client and server** ***over stateless HTTP***.
+
+
+## Sessions:
+
+### Install Express Session Package:
+```bash
+npm install express-session
+```
+
+### Session Example:
+```js
+const session = require("express-session");
+
+app.use(session({
+    secret: "Arbaz Khan Secret",
+    resave: false,
+    saveUninitialized: true
+}));
+```
+
+
+## Creating Session for Project:
+
+1. **Sensitive info** is **stored on server**.
+
+2. Same **session is valid for all requests from one user**, **using cookies**.
+
+3. **Remove setting the cookie** and now **save the flag in session**.
+
+4. **Check the browser** for **cookie changes**.
+
+5. **Log Session** in some **get request**.
+
+6. **Try to use** a **different browser** and show that **session is different**.
+
+7. Session are **stored in memory** so they **reset when server restarts**.
