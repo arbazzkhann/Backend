@@ -117,8 +117,11 @@ npm install express-session
 const session = require("express-session");
 
 app.use(session({
+    //"secret" key used to sign the session ID cookie and encrypt session data
     secret: "Arbaz Khan Secret",
+    //Forces session to be "saved back" to the session store, even if not modified
     resave: false,
+    //Forces a session that is "uninitialized" to be saved to the store
     saveUninitialized: true
 }));
 ```
