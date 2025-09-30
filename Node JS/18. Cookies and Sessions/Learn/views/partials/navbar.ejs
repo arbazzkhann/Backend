@@ -93,11 +93,15 @@
                 </a> 
             </li>
         <% } else { %>
-            <form action="/logout" method="post">
-                <button type="submit" class="relative text-white group">
-                    logout
-                </button>
-            </form>
+            <li>
+                <form action="/logout" method="post">
+                    <button type="submit" 
+                        class="relative text-white group">
+                        logout
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                    </button>
+                </form>
+            </li>
         <% } %>
     </ul>
 </nav>

@@ -1,6 +1,14 @@
 //external modules
 const express = require('express');
+
+//session 
 const session = require('express-session');
+const MongoDBStore = require("connect-mongodb-session")(session);
+
+//DB path String
+const DB_PATH = "mongodb+srv://arbazfanda3:root@arbazkhan.nmsxldo.mongodb.net/mywebsite?retryWrites=true&w=majority&appName=ArbazKhan";
+
+
 
 //local modules
 const storeRouter = require('./Routers/user-routers/storeRouter.js');
@@ -46,11 +54,17 @@ app.use((req, res, next) => {
     next();
 });
 
+const store = new MongoDBStore({
+    uri: DB_PATH,
+    collection: "sessions"
+})
+
 //session
 app.use(session({
     secret: "Arbaz Khan Secret",
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    store
 }));
 
 //checking user isLoggedIn or not
@@ -89,9 +103,6 @@ app.use(pageNotFount);
 //server connect
 const PORT = 3000;
 
-
-//database path string
-const DB_PATH = "mongodb+srv://arbazfanda3:root@arbazkhan.nmsxldo.mongodb.net/mywebsite?retryWrites=true&w=majority&appName=ArbazKhan";
 
 //db connect with mongoose
 mongoose.connect(DB_PATH)

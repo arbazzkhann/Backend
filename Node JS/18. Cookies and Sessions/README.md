@@ -142,3 +142,32 @@ app.use(session({
 6. **Try to use** a **different browser** and show that **session is different**.
 
 7. Session are **stored in memory** so they **reset when server restarts**.
+
+
+## Saving Session in Database:
+
+1. Install mongodb-session:
+```bash
+npm install connect-mongodb-session
+```
+
+2. Configure:
+```js
+const session = require("express-session");  //session require
+
+const MongoDBStore = require("connect-mongodb-session")(session);
+
+//creating store
+const store = new MongoDBStore({
+    uri: DB_PATH,
+    collection: "sessions"
+})
+
+//session
+app.use(session({
+    secret: "Arbaz Khan Secret",
+    resave: false,
+    saveUninitialized: true,
+    store: store //now all sessions is save into "store"
+}));
+```
