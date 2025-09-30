@@ -171,3 +171,13 @@ app.use(session({
     store: store //now all sessions is save into "store"
 }));
 ```
+
+
+## Prectice:
+
+Taking our project forward:
+* **Cleanup cookie code** to **use session** everywhere.
+* **Remove the cookie middleware**.
+* **Destroy the session on logout**.
+* **Cleanup Logs**.
+* *Understand why leaving the cookie* on logout is fine.
