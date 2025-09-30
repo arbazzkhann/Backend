@@ -1,3 +1,5 @@
+const session = require('express-session');
+
 //addHousesGET middleware
 exports.getLogin = (req, res, next) => {
     res.render('auth/login.ejs', {
@@ -8,7 +10,8 @@ exports.getLogin = (req, res, next) => {
 
 exports.getLoginPOST = (req, res, next) => {
     console.log(req.body);
-    res.cookie("isLoggedIn", "true");
+    // res.cookie("isLoggedIn", "true");  //cookie
+    req.session.isLoggedIn = true;  //session
     res.redirect('/');
 }
 

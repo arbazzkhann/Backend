@@ -1,5 +1,6 @@
 //external modules
 const express = require('express');
+const session = require('express-session');
 
 //local modules
 const storeRouter = require('./Routers/user-routers/storeRouter.js');
@@ -13,6 +14,7 @@ const { pageNotFount } = require('./controllers/errors.js');
 
 //Mongoose  
 const { default: mongoose } = require('mongoose');
+
 
 //MySQL
 // db.execute('SELECT * FROM houses')
@@ -38,10 +40,23 @@ app.use(express.static(path.join(__dirname, "public")));
 //for req.body
 app.use(express.urlencoded());
 
+//middleware for "URL" and "request method"
+app.use((req, res, next) => {
+    console.log(`Current URL: ${req.url} and method: ${req.method}`);
+    next();
+});
+
+//session
+app.use(session({
+    secret: "Arbaz Khan Secret",
+    resave: false,
+    saveUninitialized: true
+}));
+
 //checking user isLoggedIn or not
 app.use((req, res, next) => {
-    console.log("Cookie check middlware.", req.get('Cookie'));
-    req.isLoggedIn = req.get('Cookie') ? req.get("Cookie").split("=")[1] === "true" : false;
+    // req.isLoggedIn = req.get('Cookie') ? req.get("Cookie").split("=")[1] === "true" : false;  //for cookie
+    req.isLoggedIn = req.session.isLoggedIn;
     next();  //next middleware
 });
 
@@ -56,7 +71,6 @@ app.use('/host', (req, res, next) => {
         res.redirect('/login');
     }
 });
-
 
 
 

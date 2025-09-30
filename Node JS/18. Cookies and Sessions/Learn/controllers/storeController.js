@@ -3,7 +3,7 @@ const Favourite = require('../models/favourite');
 const House = require('../models/house');
 
 exports.homeGET = (req, res, next) => {
-    console.log(`Handling / for get, request method is ${req.method}`);
+    console.log("Session value: ", req.session.isLoggedIn);
     res.render("home.ejs", {
         req, 
         activePath: '/',
