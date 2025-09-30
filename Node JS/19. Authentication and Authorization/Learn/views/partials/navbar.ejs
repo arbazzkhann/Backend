@@ -1,0 +1,107 @@
+<!-- Navbar -->
+<nav class="bg-red-500 shadow-md px-6 py-4 flex items-center justify-between">
+    <div class="text-2xl font-bold text-white">
+        <a href="/">ARBAZ</a>
+    </div>
+
+    <ul class="hidden md:flex space-x-6 font-medium">
+        <li>
+            <a href="/" class="relative text-white group">
+                Home
+                <% if (activePath === "/") { %>
+                    <!-- Active tab: underline is full, shrinks on hover out -->
+                    <span class="absolute left-0 bottom-0 w-full h-0.5 bg-white transition-all duration-300 group-hover:w-0"></span>
+                    <% } else { %>
+                    <!-- Inactive tab: underline grows on hover -->
+                    <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                <% } %>
+            </a>          
+        </li>
+        <% if(isLoggedIn) { %>
+            <li>
+                <a href="/contact-us" class="relative text-white group">
+                    Contact Us
+                    <% if (activePath === "/contact-us") { %>
+                        <!-- Active tab: underline is full, shrinks on hover out -->
+                        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-white transition-all duration-300 group-hover:w-0"></span>
+                        <% } else { %>
+                        <!-- Inactive tab: underline grows on hover -->
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                    <% } %>
+                </a>
+            </li>
+            <li>
+                <a href="/bookings" class="relative text-white group">
+                    Bookings
+                    <% if (activePath === "/bookings") { %>
+                        <!-- Active tab: underline is full, shrinks on hover out -->
+                        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-white transition-all duration-300 group-hover:w-0"></span>
+                        <% } else { %>
+                        <!-- Inactive tab: underline grows on hover -->
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                    <% } %>
+                </a>
+            </li>
+            <li>
+                <a href="/favourite-list" class="relative text-white group">
+                    Favourite
+                                    <% if (activePath === "/favourite-list") { %>
+                        <!-- Active tab: underline is full, shrinks on hover out -->
+                        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-white transition-all duration-300 group-hover:w-0"></span>
+                        <% } else { %>
+                        <!-- Inactive tab: underline grows on hover -->
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                    <% } %>
+                </a>
+            </li>
+            <li>
+                <a href="/registered-houses" class="relative text-white group"> 
+                    Registered Houses 
+                    <% if (activePath === "/registered-houses") { %>
+                        <!-- Active tab: underline is full, shrinks on hover out -->
+                        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-white transition-all duration-300 group-hover:w-0"></span>
+                        <% } else { %>
+                        <!-- Inactive tab: underline grows on hover -->
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                    <% } %>
+                </a> 
+            </li>
+            <li>
+                <a href="/host/registered-houses" class="relative text-white group"> 
+                    Host Houses 
+                    <% if (activePath === "/host-registered-houses") { %>
+                        <!-- Active tab: underline is full, shrinks on hover out -->
+                        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-white transition-all duration-300 group-hover:w-0"></span>
+                        <% } else { %>
+                        <!-- Inactive tab: underline grows on hover -->
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                    <% } %>
+                </a> 
+            </li>
+        <% } %>
+        <% if(!isLoggedIn) { %>
+            <li>
+                <a href="/login" class="relative text-white group"> 
+                    Login 
+                    <% if (activePath === "/login") { %>
+                        <!-- Active tab: underline is full, shrinks on hover out -->
+                        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-white transition-all duration-300 group-hover:w-0"></span>
+                        <% } else { %>
+                        <!-- Inactive tab: underline grows on hover -->
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                    <% } %>
+                </a> 
+            </li>
+        <% } else { %>
+            <li>
+                <form action="/logout" method="post">
+                    <button type="submit" 
+                        class="relative text-white group">
+                        logout
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                    </button>
+                </form>
+            </li>
+        <% } %>
+    </ul>
+</nav>
