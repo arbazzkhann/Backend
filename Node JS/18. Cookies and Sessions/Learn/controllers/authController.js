@@ -16,8 +16,12 @@ exports.getLoginPOST = (req, res, next) => {
 }
 
 exports.logoutPOST = (req, res, next) => {
-    res.clearCookie("isLoggedIn");  //clear cookie
+    // res.clearCookie("isLoggedIn");  //clear cookie
     // res.cookie("isLoggedIn", false);   //setting isLoggedIn-cookie as false
+
+    //it will destroy session form database
+    req.session.destroy(() => {
+        res.redirect('/login');
+    })
     console.log("Now, you are logged out.");
-    res.redirect('/');
 }
