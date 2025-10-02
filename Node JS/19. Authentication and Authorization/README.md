@@ -51,3 +51,13 @@
 3. Define **routes in authRouter** and **behaviour in authController**.
 
 4. **Fix the UI of the app** to look pretty.
+
+
+## Express Validator
+
+### Overview:
+
+* Express-validator is a **set of express.js middlewares** that wraps the extensive **collection of validators** and **sanitizers** ***offered by validator.js***
+
+* It allows you to combine them in many ways so that you can **validate and sanitize your express requests**, and **offers tools** to d**etermine if the request is valid or not**, **which data was matched according to your validators**, and so on.
+
