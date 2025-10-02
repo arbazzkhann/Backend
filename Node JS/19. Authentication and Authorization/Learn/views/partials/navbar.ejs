@@ -81,6 +81,18 @@
         <% } %>
         <% if(!isLoggedIn) { %>
             <li>
+                <a href="/signup" class="relative text-white group"> 
+                    Signup 
+                    <% if (activePath === "/signup") { %>
+                        <!-- Active tab: underline is full, shrinks on hover out -->
+                        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-white transition-all duration-300 group-hover:w-0"></span>
+                        <% } else { %>
+                        <!-- Inactive tab: underline grows on hover -->
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                    <% } %>
+                </a> 
+            </li>
+            <li>
                 <a href="/login" class="relative text-white group"> 
                     Login 
                     <% if (activePath === "/login") { %>

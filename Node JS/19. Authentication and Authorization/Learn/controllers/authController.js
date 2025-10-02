@@ -1,13 +1,12 @@
 const session = require('express-session');
 
-//addHousesGET middleware
+//login controllers
 exports.getLogin = (req, res, next) => {
     res.render('auth/login.ejs', {
         activePath: "/login",
         isLoggedIn: false
     });
 }
-
 exports.getLoginPOST = (req, res, next) => {
     console.log(req.body);
     // res.cookie("isLoggedIn", "true");  //cookie
@@ -15,6 +14,7 @@ exports.getLoginPOST = (req, res, next) => {
     res.redirect('/');
 }
 
+//logout controller
 exports.logoutPOST = (req, res, next) => {
     // res.clearCookie("isLoggedIn");  //clear cookie
     // res.cookie("isLoggedIn", false);   //setting isLoggedIn-cookie as false
@@ -24,4 +24,16 @@ exports.logoutPOST = (req, res, next) => {
         res.redirect('/login');
     })
     console.log("Now, you are logged out.");
+}
+
+//signup controllers
+exports.getSignup = (req, res, next) => {
+    res.render("auth/signup.ejs", {
+        activePath: "/signup",
+        isLoggedIn: false
+    });
+}
+exports.signupPOST = (req, res, next) => {
+    console.log("Signup success ", req.body);
+    res.redirect('/login');
 }
