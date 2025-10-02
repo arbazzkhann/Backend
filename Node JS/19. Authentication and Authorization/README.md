@@ -61,3 +61,16 @@
 
 * It allows you to combine them in many ways so that you can **validate and sanitize your express requests**, and **offers tools** to d**etermine if the request is valid or not**, **which data was matched according to your validators**, and so on.
 
+
+## Express Validator in Project:
+
+1. Add **handling for POST /signup** in **auth controller** and **router**.
+
+2. **Install Express Validator**:
+```bash
+npm install express-validator
+```
+
+3. Use the **email** and **password validations** in the **post handler**.
+
+4. Change the **signup.ejs** to **show the error**. And **accepts the old values**.
