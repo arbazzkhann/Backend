@@ -18,3 +18,20 @@
 2. It ensures that **users can access only the resources** and **funcationalities they have permission for**.
 
 3. Authorization **enhances security by restricting access to sensitive data** and **operation**, complementing the authentication process.
+
+
+## Authentication VS Authorization
+
+<img src="Authentication_vs_Authorization.png" height="350px" style="background-color: white"/>
+
+---
+
+| Aspect          | Authentication                                      | Authorization                                           |
+|-----------------|-----------------------------------------------------|---------------------------------------------------------|
+| **Definition**  | Verifies the identity of a user or system           | Determines what resources a user can access             |
+| **Purpose**     | Ensures users are who they claim to be              | Grants or denies permissions to resources and actions   |
+| **Process**     | Validates credentials like usernames and passwords  | Checks user privileges and access levels                |
+| **Occurs When** | At the start of a session or when accessing secured areas | After authentication, during resource access     |
+| **User Interaction** | Requires user input (e.g., logging in)        | Usually transparent unless access is denied             |
+| **Managed By**  | Handled by both frontend and backend systems        | Mainly enforced by backend servers                      |
+| **Example**     | User logs into an account with a password           | User accesses settings page only if they have rights    |
