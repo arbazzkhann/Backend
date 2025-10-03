@@ -38,6 +38,7 @@
             type="text"
             name="firstName"
             id="firstName"
+            value="<%= oldInput.firstName ? oldInput.firstName : '' %>"
             placeholder="Enter your first name"
             required
             class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
@@ -51,6 +52,7 @@
             type="text"
             name="lastName"
             id="lastName"
+            value="<%= oldInput.lastName ? oldInput.lastName : '' %>"
             placeholder="Enter your last name"
             class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
           />
@@ -64,6 +66,7 @@
             type="email"
             name="signupEmail"
             id="signupEmail"
+            value="<%= oldInput.signupEmail ? oldInput.signupEmail : '' %>"
             placeholder="Enter your email address"
             required
             class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
@@ -105,11 +108,11 @@
             <span class="block text-sm font-medium text-gray-700">Register as:</span>
             <div class="flex items-center space-x-4 mt-2">
             <label class="flex items-center space-x-2">
-                <input type="radio" required checked name="userType" value="guest" class="text-blue-600 focus:ring-blue-500">
+                <input type="radio" required <%= (oldInput.userType && oldInput.userType == "guest") ? "checked" : '' %> name="userType" value="guest" class="text-blue-600 focus:ring-blue-500">
                 <span>Guest</span>
             </label>
             <label class="flex items-center space-x-2">
-                <input type="radio" required name="userType" value="host" class="text-blue-600 focus:ring-blue-500">
+                <input type="radio" required <%= (oldInput.userType && oldInput.userType == "host") ? "checked" : '' %> name="userType" value="host" class="text-blue-600 focus:ring-blue-500">
                 <span>Host</span>
             </label>
             </div>

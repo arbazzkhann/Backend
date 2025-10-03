@@ -97,7 +97,7 @@ exports.signupPOST = [
     
     //final Handler
     (req, res, next) => {
-        const { firstName, lastName, signupEmail, signupPassword, userType } = req.body;
+        const { firstName, lastName, signupEmail, signupPassword, confirmPassword, userType,  } = req.body;
         const errors = validationResult(req);
 
         //if errors found
@@ -111,7 +111,6 @@ exports.signupPOST = [
                     firstName,
                     lastName,
                     signupEmail,
-                    signupPassword,
                     userType
                 }
             });
