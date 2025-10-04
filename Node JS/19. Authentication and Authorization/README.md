@@ -62,7 +62,7 @@
 * It allows you to combine them in many ways so that you can **validate and sanitize your express requests**, and **offers tools** to d**etermine if the request is valid or not**, **which data was matched according to your validators**, and so on.
 
 
-## Express Validator in Project:
+## Using Express Validator (for Project):
 
 1. Add **handling for POST /signup** in **auth controller** and **router**.
 
@@ -74,3 +74,14 @@ npm install express-validator
 3. Use the **email** and **password validations** in the **post handler**.
 
 4. Change the **signup.ejs** to **show the error**. And **accepts the old values**.
+
+
+## Adding User Model:
+
+1. Define a new User Model with following fields
+    * firstName and lastName (required),
+    * email (required, unique)
+    * password (required)
+    * userType (possible values, "guest", "post")
+
+2. In the POST signup handler, create a new user with the fields from request and redirect to /login after the user.
