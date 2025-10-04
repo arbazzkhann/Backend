@@ -78,10 +78,10 @@ npm install express-validator
 
 ## Adding User Model:
 
-1. Define a new User Model with following fields
-    * firstName and lastName (required),
-    * email (required, unique)
-    * password (required)
-    * userType (possible values, "guest", "post")
+1. Define a new **User Model** with following fields:
+    * **firstName** and **lastName** (required),
+    * **email** (required, unique)
+    * **password** (required)
+    * **userType** (possible values - "*guest*", "*post*")
 
-2. In the POST signup handler, create a new user with the fields from request and redirect to /login after the user.
+2. In the **POST signup** handler, **create a new user** with the fields from request and redirect to **/login** after the user created.
