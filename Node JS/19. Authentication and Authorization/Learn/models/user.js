@@ -8,12 +8,12 @@ const userSchema = mongoose.Schema({
     lastName: {
         type: String,
     },
-    email: {
+    signupEmail: {
         type: String,
         required: [true, "Email is required."],
         unique: true
     },
-    password: {
+    signupPassword: {
         type: String,
         required: [true, "Password is required"]
     },

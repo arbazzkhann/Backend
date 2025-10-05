@@ -1,5 +1,6 @@
 const session = require('express-session');
 const {check, validationResult} = require('express-validator');
+const User = require('../models/user');
 
 //login controllers
 exports.getLogin = (req, res, next) => {
@@ -51,7 +52,7 @@ exports.signupPOST = [
         .matches(/^[a-zA-Z\s]+$/).withMessage("First name can only contain letters"),
 
     // lastName validations
-    check("firstName")
+    check("lastName")
         .matches(/^[a-zA-Z\s]*$/).withMessage("Last name can only contain letters"),
 
     // email validations
@@ -84,15 +85,12 @@ exports.signupPOST = [
 
     // termsAccepted validations
     check("termsAccepted")
-        .notEmpty().withMessage("You must accept the term and condition before proceed")
-        .custom((value) => {
+        .custom(value => {
             if(value !== 'on') {
                 throw new Error("You must accept the term and condition before proceed")
             }
             return true;
         }),
-
-    
     
     
     //final Handler
@@ -115,6 +113,33 @@ exports.signupPOST = [
                 }
             });
         }
-        res.redirect('/login');
+
+        const user = new User({
+            firstName,
+            lastName,
+            signupEmail,
+            signupPassword,
+            userType
+        })
+
+        user.save()
+        .then(() => {
+            res.redirect("/login");
+        })
+        .catch(err => {
+            console.log("Error occur while creating user, ", err);
+            return res.status(422).render("auth/signup", {
+                activePath: '/signup',
+                pageTitle: "Signup",
+                isLoggedIn: false,
+                errorMessages: [err.message],
+                oldInput: {
+                    firstName,
+                    lastName,
+                    signupEmail,
+                    userType
+                }
+            });
+        })
     }
 ]
