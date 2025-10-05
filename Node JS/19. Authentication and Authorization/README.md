@@ -92,3 +92,33 @@ npm install express-validator
 1. Install a package named: **bcryptjs**.
 2. **Hash the password** before saving password.
 3. Understand the **even server does not have the password**.
+
+
+## Installing bcryptjs:
+
+1. Install **bcryptjs** package:
+```bash
+npm install bcryptjs
+```
+
+2. Import and Use:
+```js
+const bcrypt = require("bcryptjs");
+
+bcrypt.hash(_password_, _digits_).then(hashedPassword => {
+    // Code here
+});
+```
+
+Example:
+```js
+bcrypt.hash(password, 12).then(hashedPassword => {
+    //user model
+    const user = new User({
+        firstName,
+        lastName,
+        email,
+        password: hashedPassword
+    });
+});
+```
