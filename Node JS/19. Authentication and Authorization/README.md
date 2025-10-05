@@ -85,3 +85,10 @@ npm install express-validator
     * **userType** (possible values - "*guest*", "*post*")
 
 2. In the **POST signup** handler, **create a new user** with the fields from request and redirect to **/login** after the user created.
+
+
+## Encrypting Passwords:
+
+1. Install a package named: **bcryptjs**.
+2. **Hash the password** before saving password.
+3. Understand the **even server does not have the password**.
