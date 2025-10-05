@@ -1,6 +1,7 @@
 const session = require('express-session');
 const {check, validationResult} = require('express-validator');
 const User = require('../models/user');
+const bcrypt = require("bcryptjs");
 
 //login controllers
 exports.getLogin = (req, res, next) => {
@@ -37,8 +38,8 @@ exports.getSignup = (req, res, next) => {
         oldInput: {
             firstName: '',
             lastName: '',
-            signupEmail: '',
-            signupPassword: '',
+            email: '',
+            password: '',
             userType: ''
         }
     });
@@ -56,12 +57,12 @@ exports.signupPOST = [
         .matches(/^[a-zA-Z\s]*$/).withMessage("Last name can only contain letters"),
 
     // email validations
-    check("signupEmail")
+    check("email")
         .isEmail().withMessage("Please enter valid email")
         .normalizeEmail(),
 
-    // signupPassword validations
-    check("signupPassword")
+    // password validations
+    check("password")
         .isLength({ min: 8 }).withMessage("Password at least 8 character long")
         .matches(/[a-z]/).withMessage("Password must contain at least one lower case letter")
         .matches(/[A-Z]/).withMessage("Password must contain at least one upper case letter")
@@ -72,7 +73,7 @@ exports.signupPOST = [
     check("confirmPassword")
         .trim()
         .custom((value, {req}) => {
-            if(value !== req.body.signupPassword) {
+            if(value !== req.body.password) {
                 throw new Error("Password do not match");
             }
             return true;
@@ -95,7 +96,7 @@ exports.signupPOST = [
     
     //final Handler
     (req, res, next) => {
-        const { firstName, lastName, signupEmail, signupPassword, confirmPassword, userType,  } = req.body;
+        const { firstName, lastName, email, password, confirmPassword, userType,  } = req.body;
         const errors = validationResult(req);
 
         //if errors found
@@ -108,38 +109,40 @@ exports.signupPOST = [
                 oldInput: {
                     firstName,
                     lastName,
-                    signupEmail,
+                    email,
                     userType
                 }
             });
         }
 
-        const user = new User({
-            firstName,
-            lastName,
-            signupEmail,
-            signupPassword,
-            userType
-        })
+        bcrypt.hash(password, 12).then(hashedPassword => {
+            const user = new User({
+                firstName,
+                lastName,
+                email,
+                password: hashedPassword,
+                userType
+            })
 
-        user.save()
-        .then(() => {
-            res.redirect("/login");
-        })
-        .catch(err => {
-            console.log("Error occur while creating user, ", err);
-            return res.status(422).render("auth/signup", {
-                activePath: '/signup',
-                pageTitle: "Signup",
-                isLoggedIn: false,
-                errorMessages: [err.message],
-                oldInput: {
-                    firstName,
-                    lastName,
-                    signupEmail,
-                    userType
-                }
-            });
+            user.save()
+            .then(() => {
+                res.redirect("/login");
+            })
+            .catch(err => {
+                console.log("Error occur while creating user, ", err);
+                return res.status(422).render("auth/signup", {
+                    activePath: '/signup',
+                    pageTitle: "Signup",
+                    isLoggedIn: false,
+                    errorMessages: [err.message],
+                    oldInput: {
+                        firstName,
+                        lastName,
+                        email,
+                        userType
+                    }
+                });
+            })
         })
     }
 ]
