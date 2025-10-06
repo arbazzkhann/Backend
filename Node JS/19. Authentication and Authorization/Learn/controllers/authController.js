@@ -42,6 +42,8 @@ exports.getLoginPOST = async (req, res, next) => {
     // res.cookie("isLoggedIn", "true");  //cookie
     req.session.isLoggedIn = true;  //session
     req.session.user = user;
+    await req.session.save();   //saving session into db
+
     res.redirect('/');
 }
 
