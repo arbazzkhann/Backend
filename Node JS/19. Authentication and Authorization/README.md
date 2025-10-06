@@ -105,7 +105,7 @@ npm install bcryptjs
 ```js
 const bcrypt = require("bcryptjs");
 
-bcrypt.hash(_password_, _digits_).then(hashedPassword => {
+bcrypt.hash(_password_, _number_of_times_hashing_).then(hashedPassword => {
     // Code here
 });
 ```
@@ -122,3 +122,12 @@ bcrypt.hash(password, 12).then(hashedPassword => {
     });
 });
 ```
+
+
+## Implementing Login:
+
+1. **Read the email** and **password** *from the request body* and **find the user with the email** from the Users collection.
+
+2. If the ***user is not found send an error and re-render the login-page***, also make changes to the **login page to show errors**.
+
+3. If the ***user is found***, then use the **bcrypt compare function to match the entered password**, ***if password does not match send another error***, **otherwise create a login session and redirect user to the home**.
