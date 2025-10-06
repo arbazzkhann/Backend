@@ -7,13 +7,41 @@ const bcrypt = require("bcryptjs");
 exports.getLogin = (req, res, next) => {
     res.render('auth/login.ejs', {
         activePath: "/login",
-        isLoggedIn: false
+        isLoggedIn: false,
+        oldInput: { email: '' }
     });
 }
-exports.getLoginPOST = (req, res, next) => {
-    console.log(req.body);
+exports.getLoginPOST = async (req, res, next) => {
+    const { email, password } = req.body;
+    const user = await User.findOne({email});
+
+    //if user is not exists
+    if(!user) {
+        return res.status(422).render("auth/login", {
+            activePath: '/login',
+            pageTitle: "Login",
+            isLoggedIn: false,
+            errorMessages: ["Invalid email"],
+            oldInput: { email }
+        })
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+    
+    if(!isMatch) {
+            return res.status(422).render("auth/login", {
+            activePath: '/login',
+            pageTitle: "Login",
+            isLoggedIn: false,
+            errorMessages: ["Invalid password"],
+            oldInput: { email }
+        })
+    }
+
+
     // res.cookie("isLoggedIn", "true");  //cookie
     req.session.isLoggedIn = true;  //session
+    req.session.user = user;
     res.redirect('/');
 }
 
