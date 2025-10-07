@@ -142,6 +142,6 @@ bcrypt.hash(password, 12).then(hashedPassword => {
 3. Remove the Favourite Model and the Pre hook from the Home Model.
 
 4. Make the favourite user specific and change the following methods:
-    * addToFavouritesPOST
-    * favouritesGET
-    * removeFavouritePOST
+    * addToFavouritePOST
+    * FavouriteListGET
+    * removeFromFavouritePOST

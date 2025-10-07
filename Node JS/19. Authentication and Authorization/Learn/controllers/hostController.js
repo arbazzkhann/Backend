@@ -1,6 +1,5 @@
 //local modules
 const House = require('../models/house');
-const Favourite = require('../models/favourite');
 
 //addHousesGET middleware
 exports.addHouseGET = (req, res, next) => {
