@@ -131,3 +131,17 @@ bcrypt.hash(password, 12).then(hashedPassword => {
 2. If the ***user is not found send an error and re-render the login-page***, also make changes to the **login page to show errors**.
 
 3. If the ***user is found***, then use the **bcrypt compare function to match the entered password**, ***if password does not match send another error***, **otherwise create a login session and redirect user to the home**.
+
+
+## Adding User Functions:
+
+1. Make the navigation bar items display only on the basis of userType by passing the user object to all views.
+
+2. Add a field in User Model names favouritesHomes, which is an array of home ids.
+
+3. Remove the Favourite Model and the Pre hook from the Home Model.
+
+4. Make the favourite user specific and change the following methods:
+    * addToFavouritesPOST
+    * favouritesGET
+    * removeFavouritePOST
