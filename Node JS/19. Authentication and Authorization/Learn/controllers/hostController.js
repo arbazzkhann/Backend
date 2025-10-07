@@ -8,7 +8,8 @@ exports.addHouseGET = (req, res, next) => {
         req, 
         activePath: '/add-house',
         editing: false,
-        isLoggedIn: req.isLoggedIn
+        isLoggedIn: req.isLoggedIn,
+        user: req.session.user
     });
 }
 
@@ -29,7 +30,8 @@ exports.hostRegisteredHouses = (req, res, next) => {
             registeredHouses, 
             req,
             activePath: '/host-registered-houses',
-            isLoggedIn: req.isLoggedIn
+            isLoggedIn: req.isLoggedIn,
+            user: req.session.user
         });
     });
 }
@@ -49,7 +51,8 @@ exports.editHouseGET = (req, res, next) => {
             activePath: '/add-house',
             house,
             editing,
-            isLoggedIn: req.isLoggedIn
+            isLoggedIn: req.isLoggedIn,
+            user: req.session.user
         });
     })
 }

@@ -7,7 +7,8 @@ exports.homeGET = (req, res, next) => {
     res.render("home.ejs", {
         req, 
         activePath: '/',
-        isLoggedIn: req.isLoggedIn
+        isLoggedIn: req.isLoggedIn,
+        user: req.session.user
     });
 }
 
@@ -18,7 +19,8 @@ exports.registeredHouses = (req, res, next) => {
             registeredHouses, 
             req, 
             activePath: '/registered-houses',
-            isLoggedIn: req.isLoggedIn
+            isLoggedIn: req.isLoggedIn,
+            user: req.session.user
         });
     })
     .catch(err => {
@@ -31,7 +33,8 @@ exports.BookingsGET = (req, res, next) => {
         registeredHouses, 
         req, 
         activePath: '/bookings',
-        isLoggedIn: req.isLoggedIn
+        isLoggedIn: req.isLoggedIn,
+        user: req.session.user
     });
 }
 
@@ -47,7 +50,8 @@ exports.FavouriteListGET = (req, res) => {
                 favouriteHouses, 
                 req, 
                 activePath: '/favourite-list',
-                isLoggedIn: req.isLoggedIn
+                isLoggedIn: req.isLoggedIn,
+                user: req.session.user
             });
         });
     });
@@ -57,7 +61,8 @@ exports.contactUsGET = (req, res, next) => {
     res.render('store/contact-us-get.ejs', {
         req, 
         activePath: '/contact-us',
-        isLoggedIn: req.isLoggedIn
+        isLoggedIn: req.isLoggedIn,
+        user: req.session.user
     });
 }
 
@@ -67,7 +72,8 @@ exports.contactUsPOST = (req, res, next) => {
     res.render('store/contact-us-post.ejs', {
         req, 
         activePath: '/contact-us',
-        isLoggedIn: req.isLoggedIn
+        isLoggedIn: req.isLoggedIn,
+        user: req.session.user
     });
 }
 
@@ -85,7 +91,8 @@ exports.houseDetails = (req, res, next) => {
                 houseId, 
                 activePath: '/house-details',
                 house: house,
-                isLoggedIn: req.isLoggedIn
+                isLoggedIn: req.isLoggedIn,
+                user: req.session.user
             });
         }
     });

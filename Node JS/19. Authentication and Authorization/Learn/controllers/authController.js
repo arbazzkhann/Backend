@@ -8,10 +8,11 @@ exports.getLogin = (req, res, next) => {
     res.render('auth/login.ejs', {
         activePath: "/login",
         isLoggedIn: false,
-        oldInput: { email: '' }
+        oldInput: { email: '' },
+        user: {}
     });
 }
-exports.getLoginPOST = async (req, res, next) => {
+exports.loginPOST = async (req, res, next) => {
     const { email, password } = req.body;
     const user = await User.findOne({email});
 
@@ -22,8 +23,9 @@ exports.getLoginPOST = async (req, res, next) => {
             pageTitle: "Login",
             isLoggedIn: false,
             errorMessages: ["Invalid email"],
-            oldInput: { email }
-        })
+            oldInput: { email },
+            user: {}
+        });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
@@ -34,8 +36,9 @@ exports.getLoginPOST = async (req, res, next) => {
             pageTitle: "Login",
             isLoggedIn: false,
             errorMessages: ["Invalid password"],
-            oldInput: { email }
-        })
+            oldInput: { email },
+            user: {}
+        });
     }
 
 
@@ -70,7 +73,8 @@ exports.getSignup = (req, res, next) => {
             lastName: '',
             email: '',
             password: '',
-            userType: ''
+            userType: '',
+            user: {}
         }
     });
 }
@@ -141,7 +145,8 @@ exports.signupPOST = [
                     lastName,
                     email,
                     userType
-                }
+                },
+                user: {}
             });
         }
 
@@ -170,7 +175,8 @@ exports.signupPOST = [
                         lastName,
                         email,
                         userType
-                    }
+                    },
+                    user: {}
                 });
             })
         })

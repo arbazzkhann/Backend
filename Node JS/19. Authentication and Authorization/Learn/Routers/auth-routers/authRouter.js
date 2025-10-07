@@ -4,11 +4,11 @@ const express = require('express');
 //router from express
 const authRouter = express.Router();
 
-const { getLogin, getLoginPOST, logoutPOST, getSignup, signupPOST } = require('../../controllers/authController');
+const { getLogin, loginPOST, logoutPOST, getSignup, signupPOST } = require('../../controllers/authController');
 
 //signin
 authRouter.get('/login', getLogin);
-authRouter.post("/login", getLoginPOST);
+authRouter.post("/login", loginPOST);
 
 //logout
 authRouter.post('/logout', logoutPOST);
