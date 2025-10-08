@@ -13,7 +13,7 @@ const houseSchema = mongoose.Schema({
         type: String, 
         required: true
     },
-    houseImageURL: String,
+    image: String,
     houseDescription: String
 });
 

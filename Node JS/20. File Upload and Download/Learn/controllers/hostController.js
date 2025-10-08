@@ -15,14 +15,16 @@ exports.addHouseGET = (req, res, next) => {
 //addHousePOST middleware
 exports.addHousePOST = (req, res, next) => {
     //destructuting
-    const { houseName, housePrice, houseLocation, houseImageURL, houseDescription } = req.body;
+    const { houseName, housePrice, houseLocation, image, houseDescription } = req.body;
+    console.log("house Details: ",houseName, housePrice, houseLocation, image, houseDescription);
 
-    const house = new House({houseName, housePrice, houseLocation, houseImageURL, houseDescription});
+    const house = new House({houseName, housePrice, houseLocation, image, houseDescription});
     house.save()
     .then(() => res.redirect('/host/registered-houses'))
     .catch(err =>  console.log("Error while adding: ", err))
 }
 
+//registered houses list
 exports.hostRegisteredHouses = (req, res, next) => {
     House.find().then(registeredHouses => {
         res.render('host/host-registeredHouses.ejs', {
@@ -57,14 +59,14 @@ exports.editHouseGET = (req, res, next) => {
 }
 
 exports.editHousePOST = (req, res, next) => {
-    const { houseId, houseName, housePrice, houseLocation, houseImageURL, houseDescription } = req.body;
+    const { houseId, houseName, housePrice, houseLocation, image, houseDescription } = req.body;
     console.log(req.body);
 
     House.findById(houseId).then(house => {
         house.houseName = houseName;
         house.housePrice = housePrice;
         house.houseLocation = houseLocation;
-        house.houseImageURL = houseImageURL;
+        house.image = image;
         house.houseDescription = houseDescription;
 
         house.save().then(result => {
