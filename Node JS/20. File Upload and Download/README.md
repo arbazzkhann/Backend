@@ -22,3 +22,26 @@
 
 * **Enctype Attribute**: To enable this, a web form's enctype attribute is set to multipart/form-data. 
 
+### Why It's Used?
+
+* **File Uploads**: It's the standard for sending files (like PDFs, images, or documents) along with other form fields (like name, email, etc.).
+
+* **Bundling Data**: It bundles different kinds of data into a single HTTP request.
+
+* **Clarity for the Server**: The boundary strings allow the server to easily parse the request and distinguish between the text data and the binary file data.
+
+### Example Scenario:
+* When you fill out a job application and upload your resume, the form uses multipart/form-data to send both your personal information and the resume file in one go. 
+
+
+## Handling Multipart Form Data:
+
+### Intstall *multer*:
+```bash
+npm install multer
+```
+
+### Change form Type:
+enctype="multipart"
+
+<form action="_URL_" method="POST" enctype>
