@@ -42,6 +42,24 @@ npm install multer
 ```
 
 ### Change form Type:
-enctype="multipart"
+***enctype="multipart/formdata"***
 
-<form action="_URL_" method="POST" enctype>
+<form action="_URL_" method="POST" enctype="multipart/formdata">
+
+
+### Import "multer" and Use in app.js:
+
+```js
+//import
+import multer = require('multer');
+
+//middleware for single file
+app.use(multer().single("_fileName_"));
+```
+
+Example:
+```js
+import multer = require('multer');
+
+app.use(multer().single("image"));
+```
