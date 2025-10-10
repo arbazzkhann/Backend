@@ -1,27 +1,20 @@
 //external modules
 const express = require('express');
 
+const multer = require('multer');
 //session 
 const session = require('express-session');
 const MongoDBStore = require("connect-mongodb-session")(session);
 
-//DB path String
+//DB
 const DB_PATH = "mongodb+srv://arbazfanda3:root@arbazkhan.nmsxldo.mongodb.net/mywebsite?retryWrites=true&w=majority&appName=ArbazKhan";
-
-
-
+const { default: mongoose } = require('mongoose');
+ 
 //local modules
 const storeRouter = require('./Routers/user-routers/storeRouter.js');
-
 const hostRouter = require('./Routers/host-routers/hostRouter.js');
-
 const authRouter = require('./Routers/auth-routers/authRouter.js');
-
-//errors
 const { pageNotFount } = require('./controllers/errors.js');
-
-//Mongoose  
-const { default: mongoose } = require('mongoose');
 
 
 //MySQL
@@ -42,11 +35,11 @@ app.set('view engine', 'ejs');
 //static files intigration
 // app.use(express.static(abosolutePath));
 const path = require("path");
-
 app.use(express.static(path.join(__dirname, "public")));
 
-//for req.body
 app.use(express.urlencoded());
+app.use(multer().single('image'));
+
 
 //middleware for "URL" and "request method"
 app.use((req, res, next) => {
