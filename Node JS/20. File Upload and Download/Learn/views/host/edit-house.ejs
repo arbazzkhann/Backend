@@ -14,9 +14,9 @@
       </h2>
 
       <!-- Form -->
-      <form action="<%= editing ? '/host/edit-house' : '/host/add-house' %>" method="post" class="space-y-5">
+      <form action="<%= editing ? '/host/edit-house' : '/host/add-house' %>" method="post" class="space-y-5" enctype="multipart/form-data">
         <% if (editing) { %>
-          <input 
+          <input
             type="text"
             name="houseId"
             value="<%= house._id %>" 
