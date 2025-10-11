@@ -15,8 +15,11 @@ exports.addHouseGET = (req, res, next) => {
 //addHousePOST middleware
 exports.addHousePOST = (req, res, next) => {
     //destructuting
+    console.log("req body: ", req.body);
     const { houseName, housePrice, houseLocation, image, houseDescription } = req.body;
-    console.log("house Details: ",houseName, housePrice, houseLocation, image, houseDescription);
+    console.log("house Details: ", houseName, housePrice, houseLocation, image, houseDescription);
+
+    console.log("req.file: ", req.file);
 
     const house = new House({houseName, housePrice, houseLocation, image, houseDescription});
     house.save()
