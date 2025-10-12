@@ -37,8 +37,13 @@ app.set('view engine', 'ejs');
 const path = require("path");
 app.use(express.static(path.join(__dirname, "public")));
 
+
+const multerOptions = {
+    dest: 'uploads/',
+}
+
+app.use(multer(multerOptions).single('image'));
 app.use(express.urlencoded());
-app.use(multer().single('image'));
 
 
 //middleware for "URL" and "request method"

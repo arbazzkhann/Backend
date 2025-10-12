@@ -63,3 +63,10 @@ import multer = require('multer');
 
 app.use(multer().single("image"));
 ```
+
+
+## Saving Images Files:
+
+```js
+app.use(multer({ dest: '/uploads' }).single('image'));
+```
