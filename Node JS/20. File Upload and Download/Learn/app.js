@@ -37,14 +37,35 @@ app.set('view engine', 'ejs');
 const path = require("path");
 app.use(express.static(path.join(__dirname, "public")));
 
-
-const multerOptions = {
-    dest: 'uploads/',
+//ramdom string
+const randomString = (length) => {
+    const charactors = 'abcdefghijklmnopqrstuvwxyz';
+    let result = '';
+    for(let i = 0; i < length; i++) {
+        result += charactors.charAt(Math.floor(Math.random() * charactors.length));
+    }
+    return result;
 }
 
-app.use(multer(multerOptions).single('image'));
-app.use(express.urlencoded());
+//image save into storage
+const storage = multer.diskStorage({
+    //Set the destination folder for uploaded files
+    destination: (req, file, cb) => {
+        cb(null, 'uploads/'); // Files will be saved in 'uploads' directory
+    },
 
+    //Set the filename for uploaded Files
+    filename: (req, file, cb) => {
+        cb(null, randomString(10) + '-' + file.originalname);
+    }
+});
+const multerOptions = {
+    storage
+}
+app.use(express.urlencoded());
+app.use(multer(multerOptions).single('image'));
+
+//for bodyparser
 
 //middleware for "URL" and "request method"
 app.use((req, res, next) => {

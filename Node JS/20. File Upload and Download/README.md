@@ -70,3 +70,38 @@ app.use(multer().single("image"));
 ```js
 app.use(multer({ dest: '/uploads' }).single('image'));
 ```
+
+## Custom File Names:
+
+```js
+//ramdom string
+const randomString = (length) => {
+    const charactors = 'abcdefghijklmnopqrstuvwxyz';
+    let result = '';
+    for(let i = 0; i < length; i++) {
+        result += charactors.charAt(Math.floor(Math.random() * charactors.length));
+    }
+    return result;
+}
+
+//storage destination and fileName
+const storage = multer.diskStorage({
+    //Set the destination folder for uploaded files
+    destination: (req, file, cb) => {
+        cb(null, 'uploads/'); // Files will be saved in 'uploads' directory
+    },
+
+    //Set the filename for uploaded Files
+    filename: (req, file, cb) => {
+        cb(null, randomString(10) + '_' + file.originalname);
+    }
+});
+
+//multerOptions
+const multerOptions = {
+    storage
+}
+
+//multer
+app.use(multer(multerOptions).single('image'));
+```
