@@ -105,3 +105,24 @@ const multerOptions = {
 //multer
 app.use(multer(multerOptions).single('image'));
 ```
+
+
+## Restricting Upload File Types:
+
+```js
+// Adding this filter, now multer would not have the file 
+// if it does not match the type and req.file will be undefined.
+const fileFilter = (req, file, cb) => {
+    if(['image/jpeg', 'image/jpg', 'image/png'].includes(file.mimetype)) {
+        cb(null, true);
+    }
+    else {
+        cb(null, false);
+    }
+}
+
+app.use(multer({ 
+    storage,
+    fileFilter
+})).single('photo');
+```
