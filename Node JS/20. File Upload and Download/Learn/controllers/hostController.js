@@ -1,3 +1,6 @@
+//core modules
+const fs = require('fs');
+
 //local modules
 const House = require('../models/house');
 
@@ -79,6 +82,11 @@ exports.editHousePOST = (req, res, next) => {
         house.houseDescription = houseDescription;
 
         if(req.file) {
+            fs.unlink(house.image, (err) => {
+                if(err) {
+                    console.log("Error while deleting file.", err);
+                }
+            });
             house.image = req.file.path;
         }
             
