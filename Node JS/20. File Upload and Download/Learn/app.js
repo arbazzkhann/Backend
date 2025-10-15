@@ -37,7 +37,7 @@ app.set('view engine', 'ejs');
 const path = require("path");
 app.use(express.static(path.join(__dirname, "public")));
 
-//ramdom string
+//ramdom string function
 const randomString = (length) => {
     const charactors = 'abcdefghijklmnopqrstuvwxyz';
     let result = '';
@@ -45,6 +45,16 @@ const randomString = (length) => {
         result += charactors.charAt(Math.floor(Math.random() * charactors.length));
     }
     return result;
+}
+
+//fileFilter function
+const fileFilter = (req, file, cb) => {
+    if(file.mimetype === "image/png" || file.mimetype === "image/jpg" || file.mimetype === "image/jpeg") {
+        cb(null, true);
+    }
+    else {
+        cb(null, false);
+    }
 }
 
 //image save into storage
@@ -60,7 +70,8 @@ const storage = multer.diskStorage({
     }
 });
 const multerOptions = {
-    storage
+    storage,
+    fileFilter
 }
 app.use(express.urlencoded());
 app.use(multer(multerOptions).single('image'));

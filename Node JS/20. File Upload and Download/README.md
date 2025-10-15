@@ -113,7 +113,7 @@ app.use(multer(multerOptions).single('image'));
 // Adding this filter, now multer would not have the file 
 // if it does not match the type and req.file will be undefined.
 const fileFilter = (req, file, cb) => {
-    if(['image/jpeg', 'image/jpg', 'image/png'].includes(file.mimetype)) {
+    if(file.mimetype === "image/png" || file.mimetype === "image/jpg" || file.mimetype === "image/jpeg") {
         cb(null, true);
     }
     else {
@@ -121,8 +121,15 @@ const fileFilter = (req, file, cb) => {
     }
 }
 
+//multer
 app.use(multer({ 
     storage,
     fileFilter
 })).single('photo');
+
+
+//in host-controller
+if(!req.file) {
+    res.status(422).send("No image provided.");
+}
 ```

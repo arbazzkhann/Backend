@@ -21,6 +21,10 @@ exports.addHousePOST = (req, res, next) => {
 
     console.log("req.file: ", req.file);
 
+    if(!req.file) {
+        res.status(422).send("No image provided.");
+    }
+
     const house = new House({houseName, housePrice, houseLocation, image, houseDescription});
     house.save()
     .then(() => res.redirect('/host/registered-houses'))
