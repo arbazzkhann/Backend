@@ -1,7 +1,10 @@
+//core modules
+const fs = require('fs');
+
 //external modules
 const express = require('express');
-
 const multer = require('multer');
+
 //session 
 const session = require('express-session');
 const MongoDBStore = require("connect-mongodb-session")(session);
