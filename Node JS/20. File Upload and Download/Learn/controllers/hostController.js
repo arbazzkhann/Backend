@@ -16,8 +16,8 @@ exports.addHouseGET = (req, res, next) => {
 exports.addHousePOST = (req, res, next) => {
     //destructuting
     console.log("req body: ", req.body);
-    const { houseName, housePrice, houseLocation, image, houseDescription } = req.body;
-    console.log("house Details: ", houseName, housePrice, houseLocation, image, houseDescription);
+    const { houseName, housePrice, houseLocation, houseDescription } = req.body;
+    console.log("house Details: ", houseName, housePrice, houseLocation, houseDescription);
 
     console.log("req.file: ", req.file);
 
@@ -25,6 +25,8 @@ exports.addHousePOST = (req, res, next) => {
         res.status(422).send("No image provided.");
     }
 
+    const image = req.file.path;
+   
     const house = new House({houseName, housePrice, houseLocation, image, houseDescription});
     house.save()
     .then(() => res.redirect('/host/registered-houses'))
@@ -66,16 +68,20 @@ exports.editHouseGET = (req, res, next) => {
 }
 
 exports.editHousePOST = (req, res, next) => {
-    const { houseId, houseName, housePrice, houseLocation, image, houseDescription } = req.body;
+    const { houseId, houseName, housePrice, houseLocation, houseDescription } = req.body;
+
     console.log(req.body);
 
     House.findById(houseId).then(house => {
         house.houseName = houseName;
         house.housePrice = housePrice;
         house.houseLocation = houseLocation;
-        house.image = image;
         house.houseDescription = houseDescription;
 
+        if(req.file) {
+            house.image = req.file.path;
+        }
+            
         house.save().then(result => {
             console.log("House updated: ", result);
         }).catch(err => {
