@@ -37,9 +37,10 @@ app.set('view engine', 'ejs');
 const path = require("path");
 app.use(express.static(path.join(__dirname, "public")));
 
-//uploads directory
+//uploads directory - accessing from frontend
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/host/uploads", express.static(path.join(__dirname, "uploads")));
+app.use("/house/uploads", express.static(path.join(__dirname, "uploads")));
 
 //ramdom string function
 const randomString = (length) => {
