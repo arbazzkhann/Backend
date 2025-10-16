@@ -13,6 +13,8 @@
 
 ## What are REST APIs?
 
+**REST API** => ***Representational State Transfer Application Programming Interface***
+
 <img src='REST-API.png' height='275px'/>
 
 * **REST APIs** enables **communication between clients** and **servers** *using HTTP*.
@@ -24,3 +26,18 @@
 * REST APIs are **stateless**.
 
 * REST APIs **allows clients to access and manipulate web resources**.
+
+
+## Decoupling Frontend & Backend:
+
+<img src="Decoupling-frontend-backend.png" height="270px"/>
+
+* **Separating front-end** and **back-end** allows *independent development and scaling*.
+
+* **REST APIs** serve as a **communication layer between them**.
+
+* **Front-end interacts with back-end** *through standardized **RESTful calls***.
+
+* **Decoupling enhances flexibility** and **simplifies maintenance**.
+
+* **REST APIs enable front-end updates without altering back-end code**.
