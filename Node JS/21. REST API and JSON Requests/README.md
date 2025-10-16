@@ -10,3 +10,17 @@
 
 * The **page updates itself dynamically** ***using the received data***.
 
+
+## What are REST APIs?
+
+<img src='REST-API.png' height='275px'/>
+
+* **REST APIs** enables **communication between clients** and **servers** *using HTTP*.
+
+* They are mainly **identified by a URL**.
+
+* They use standard **HTTP** methods like **GET**, **POST**, **PUT**, and **DELETE**.
+
+* REST APIs are **stateless**.
+
+* REST APIs **allows clients to access and manipulate web resources**.
