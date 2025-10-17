@@ -41,3 +41,20 @@
 * **Decoupling enhances flexibility** and **simplifies maintenance**.
 
 * **REST APIs enable front-end updates without altering back-end code**.
+
+
+## Routes & HTTP Methods?
+
+<img src="HTTP-Methods.png" height='275px'/>
+
+* **REST API routes** define the **endpoints** (URLs) where **resources can be accessed by clients**.
+
+* **GET**: **Retrieves data from the server** at the specified route.
+
+* **POST**: **Sends new data to the server** to **create a resources**.
+
+* **PUT**: **Updates** or **replaces** an **existing resource** at a given route.
+
+* **DELETE**: **Removes a resources from the server** at the specified route.
+
+* **PATCH**: Partially **updates an existing resources with new data**.
