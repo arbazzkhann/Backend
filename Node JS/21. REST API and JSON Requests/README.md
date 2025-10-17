@@ -58,3 +58,20 @@
 * **DELETE**: **Removes a resources from the server** at the specified route.
 
 * **PATCH**: Partially **updates an existing resources with new data**.
+
+
+## REST Core Concepts:
+
+<img src='REST-Core-Concepts.png' height="275px" width="700px"/>
+
+* **Statelessness**: Each **request contains all necessary information**. The **server maintains no client session**.
+
+* **Uniform Interface**: Standardized communication using HTTP methods like **GET**, **POST**, **PUT**, **DELETE**.
+
+* **Client-Server Separation**: **Independent development** of ***front-end*** and ***back-end*** components.
+
+* **Cacheability**: Responses indicate if they can be **cached to improve performance**.
+
+* **Layered System**: Architecture allows for **multiple layers between client and server**.
+
+* **Code on Demand (*Optional*)**: Server can **extend client functionality by sending executable code**.
