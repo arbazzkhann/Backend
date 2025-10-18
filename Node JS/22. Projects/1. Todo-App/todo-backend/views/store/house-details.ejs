@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>House Details</title>
+    <link rel="stylesheet" href="/output.css">
+</head>
+
+<body>
+    <!--Navbar-->
+    <%- include('../partials/navbar.ejs')%>
+
+
+    <section class="bg-white text-gray-900 flex items-center justify-center mt-12">
+        <!-- Card -->
+        <div class="max-w-md w-full bg-white shadow-lg rounded-2xl overflow-hidden border border-red-500">
+            <!-- House Image -->
+            <img src="<%= house.image %>" alt="House Image" class="w-full h-64 object-cover" />
+
+            <%- include('../partials/favourite-button.ejs')%>
+
+            <!-- Content -->
+            <div class="p-6 mt-0 pt-0">
+                <h1 class="text-2xl font-bold text-red-600 mb-4"><%= house.houseName %></h1>
+
+                <!-- House ID -->
+                <p class="text-gray-700 mb-2">
+                    <span class="font-semibold text-red-600">House ID:</span>
+                    <%= house._id %>
+                </p>
+
+                <!-- Location -->
+                <p class="text-gray-700 mb-2">
+                    <span class="font-semibold text-red-600">Location:</span>
+                    <%= house.houseLocation %>
+                </p>
+                
+                <!-- Price -->
+                <p class="flex justify-between items-center text-gray-700 mb-2">
+                    <span>
+                        <span class="font-semibold text-red-600">Price:</span> <%= house.housePrice %>/-
+                    </span>
+                </p>
+
+                <!-- Description -->
+                <p class="text-gray-700 mb-2">
+                    <span class="font-semibold text-red-600">Description:</span>
+                    <%= house.houseDescription %>
+                </p>
+                
+                
+
+                
+
+                <!-- Back Button -->
+                <a href="/registered-houses"
+                    class="inline-block bg-red-600 text-white px-4 py-2 rounded-xl shadow hover:bg-red-700 transition">
+                    ← Back to Houses
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
