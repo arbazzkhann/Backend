@@ -10,22 +10,14 @@ const { pageNotFount } = require('./controllers/errors.js');
 const todoRouter = require('./Routers/todoItemsRouter.js')
 
 //DB
-const DB_PATH = "mongodb+srv://arbazfanda3:root@arbazkhan.nmsxldo.mongodb.net/mywebsite?retryWrites=true&w=majority&appName=ArbazKhan";
+const DB_PATH = "mongodb+srv://arbazfanda3:root@arbazkhan.nmsxldo.mongodb.net/todo?retryWrites=true&w=majority&appName=ArbazKhan";
 const { default: mongoose } = require('mongoose');
 
 //express app
 const app = express();
 
-
-//static files intigration
-// app.use(express.static(abosolutePath));
-app.use(express.static(path.join(__dirname, "public")));
-
-
-
-app.use(cors());
 app.use(express.json());
-
+app.use(cors());
 
 //todo
 app.use(todoRouter);
@@ -43,7 +35,7 @@ app.use(pageNotFount);
 
 //Server and DB Start here
 //server connect
-const PORT = 3000;
+const PORT = 3001;
 //db connect with mongoose
 mongoose.connect(DB_PATH)
 .then(() => {

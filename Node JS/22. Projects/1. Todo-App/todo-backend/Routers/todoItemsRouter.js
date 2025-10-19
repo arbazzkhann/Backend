@@ -4,6 +4,6 @@ const todoRouter = express.Router();
 
 const todoItemsController = require('../controllers/todoItemsController');
 
-todoRouter.post('/item', todoItemsController.createTodoItem)
+todoRouter.post('/api/todo', todoItemsController.createTodoItem)
 
 module.exports = todoRouter;

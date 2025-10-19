@@ -5,13 +5,13 @@ const todoItemSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    date: {
-        type: Date
-    },
+    date: Date,
     completed: {
         type: Boolean,
         default: false
     }
-}, {timestamps: true});
+},
+{ timestamps: true }
+);
 
 module.exports = mongoose.model('TodoItem', todoItemSchema);
