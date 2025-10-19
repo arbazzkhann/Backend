@@ -7,7 +7,7 @@ const cors = require("cors");
 
 //local modules
 const { pageNotFount } = require('./controllers/errors.js');
-const todoRouter = require('./Routers/todoItemsRouter.js')
+const todoItemsController = require('./Routers/todoItemsRouter.js')
 
 //DB
 const DB_PATH = "mongodb+srv://arbazfanda3:root@arbazkhan.nmsxldo.mongodb.net/todo?retryWrites=true&w=majority&appName=ArbazKhan";
@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(cors());
 
 //todo
-app.use(todoRouter);
+app.use('/api/todo', todoItemsController);
 
 //404 status
 app.use(pageNotFount);
