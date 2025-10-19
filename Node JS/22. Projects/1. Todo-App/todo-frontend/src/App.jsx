@@ -3,11 +3,18 @@ import AddTodo from "./components/AddTodo";
 import TodoItems from "./components/TodoItems";
 import WelcomeMessage from "./components/WelcomeMessage";
 import "./App.css";
-import { useState } from "react";
-import { addItemToServer } from './services/itemsService.js';
+import { useEffect, useState } from "react";
+import { addItemToServer, deleteItemFromServer, getItemFromServer } from './services/itemsService.js';
 
 function App() {
   const [todoItems, setTodoItems] = useState([]);
+
+  useEffect(() => {
+    getItemFromServer()
+    .then(initialItems => {
+      setTodoItems(initialItems);
+    });
+  },[]);
 
   const handleNewItem = async (itemName, itemDueDate) => {
     console.log(`New Item Added: ${itemName} Date:${itemDueDate}`);
@@ -19,8 +26,9 @@ function App() {
     setTodoItems(newTodoItems);
   };
 
-  const handleDeleteItem = (todoItemName) => {
-    const newTodoItems = todoItems.filter((item) => item.name !== todoItemName);
+  const handleDeleteItem = async (id) => {
+    const deleteId = await(deleteItemFromServer(id));
+    const newTodoItems = todoItems.filter(item => item.id !== deleteId);
     setTodoItems(newTodoItems);
   };
 
