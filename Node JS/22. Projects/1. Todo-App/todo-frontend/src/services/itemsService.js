@@ -7,7 +7,13 @@ export const addItemToServer = async (task, date) => {
         },
         body: JSON.stringify({task, date}),
     });
-    const item = await response.json()
+
+    if (!response.ok) {
+        const text = await response.text();
+        throw new Error(`Failed to add item: ${response.status} ${text}`);
+    }
+
+    const item = await response.json();
     return mapServerItemToLocalItem(item);
 }
 
