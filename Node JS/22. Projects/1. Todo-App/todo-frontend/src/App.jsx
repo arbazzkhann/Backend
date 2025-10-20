@@ -4,7 +4,7 @@ import TodoItems from "./components/TodoItems";
 import WelcomeMessage from "./components/WelcomeMessage";
 import "./App.css";
 import { useEffect, useState } from "react";
-import { addItemToServer, deleteItemFromServer, getItemFromServer } from './services/itemsService.js';
+import { addItemToServer, deleteItemFromServer, getItemFromServer, markItemCompleted, updateItemOnServer } from './services/itemsService.js';
 
 function App() {
   const [todoItems, setTodoItems] = useState([]);
@@ -33,8 +33,33 @@ function App() {
   };
 
   const handleDeleteItem = async (id) => {
-    const deleteId = await deleteItemFromServer(id);
-    setTodoItems((prev) => prev.filter((item) => item.id !== deleteId));
+    try {
+      const deleteId = await deleteItemFromServer(id);
+      setTodoItems((prev) => prev.filter((item) => item.id !== deleteId));
+    } catch (err) {
+      console.error('Failed to delete todo:', err);
+      alert(`Failed to delete todo: ${err.message}`);
+    }
+  };
+
+  const handleCompleteItem = async (id, completed = true) => {
+    try {
+      const updated = await markItemCompleted(id, completed);
+      setTodoItems((prev) => prev.map((it) => (it.id === updated.id ? updated : it)));
+    } catch (err) {
+      console.error('Failed to mark completed:', err);
+      alert(`Failed to mark completed: ${err.message}`);
+    }
+  };
+
+  const handleEditItem = async (id, newName, newDate) => {
+    try {
+      const updated = await updateItemOnServer(id, newName, newDate);
+      setTodoItems((prev) => prev.map((it) => (it.id === updated.id ? updated : it)));
+    } catch (err) {
+      console.error('Failed to update todo:', err);
+      alert(`Failed to update todo: ${err.message}`);
+    }
   };
 
   return (
@@ -51,7 +76,7 @@ function App() {
             <WelcomeMessage />
           ) : null}
 
-          <TodoItems todoItems={todoItems} onDeleteClick={handleDeleteItem} />
+          <TodoItems todoItems={todoItems} onDeleteClick={handleDeleteItem} onCompleteClick={handleCompleteItem} onEditClick={handleEditItem} />
         </main>
       </div>
     </div>

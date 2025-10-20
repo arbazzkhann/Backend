@@ -8,5 +8,6 @@ todoItemsRouter.get('/', todoItemsController.getTodoItems);
 todoItemsRouter.post('/', todoItemsController.createTodoItem);
 todoItemsRouter.delete('/:id', todoItemsController.deleteTodoItem);
 todoItemsRouter.put('/:id/completed', todoItemsController.markCompleted);
+todoItemsRouter.put('/:id', todoItemsController.updateTodoItem);
 
 module.exports = todoItemsRouter;

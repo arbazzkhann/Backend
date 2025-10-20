@@ -6,6 +6,10 @@ const todoItemSchema = mongoose.Schema({
         required: true
     },
     date: Date,
+    previousDates: {
+        type: [Date],
+        default: []
+    },
     completed: {
         type: Boolean,
         default: false
